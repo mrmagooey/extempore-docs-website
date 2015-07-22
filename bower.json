@@ -1,0 +1,20 @@
+{
+  "name": "extempore_docs",
+  "version": "0.0.0",
+  "authors": [
+    "mrmagooey <peter.davis8@gmail.com>"
+  ],
+  "description": "extempore documentation",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.13.3"
+  }
+}
