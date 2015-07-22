@@ -198,23 +198,79 @@
 {
   "category": "named type",
   "name": "String",
-  "args": "()",
+  "args": null,
   "type": "<i64,i8*>",
-  "docstring": null
+  "docstring": "xtlang's string type\n\nTuple contains <string_length,characters>\n\nShould be created, modified and destroyed with the String_* library functions.\n\nSecond item in tuple is a char* c-style string "
 },
 {
   "category": "named type",
   "name": "mzone",
-  "args": "()",
+  "args": null,
   "type": "<i8*,i64,i64,i64,mzone*>",
-  "docstring": null
+  "docstring": "Extempore memory zone"
 },
 {
   "category": "named type",
   "name": "clsvar",
-  "args": "()",
+  "args": null,
   "type": "<i8*,i32,i8*,i64,clsvar*>",
-  "docstring": null
+  "docstring": "Extempore closure address table: <name,offset,type,TODO_whatisthis,next_table>"
+},
+{
+  "category": "xtlang alias",
+  "name": "DSPMCMT",
+  "args": null,
+  "type": "[void,float**,float*,i64,i8*]*",
+  "docstring": "buffered (multithreaded) audio output callback type"
+},
+{
+  "category": "xtlang alias",
+  "name": "DSPMC",
+  "args": null,
+  "type": "[void,float*,float*,i64,i8*]*",
+  "docstring": "buffered audio output callback type"
+},
+{
+  "category": "xtlang alias",
+  "name": "DSPMT",
+  "args": null,
+  "type": "[float,float*,i64,i64,float*]*",
+  "docstring": "(multithreaded) audio output callback type"
+},
+{
+  "category": "xtlang alias",
+  "name": "DSP",
+  "args": null,
+  "type": "[float,float,i64,i64,float*]*",
+  "docstring": "audio output callback type"
+},
+{
+  "category": "xtlang alias",
+  "name": "SAMPLE",
+  "args": null,
+  "type": "float",
+  "docstring": "audio I/O sample type in the dsp processing chain"
+},
+{
+  "category": "xtlang alias",
+  "name": "enum",
+  "args": null,
+  "type": "i32",
+  "docstring": "useful for working with C libraries"
+},
+{
+  "category": "xtlang alias",
+  "name": "size_t",
+  "args": null,
+  "type": "i64",
+  "docstring": "useful for working with C libraries"
+},
+{
+  "category": "xtlang alias",
+  "name": "bool",
+  "args": null,
+  "type": "i1",
+  "docstring": "boolean true/false type"
 },
 {
   "category": "xtlang closure",
@@ -625,6349 +681,6349 @@
 {
   "category": "C function",
   "name": "sys_unsetenv_maker",
-  "args": "()",
+  "args": null,
   "type": "[[i32,i8*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "sys_unsetenv_native",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "sys_unsetenv_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "sys_unsetenv_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "sys_unsetenv_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "sys_unsetenv_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "sys_unsetenv",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "sys_setenv_maker",
-  "args": "()",
+  "args": null,
   "type": "[[i32,i8*,i8*,i32]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "sys_setenv_native",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i8*,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "sys_setenv_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "sys_setenv_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "sys_setenv_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "sys_setenv_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "sys_setenv",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i8*,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "sys_getenv_maker",
-  "args": "()",
+  "args": null,
   "type": "[[i8*,i8*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "sys_getenv_native",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "sys_getenv_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "sys_getenv_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "sys_getenv_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "sys_getenv_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "sys_getenv",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_voidptr_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*,i8*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_voidptr_native",
-  "args": "()",
+  "args": null,
   "type": "[String*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_voidptr_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_voidptr_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_voidptr_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_voidptr_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_voidptr",
-  "args": "()",
+  "args": null,
   "type": "[String*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_voidptr_maker",
-  "args": "()",
+  "args": null,
   "type": "[[void,i8*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_voidptr_native",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_voidptr_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_voidptr_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_voidptr_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_voidptr_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_voidptr",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_d_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*,double]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_d_native",
-  "args": "()",
+  "args": null,
   "type": "[String*,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_d_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_d_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_d_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_d_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_d",
-  "args": "()",
+  "args": null,
   "type": "[String*,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_f_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*,float]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_f_native",
-  "args": "()",
+  "args": null,
   "type": "[String*,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_f_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_f_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_f_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_f_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_f",
-  "args": "()",
+  "args": null,
   "type": "[String*,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i64_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*,i64]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i64_native",
-  "args": "()",
+  "args": null,
   "type": "[String*,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i64_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i64_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i64_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i64_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i64",
-  "args": "()",
+  "args": null,
   "type": "[String*,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i32_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*,i32]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i32_native",
-  "args": "()",
+  "args": null,
   "type": "[String*,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i32_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i32_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i32_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i32_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i32",
-  "args": "()",
+  "args": null,
   "type": "[String*,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i8_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*,i8]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i8_native",
-  "args": "()",
+  "args": null,
   "type": "[String*,i8]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i8_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i8_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i8_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i8_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i8",
-  "args": "()",
+  "args": null,
   "type": "[String*,i8]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i1_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*,i1]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i1_native",
-  "args": "()",
+  "args": null,
   "type": "[String*,i1]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i1_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i1_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i1_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i1_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_i1",
-  "args": "()",
+  "args": null,
   "type": "[String*,i1]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_space_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_space_native",
-  "args": "()",
+  "args": null,
   "type": "[String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_space_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_space_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_space_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_space_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_space",
-  "args": "()",
+  "args": null,
   "type": "[String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_return_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_return_native",
-  "args": "()",
+  "args": null,
   "type": "[String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_return_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_return_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_return_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_return_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "toString_return",
-  "args": "()",
+  "args": null,
   "type": "[String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_d_maker",
-  "args": "()",
+  "args": null,
   "type": "[[void,double]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_d_native",
-  "args": "()",
+  "args": null,
   "type": "[void,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_d_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_d_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_d_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_d_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_d",
-  "args": "()",
+  "args": null,
   "type": "[void,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_f_maker",
-  "args": "()",
+  "args": null,
   "type": "[[void,float]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_f_native",
-  "args": "()",
+  "args": null,
   "type": "[void,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_f_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_f_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_f_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_f_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_f",
-  "args": "()",
+  "args": null,
   "type": "[void,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i64_maker",
-  "args": "()",
+  "args": null,
   "type": "[[void,i64]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i64_native",
-  "args": "()",
+  "args": null,
   "type": "[void,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i64_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i64_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i64_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i64_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i64",
-  "args": "()",
+  "args": null,
   "type": "[void,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i32_maker",
-  "args": "()",
+  "args": null,
   "type": "[[void,i32]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i32_native",
-  "args": "()",
+  "args": null,
   "type": "[void,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i32_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i32_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i32_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i32_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i32",
-  "args": "()",
+  "args": null,
   "type": "[void,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i8_maker",
-  "args": "()",
+  "args": null,
   "type": "[[void,i8]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i8_native",
-  "args": "()",
+  "args": null,
   "type": "[void,i8]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i8_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i8_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i8_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i8_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i8",
-  "args": "()",
+  "args": null,
   "type": "[void,i8]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i1_maker",
-  "args": "()",
+  "args": null,
   "type": "[[void,i1]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i1_native",
-  "args": "()",
+  "args": null,
   "type": "[void,i1]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i1_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i1_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i1_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i1_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_i1",
-  "args": "()",
+  "args": null,
   "type": "[void,i1]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_space_maker",
-  "args": "()",
+  "args": null,
   "type": "[[void]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_space_native",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_space_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_space_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_space_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_space_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_space",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_return_maker",
-  "args": "()",
+  "args": null,
   "type": "[[void]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_return_native",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_return_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_return_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_return_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_return_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "print_return",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_String_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*,String*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_String_native",
-  "args": "()",
+  "args": null,
   "type": "[String*,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_String_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_String_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_String_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_String_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_String",
-  "args": "()",
+  "args": null,
   "type": "[String*,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_d_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*,double]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_d_native",
-  "args": "()",
+  "args": null,
   "type": "[String*,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_d_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_d_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_d_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_d_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_d",
-  "args": "()",
+  "args": null,
   "type": "[String*,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_f_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*,float]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_f_native",
-  "args": "()",
+  "args": null,
   "type": "[String*,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_f_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_f_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_f_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_f_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_f",
-  "args": "()",
+  "args": null,
   "type": "[String*,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i64_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*,i64]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i64_native",
-  "args": "()",
+  "args": null,
   "type": "[String*,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i64_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i64_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i64_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i64_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i64",
-  "args": "()",
+  "args": null,
   "type": "[String*,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i32_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*,i32]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i32_native",
-  "args": "()",
+  "args": null,
   "type": "[String*,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i32_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i32_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i32_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i32_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i32",
-  "args": "()",
+  "args": null,
   "type": "[String*,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i8_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*,i8]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i8_native",
-  "args": "()",
+  "args": null,
   "type": "[String*,i8]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i8_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i8_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i8_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i8_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i8",
-  "args": "()",
+  "args": null,
   "type": "[String*,i8]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i1_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*,i1]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i1_native",
-  "args": "()",
+  "args": null,
   "type": "[String*,i1]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i1_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i1_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i1_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i1_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_i1",
-  "args": "()",
+  "args": null,
   "type": "[String*,i1]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_space_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_space_native",
-  "args": "()",
+  "args": null,
   "type": "[String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_space_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_space_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_space_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_space_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_space",
-  "args": "()",
+  "args": null,
   "type": "[String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_return_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_return_native",
-  "args": "()",
+  "args": null,
   "type": "[String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_return_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_return_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_return_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_return_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_format_return",
-  "args": "()",
+  "args": null,
   "type": "[String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_similarity_maker",
-  "args": "()",
+  "args": null,
   "type": "[[double,String*,String*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_similarity_native",
-  "args": "()",
+  "args": null,
   "type": "[double,String*,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_similarity_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_similarity_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_similarity_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_similarity_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_similarity",
-  "args": "()",
+  "args": null,
   "type": "[double,String*,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_levenshtein_maker",
-  "args": "()",
+  "args": null,
   "type": "[[i64,String*,String*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_levenshtein_native",
-  "args": "()",
+  "args": null,
   "type": "[i64,String*,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_levenshtein_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_levenshtein_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_levenshtein_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_levenshtein_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_levenshtein",
-  "args": "()",
+  "args": null,
   "type": "[i64,String*,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_equal_maker",
-  "args": "()",
+  "args": null,
   "type": "[[i1,String*,String*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_equal_native",
-  "args": "()",
+  "args": null,
   "type": "[i1,String*,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_equal_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_equal_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_equal_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_equal_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_equal",
-  "args": "()",
+  "args": null,
   "type": "[i1,String*,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_cat2_h_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*,String*,String*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_cat2_h_native",
-  "args": "()",
+  "args": null,
   "type": "[String*,String*,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_cat2_h_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_cat2_h_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_cat2_h_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_cat2_h_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_cat2_h",
-  "args": "()",
+  "args": null,
   "type": "[String*,String*,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_cat2_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*,String*,String*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_cat2_native",
-  "args": "()",
+  "args": null,
   "type": "[String*,String*,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_cat2_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_cat2_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_cat2_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_cat2_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_cat2",
-  "args": "()",
+  "args": null,
   "type": "[String*,String*,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_copy_h_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*,String*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_copy_h_native",
-  "args": "()",
+  "args": null,
   "type": "[String*,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_copy_h_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_copy_h_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_copy_h_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_copy_h_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_copy_h",
-  "args": "()",
+  "args": null,
   "type": "[String*,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_from_cptr_h_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*,i8*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_from_cptr_h_native",
-  "args": "()",
+  "args": null,
   "type": "[String*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_from_cptr_h_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_from_cptr_h_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_from_cptr_h_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_from_cptr_h_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_from_cptr_h",
-  "args": "()",
+  "args": null,
   "type": "[String*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_copy_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*,String*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_copy_native",
-  "args": "()",
+  "args": null,
   "type": "[String*,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_copy_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_copy_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_copy_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_copy_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_copy",
-  "args": "()",
+  "args": null,
   "type": "[String*,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_from_cptr_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*,i8*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_from_cptr_native",
-  "args": "()",
+  "args": null,
   "type": "[String*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_from_cptr_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_from_cptr_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_from_cptr_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_from_cptr_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_from_cptr",
-  "args": "()",
+  "args": null,
   "type": "[String*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_cstr_maker",
-  "args": "()",
+  "args": null,
   "type": "[[i8*,String*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_cstr_native",
-  "args": "()",
+  "args": null,
   "type": "[i8*,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_cstr_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_cstr_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_cstr_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_cstr_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_cstr",
-  "args": "()",
+  "args": null,
   "type": "[i8*,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_size_maker",
-  "args": "()",
+  "args": null,
   "type": "[[i64,String*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_size_native",
-  "args": "()",
+  "args": null,
   "type": "[i64,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_size_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_size_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_size_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_size_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_size",
-  "args": "()",
+  "args": null,
   "type": "[i64,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_length_maker",
-  "args": "()",
+  "args": null,
   "type": "[[i64,String*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_length_native",
-  "args": "()",
+  "args": null,
   "type": "[i64,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_length_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_length_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_length_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_length_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_length",
-  "args": "()",
+  "args": null,
   "type": "[i64,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_toString_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*,String*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_toString_native",
-  "args": "()",
+  "args": null,
   "type": "[String*,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_toString_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_toString_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_toString_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_toString_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_toString",
-  "args": "()",
+  "args": null,
   "type": "[String*,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_print_maker",
-  "args": "()",
+  "args": null,
   "type": "[[void,String*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_print_native",
-  "args": "()",
+  "args": null,
   "type": "[void,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_print_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_print_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_print_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_print_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_print",
-  "args": "()",
+  "args": null,
   "type": "[void,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_free_maker",
-  "args": "()",
+  "args": null,
   "type": "[[void,String*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_free_native",
-  "args": "()",
+  "args": null,
   "type": "[void,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_free_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_free_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_free_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_free_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_free",
-  "args": "()",
+  "args": null,
   "type": "[void,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_zcopy_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*,String*,mzone*,mzone*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_zcopy_native",
-  "args": "()",
+  "args": null,
   "type": "[String*,String*,mzone*,mzone*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_zcopy_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_zcopy_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_zcopy_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_zcopy_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_zcopy",
-  "args": "()",
+  "args": null,
   "type": "[String*,String*,mzone*,mzone*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_hfree_maker",
-  "args": "()",
+  "args": null,
   "type": "[[void,String*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_hfree_native",
-  "args": "()",
+  "args": null,
   "type": "[void,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_hfree_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_hfree_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_hfree_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_hfree_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_hfree",
-  "args": "()",
+  "args": null,
   "type": "[void,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_hcopy_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*,String*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_hcopy_native",
-  "args": "()",
+  "args": null,
   "type": "[String*,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_hcopy_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_hcopy_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_hcopy_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_hcopy_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_hcopy",
-  "args": "()",
+  "args": null,
   "type": "[String*,String*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_h_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*,i64,i8*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_h_native",
-  "args": "()",
+  "args": null,
   "type": "[String*,i64,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_h_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_h_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_h_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_h_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_h",
-  "args": "()",
+  "args": null,
   "type": "[String*,i64,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_maker",
-  "args": "()",
+  "args": null,
   "type": "[[String*,i64,i8*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_native",
-  "args": "()",
+  "args": null,
   "type": "[String*,i64,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "String",
-  "args": "()",
+  "args": null,
   "type": "[String*,i64,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_d_maker",
-  "args": "()",
+  "args": null,
   "type": "[[double,double,mzone*,mzone*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_d_native",
-  "args": "()",
+  "args": null,
   "type": "[double,double,mzone*,mzone*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_d_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_d_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_d_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_d_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_d",
-  "args": "()",
+  "args": null,
   "type": "[double,double,mzone*,mzone*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_f_maker",
-  "args": "()",
+  "args": null,
   "type": "[[float,float,mzone*,mzone*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_f_native",
-  "args": "()",
+  "args": null,
   "type": "[float,float,mzone*,mzone*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_f_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_f_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_f_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_f_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_f",
-  "args": "()",
+  "args": null,
   "type": "[float,float,mzone*,mzone*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i64_maker",
-  "args": "()",
+  "args": null,
   "type": "[[i64,i64,mzone*,mzone*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i64_native",
-  "args": "()",
+  "args": null,
   "type": "[i64,i64,mzone*,mzone*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i64_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i64_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i64_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i64_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i64",
-  "args": "()",
+  "args": null,
   "type": "[i64,i64,mzone*,mzone*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i32_maker",
-  "args": "()",
+  "args": null,
   "type": "[[i32,i32,mzone*,mzone*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i32_native",
-  "args": "()",
+  "args": null,
   "type": "[i32,i32,mzone*,mzone*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i32_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i32_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i32_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i32_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i32",
-  "args": "()",
+  "args": null,
   "type": "[i32,i32,mzone*,mzone*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i8_maker",
-  "args": "()",
+  "args": null,
   "type": "[[i8,i8,mzone*,mzone*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i8_native",
-  "args": "()",
+  "args": null,
   "type": "[i8,i8,mzone*,mzone*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i8_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i8_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i8_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i8_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i8",
-  "args": "()",
+  "args": null,
   "type": "[i8,i8,mzone*,mzone*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i1_maker",
-  "args": "()",
+  "args": null,
   "type": "[[i1,i1,mzone*,mzone*]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i1_native",
-  "args": "()",
+  "args": null,
   "type": "[i1,i1,mzone*,mzone*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i1_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i1_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i1_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i1_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "zcopy_i1",
-  "args": "()",
+  "args": null,
   "type": "[i1,i1,mzone*,mzone*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "audio_64bit_maker",
-  "args": "()",
+  "args": null,
   "type": "[[i1]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "audio_64bit_native",
-  "args": "()",
+  "args": null,
   "type": "[i1]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "audio_64bit_scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "audio_64bit_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "audio_64bit_getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "audio_64bit_setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "audio_64bit",
-  "args": "()",
+  "args": null,
   "type": "[i1]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "set_float_nans__maker",
-  "args": "()",
+  "args": null,
   "type": "[[void]*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "set_float_nans__native",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "set_float_nans__scheme",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "set_float_nans__callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "set_float_nans__getter",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "set_float_nans__setter",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "set_float_nans_",
-  "args": "()",
+  "args": null,
   "type": "[void]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLClearDrawable",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLCopyContext",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i8*,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLCreateContext",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i8*,i8**]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLCreatePBuffer",
-  "args": "()",
+  "args": null,
   "type": "[i32,i32,i32,i32,i32,i32,i8**]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLDescribePBuffer",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i32*,i32*,i32*,i32*,i32*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLDescribePixelFormat",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i32,i32,i32*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLDescribeRenderer",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i32,i32,i32*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLDestroyContext",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLDestroyPBuffer",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLDestroyPixelFormat",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLDestroyRendererInfo",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLDisable",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLEnable",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLErrorString",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLFlushDrawable",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLGetContextRetainCount",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLGetCurrentContext",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLGetGlobalOption",
-  "args": "()",
+  "args": null,
   "type": "[i32,i32,i32*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLGetOffScreen",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i32*,i32*,i32*,i8**]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLGetOption",
-  "args": "()",
+  "args": null,
   "type": "[i32,i32,i32*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLGetPBuffer",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i8**,i32*,i32*,i32*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLGetPBufferRetainCount",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLGetParameter",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i32,i32*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLGetPixelFormat",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLGetPixelFormatRetainCount",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLGetVersion",
-  "args": "()",
+  "args": null,
   "type": "[void,i32*,i32*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLGetVirtualScreen",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i32*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLIsEnabled",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i32,i32*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLLockContext",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLQueryRendererInfo",
-  "args": "()",
+  "args": null,
   "type": "[i32,i32,i8**,i32*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLReleaseContext",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLReleasePBuffer",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLReleasePixelFormat",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLRetainContext",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLRetainPBuffer",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLRetainPixelFormat",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLSetCurrentContext",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLSetFullScreenOnDisplay",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLSetGlobalOption",
-  "args": "()",
+  "args": null,
   "type": "[i32,i32,i32*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLSetOffScreen",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i32,i32,i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLSetOption",
-  "args": "()",
+  "args": null,
   "type": "[i32,i32,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLSetPBuffer",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i8*,i32,i32,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLSetParameter",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i32,i32*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLSetVirtualScreen",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLTexImagePBuffer",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i8*,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "CGLUnlockContext",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "abs",
-  "args": "()",
+  "args": null,
   "type": "[i32,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "acosf",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "acosh",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "acoshf",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "add_address_table",
-  "args": "()",
+  "args": null,
   "type": "[clsvar*,mzone*,i8*,i32,i8*,i32,clsvar*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ascii_text_color",
-  "args": "()",
+  "args": null,
   "type": "[void,i32,i32,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "asinf",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "asinh",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "asinhf",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "atan2f",
-  "args": "()",
+  "args": null,
   "type": "[float,float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "atanf",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "atanh",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "atanhf",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "atof",
-  "args": "()",
+  "args": null,
   "type": "[double,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "atoi",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "atol",
-  "args": "()",
+  "args": null,
   "type": "[i64,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "base64_decode",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i64,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "base64_encode",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i64,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "cbrt",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "cbrtf",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "check_address_exists",
-  "args": "()",
+  "args": null,
   "type": "[i1,i8*,clsvar*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "check_address_type",
-  "args": "()",
+  "args": null,
   "type": "[i1,i8*,clsvar*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "clearerr",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "clock_clock",
-  "args": "()",
+  "args": null,
   "type": "[double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "cname_decode",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i64,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "cname_encode",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i64,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "copysign",
-  "args": "()",
+  "args": null,
   "type": "[double,double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "copysignf",
-  "args": "()",
+  "args": null,
   "type": "[float,float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "coshf",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "cptr_value",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ctermid",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "dlsym",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "dtof",
-  "args": "()",
+  "args": null,
   "type": "[float,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "dtoi1",
-  "args": "()",
+  "args": null,
   "type": "[i1,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "dtoi16",
-  "args": "()",
+  "args": null,
   "type": "[i16,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "dtoi32",
-  "args": "()",
+  "args": null,
   "type": "[i32,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "dtoi64",
-  "args": "()",
+  "args": null,
   "type": "[i64,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "dtoi8",
-  "args": "()",
+  "args": null,
   "type": "[i8,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "dtoui1",
-  "args": "()",
+  "args": null,
   "type": "[i1,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "dtoui32",
-  "args": "()",
+  "args": null,
   "type": "[i32,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "dtoui64",
-  "args": "()",
+  "args": null,
   "type": "[i64,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "dtoui8",
-  "args": "()",
+  "args": null,
   "type": "[i8,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "erf",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "erfc",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "erfcf",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "erff",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "expm1",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "expm1f",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "extitoa",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "fclose",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "fdim",
-  "args": "()",
+  "args": null,
   "type": "[double,double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "fdimf",
-  "args": "()",
+  "args": null,
   "type": "[float,float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "fdopen",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "feof",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ferror",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "fflush",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "fgetc",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "fgets",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "fileno",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "flockfile",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "fmax",
-  "args": "()",
+  "args": null,
   "type": "[double,double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "fmaxf",
-  "args": "()",
+  "args": null,
   "type": "[float,float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "fmin",
-  "args": "()",
+  "args": null,
   "type": "[double,double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "fminf",
-  "args": "()",
+  "args": null,
   "type": "[float,float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "fopen",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "fputc",
-  "args": "()",
+  "args": null,
   "type": "[i32,i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "fputs",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "fread",
-  "args": "()",
+  "args": null,
   "type": "[i64,i8*,i64,i64,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "free",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "free16",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "free_after_delay",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "freopen",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "fseek",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i64,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ftell",
-  "args": "()",
+  "args": null,
   "type": "[i64,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ftod",
-  "args": "()",
+  "args": null,
   "type": "[double,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ftoi1",
-  "args": "()",
+  "args": null,
   "type": "[i1,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ftoi16",
-  "args": "()",
+  "args": null,
   "type": "[i16,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ftoi32",
-  "args": "()",
+  "args": null,
   "type": "[i32,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ftoi64",
-  "args": "()",
+  "args": null,
   "type": "[i64,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ftoi8",
-  "args": "()",
+  "args": null,
   "type": "[i8,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ftoui1",
-  "args": "()",
+  "args": null,
   "type": "[i1,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ftoui32",
-  "args": "()",
+  "args": null,
   "type": "[i32,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ftoui64",
-  "args": "()",
+  "args": null,
   "type": "[i64,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ftoui8",
-  "args": "()",
+  "args": null,
   "type": "[i8,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ftrylockfile",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "funlockfile",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "fwrite",
-  "args": "()",
+  "args": null,
   "type": "[i64,i8*,i64,i64,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "get_address_offset",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,clsvar*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "get_address_table",
-  "args": "()",
+  "args": null,
   "type": "[clsvar*,i8*,clsvar*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "getc",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "getc_unlocked",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "getchar",
-  "args": "()",
+  "args": null,
   "type": "[i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "getchar_unlocked",
-  "args": "()",
+  "args": null,
   "type": "[i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "getenv",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "gets",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "getw",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "hypot",
-  "args": "()",
+  "args": null,
   "type": "[double,double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "hypotf",
-  "args": "()",
+  "args": null,
   "type": "[float,float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i16tod",
-  "args": "()",
+  "args": null,
   "type": "[double,i16]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i16tof",
-  "args": "()",
+  "args": null,
   "type": "[float,i16]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i16toi1",
-  "args": "()",
+  "args": null,
   "type": "[i1,i16]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i16toi32",
-  "args": "()",
+  "args": null,
   "type": "[i32,i16]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i16toi64",
-  "args": "()",
+  "args": null,
   "type": "[i64,i16]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i16toi8",
-  "args": "()",
+  "args": null,
   "type": "[i8,i16]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i16toptr",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i16]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i16toui32",
-  "args": "()",
+  "args": null,
   "type": "[i32,i16]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i16toui64",
-  "args": "()",
+  "args": null,
   "type": "[i64,i16]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i16value",
-  "args": "()",
+  "args": null,
   "type": "[i16,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i1tod",
-  "args": "()",
+  "args": null,
   "type": "[double,i1]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i1tof",
-  "args": "()",
+  "args": null,
   "type": "[float,i1]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i1toi16",
-  "args": "()",
+  "args": null,
   "type": "[i16,i1]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i1toi32",
-  "args": "()",
+  "args": null,
   "type": "[i32,i1]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i1toi64",
-  "args": "()",
+  "args": null,
   "type": "[i64,i1]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i1toi8",
-  "args": "()",
+  "args": null,
   "type": "[i8,i1]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i1value",
-  "args": "()",
+  "args": null,
   "type": "[i1,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i32tod",
-  "args": "()",
+  "args": null,
   "type": "[double,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i32tof",
-  "args": "()",
+  "args": null,
   "type": "[float,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i32toi1",
-  "args": "()",
+  "args": null,
   "type": "[i1,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i32toi16",
-  "args": "()",
+  "args": null,
   "type": "[i16,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i32toi64",
-  "args": "()",
+  "args": null,
   "type": "[i64,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i32toi8",
-  "args": "()",
+  "args": null,
   "type": "[i8,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i32toptr",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i32toui64",
-  "args": "()",
+  "args": null,
   "type": "[i64,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i32value",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i64tod",
-  "args": "()",
+  "args": null,
   "type": "[double,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i64tof",
-  "args": "()",
+  "args": null,
   "type": "[float,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i64toi1",
-  "args": "()",
+  "args": null,
   "type": "[i1,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i64toi16",
-  "args": "()",
+  "args": null,
   "type": "[i16,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i64toi32",
-  "args": "()",
+  "args": null,
   "type": "[i32,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i64toi8",
-  "args": "()",
+  "args": null,
   "type": "[i8,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i64toptr",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i64value",
-  "args": "()",
+  "args": null,
   "type": "[i64,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i8tod",
-  "args": "()",
+  "args": null,
   "type": "[double,i8]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i8tof",
-  "args": "()",
+  "args": null,
   "type": "[float,i8]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i8toi1",
-  "args": "()",
+  "args": null,
   "type": "[i1,i8]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i8toi16",
-  "args": "()",
+  "args": null,
   "type": "[i16,i8]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i8toi32",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i8toi64",
-  "args": "()",
+  "args": null,
   "type": "[i64,i8]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i8toui32",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i8toui64",
-  "args": "()",
+  "args": null,
   "type": "[i64,i8]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "i8value",
-  "args": "()",
+  "args": null,
   "type": "[i8,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ilogb",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ilogbf",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "imp_rand1_d",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "imp_rand1_f",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "imp_rand1_i32",
-  "args": "()",
+  "args": null,
   "type": "[i32,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "imp_rand1_i64",
-  "args": "()",
+  "args": null,
   "type": "[i64,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "imp_rand2_d",
-  "args": "()",
+  "args": null,
   "type": "[double,double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "imp_rand2_f",
-  "args": "()",
+  "args": null,
   "type": "[float,float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "imp_rand2_i32",
-  "args": "()",
+  "args": null,
   "type": "[i32,i32,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "imp_rand2_i64",
-  "args": "()",
+  "args": null,
   "type": "[i64,i64,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "imp_randd",
-  "args": "()",
+  "args": null,
   "type": "[double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "imp_randf",
-  "args": "()",
+  "args": null,
   "type": "[float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "impc_false",
-  "args": "()",
+  "args": null,
   "type": "[i1]",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "impc_null",
-  "args": "()",
+  "args": null,
   "type": "[i8*]",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "impc_true",
-  "args": "()",
+  "args": null,
   "type": "[i1]",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "is_cptr",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "is_cptr_or_str",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "is_integer",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "is_real",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "is_string",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "lgamma",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "lgammaf",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "list_ref",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llabs",
-  "args": "()",
+  "args": null,
   "type": "[i64,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llrint",
-  "args": "()",
+  "args": null,
   "type": "[i64,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llrintf",
-  "args": "()",
+  "args": null,
   "type": "[i64,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llround",
-  "args": "()",
+  "args": null,
   "type": "[i64,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llroundf",
-  "args": "()",
+  "args": null,
   "type": "[i64,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.ceil.f32",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.ceil.f64",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.ceil.v2f64",
-  "args": "()",
+  "args": null,
   "type": "[/2,double/,/2,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.ceil.v4f32",
-  "args": "()",
+  "args": null,
   "type": "[/4,float/,/4,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.ceil.v4f64",
-  "args": "()",
+  "args": null,
   "type": "[/4,double/,/4,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.ceil.v8f32",
-  "args": "()",
+  "args": null,
   "type": "[/8,float/,/8,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.cos.f32",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.cos.f64",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.cos.v2f64",
-  "args": "()",
+  "args": null,
   "type": "[/2,double/,/2,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.cos.v4f32",
-  "args": "()",
+  "args": null,
   "type": "[/4,float/,/4,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.cos.v4f64",
-  "args": "()",
+  "args": null,
   "type": "[/4,double/,/4,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.cos.v8f32",
-  "args": "()",
+  "args": null,
   "type": "[/8,float/,/8,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.exp.f32",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.exp.f64",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.exp.v2f64",
-  "args": "()",
+  "args": null,
   "type": "[/2,double/,/2,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.exp.v4f32",
-  "args": "()",
+  "args": null,
   "type": "[/4,float/,/4,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.exp.v4f64",
-  "args": "()",
+  "args": null,
   "type": "[/4,double/,/4,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.exp.v8f32",
-  "args": "()",
+  "args": null,
   "type": "[/8,float/,/8,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.exp2.f32",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.exp2.f64",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.exp2.v2f64",
-  "args": "()",
+  "args": null,
   "type": "[/2,double/,/2,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.exp2.v4f32",
-  "args": "()",
+  "args": null,
   "type": "[/4,float/,/4,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.exp2.v4f64",
-  "args": "()",
+  "args": null,
   "type": "[/4,double/,/4,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.exp2.v8f32",
-  "args": "()",
+  "args": null,
   "type": "[/8,float/,/8,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.fabs.f32",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.fabs.f64",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.fabs.v2f64",
-  "args": "()",
+  "args": null,
   "type": "[/2,double/,/2,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.fabs.v4f32",
-  "args": "()",
+  "args": null,
   "type": "[/4,float/,/4,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.fabs.v4f64",
-  "args": "()",
+  "args": null,
   "type": "[/4,double/,/4,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.fabs.v8f32",
-  "args": "()",
+  "args": null,
   "type": "[/8,float/,/8,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.floor.f32",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.floor.f64",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.floor.v2f64",
-  "args": "()",
+  "args": null,
   "type": "[/2,double/,/2,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.floor.v4f32",
-  "args": "()",
+  "args": null,
   "type": "[/4,float/,/4,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.floor.v4f64",
-  "args": "()",
+  "args": null,
   "type": "[/4,double/,/4,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.floor.v8f32",
-  "args": "()",
+  "args": null,
   "type": "[/8,float/,/8,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.fma.f32",
-  "args": "()",
+  "args": null,
   "type": "[float,float,float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.fma.f64",
-  "args": "()",
+  "args": null,
   "type": "[double,double,double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.fma.v2f64",
-  "args": "()",
+  "args": null,
   "type": "[/2,double/,/2,double/,/2,double/,/2,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.fma.v4f32",
-  "args": "()",
+  "args": null,
   "type": "[/4,float/,/4,float/,/4,float/,/4,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.fma.v4f64",
-  "args": "()",
+  "args": null,
   "type": "[/4,double/,/4,double/,/4,double/,/4,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.fma.v8f32",
-  "args": "()",
+  "args": null,
   "type": "[/8,float/,/8,float/,/8,float/,/8,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.fmod.f32",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.fmod.f64",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.fmod.v2f64",
-  "args": "()",
+  "args": null,
   "type": "[/2,double/,/2,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.fmod.v4f32",
-  "args": "()",
+  "args": null,
   "type": "[/4,float/,/4,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.fmod.v4f64",
-  "args": "()",
+  "args": null,
   "type": "[/4,double/,/4,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.fmod.v8f32",
-  "args": "()",
+  "args": null,
   "type": "[/8,float/,/8,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.log.f32",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.log.f64",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.log.v2f64",
-  "args": "()",
+  "args": null,
   "type": "[/2,double/,/2,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.log.v4f32",
-  "args": "()",
+  "args": null,
   "type": "[/4,float/,/4,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.log.v4f64",
-  "args": "()",
+  "args": null,
   "type": "[/4,double/,/4,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.log.v8f32",
-  "args": "()",
+  "args": null,
   "type": "[/8,float/,/8,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.log10.f32",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.log10.f64",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.log10.v2f64",
-  "args": "()",
+  "args": null,
   "type": "[/2,double/,/2,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.log10.v4f32",
-  "args": "()",
+  "args": null,
   "type": "[/4,float/,/4,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.log10.v4f64",
-  "args": "()",
+  "args": null,
   "type": "[/4,double/,/4,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.log10.v8f32",
-  "args": "()",
+  "args": null,
   "type": "[/8,float/,/8,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.log2.f32",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.log2.f64",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.log2.v2f64",
-  "args": "()",
+  "args": null,
   "type": "[/2,double/,/2,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.log2.v4f32",
-  "args": "()",
+  "args": null,
   "type": "[/4,float/,/4,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.log2.v4f64",
-  "args": "()",
+  "args": null,
   "type": "[/4,double/,/4,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.log2.v8f32",
-  "args": "()",
+  "args": null,
   "type": "[/8,float/,/8,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.nearbyint.f32",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.nearbyint.f64",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.nearbyint.v2f64",
-  "args": "()",
+  "args": null,
   "type": "[/2,double/,/2,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.nearbyint.v4f32",
-  "args": "()",
+  "args": null,
   "type": "[/4,float/,/4,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.nearbyint.v4f64",
-  "args": "()",
+  "args": null,
   "type": "[/4,double/,/4,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.nearbyint.v8f32",
-  "args": "()",
+  "args": null,
   "type": "[/8,float/,/8,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.pow.f32",
-  "args": "()",
+  "args": null,
   "type": "[float,float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.pow.f64",
-  "args": "()",
+  "args": null,
   "type": "[double,double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.pow.v2f64",
-  "args": "()",
+  "args": null,
   "type": "[/2,double/,/2,double/,/2,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.pow.v4f32",
-  "args": "()",
+  "args": null,
   "type": "[/4,float/,/4,float/,/4,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.pow.v4f64",
-  "args": "()",
+  "args": null,
   "type": "[/4,double/,/4,double/,/4,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.pow.v8f32",
-  "args": "()",
+  "args": null,
   "type": "[/8,float/,/8,float/,/8,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.powi.f32",
-  "args": "()",
+  "args": null,
   "type": "[float,float,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.powi.f64",
-  "args": "()",
+  "args": null,
   "type": "[double,double,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.powi.v2f64",
-  "args": "()",
+  "args": null,
   "type": "[/2,double/,/2,double/,/2,i32/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.powi.v4f32",
-  "args": "()",
+  "args": null,
   "type": "[/4,float/,/4,float/,/4,i32/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.powi.v4f64",
-  "args": "()",
+  "args": null,
   "type": "[/4,double/,/4,double/,/4,i32/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.powi.v8f32",
-  "args": "()",
+  "args": null,
   "type": "[/8,float/,/8,float/,/8,i32/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.round.f32",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.round.f64",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.round.v2f64",
-  "args": "()",
+  "args": null,
   "type": "[/2,double/,/2,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.round.v4f32",
-  "args": "()",
+  "args": null,
   "type": "[/4,float/,/4,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.round.v4f64",
-  "args": "()",
+  "args": null,
   "type": "[/4,double/,/4,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.round.v8f32",
-  "args": "()",
+  "args": null,
   "type": "[/8,float/,/8,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.sin.f32",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.sin.f64",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.sin.v2f64",
-  "args": "()",
+  "args": null,
   "type": "[/2,double/,/2,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.sin.v4f32",
-  "args": "()",
+  "args": null,
   "type": "[/4,float/,/4,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.sin.v4f64",
-  "args": "()",
+  "args": null,
   "type": "[/4,double/,/4,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.sin.v8f32",
-  "args": "()",
+  "args": null,
   "type": "[/8,float/,/8,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.sqrt.f32",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.sqrt.f64",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.sqrt.v2f64",
-  "args": "()",
+  "args": null,
   "type": "[/2,double/,/2,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.sqrt.v4f32",
-  "args": "()",
+  "args": null,
   "type": "[/4,float/,/4,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.sqrt.v4f64",
-  "args": "()",
+  "args": null,
   "type": "[/4,double/,/4,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.sqrt.v8f32",
-  "args": "()",
+  "args": null,
   "type": "[/8,float/,/8,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.trunc.f32",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.trunc.f64",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.trunc.v2f64",
-  "args": "()",
+  "args": null,
   "type": "[/2,double/,/2,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.trunc.v4f32",
-  "args": "()",
+  "args": null,
   "type": "[/4,float/,/4,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.trunc.v4f64",
-  "args": "()",
+  "args": null,
   "type": "[/4,double/,/4,double/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm.trunc.v8f32",
-  "args": "()",
+  "args": null,
   "type": "[/8,float/,/8,float/]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_acos",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_asin",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_atan",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_atan2",
-  "args": "()",
+  "args": null,
   "type": "[double,double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_cosh",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_destroy_zone_after_delay",
-  "args": "()",
+  "args": null,
   "type": "[void,mzone*,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_fprintf",
-  "args": "()",
-  "type": "manually fixed here",
+  "args": null,
+  "type": "varargs",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_fscanf",
-  "args": "()",
-  "type": "manually fixed here",
+  "args": null,
+  "type": "varargs",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_get_function_ptr",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_memset",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i32,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_now",
-  "args": "()",
+  "args": null,
   "type": "[i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_peek_zone_stack",
-  "args": "()",
+  "args": null,
   "type": "[mzone*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_pop_zone_stack",
-  "args": "()",
+  "args": null,
   "type": "[mzone*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_print_f32",
-  "args": "()",
+  "args": null,
   "type": "[void,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_print_f64",
-  "args": "()",
+  "args": null,
   "type": "[void,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_print_i32",
-  "args": "()",
+  "args": null,
   "type": "[void,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_print_i64",
-  "args": "()",
+  "args": null,
   "type": "[void,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_print_pointer",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_printf",
-  "args": "()",
-  "type": "manually fixed here",
+  "args": null,
+  "type": "varargs",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_ptr_in_current_zone",
-  "args": "()",
+  "args": null,
   "type": "[i1,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_ptr_in_zone",
-  "args": "()",
+  "args": null,
   "type": "[i1,mzone*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_push_zone_stack",
-  "args": "()",
+  "args": null,
   "type": "[void,mzone*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_runtime_error",
-  "args": "()",
+  "args": null,
   "type": "[void,i64,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_schedule_callback",
-  "args": "()",
+  "args": null,
   "type": "[void,i64,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_send_udp",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*,i32,i8*,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_sinh",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_sprintf",
-  "args": "()",
-  "type": "manually fixed here",
+  "args": null,
+  "type": "varargs",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_sscanf",
-  "args": "()",
-  "type": "manually fixed here",
+  "args": null,
+  "type": "varargs",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_stack_alloc",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_string_cat",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_string_copy",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_string_eq",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_string_ref",
-  "args": "()",
+  "args": null,
   "type": "[i8,i8*,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_string_set",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*,i32,i8]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_substring",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i32,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_tan",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_tanh",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_threads_get_callback_zone",
-  "args": "()",
+  "args": null,
   "type": "[mzone*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_zone_copy_ptr",
-  "args": "()",
+  "args": null,
   "type": "[i1,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_zone_create",
-  "args": "()",
+  "args": null,
   "type": "[mzone*,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_zone_destroy",
-  "args": "()",
+  "args": null,
   "type": "[void,mzone*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_zone_malloc",
-  "args": "()",
+  "args": null,
   "type": "[i8*,mzone*,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_zone_mark",
-  "args": "()",
+  "args": null,
   "type": "[void,mzone*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_zone_mark_size",
-  "args": "()",
+  "args": null,
   "type": "[i64,mzone*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_zone_print",
-  "args": "()",
+  "args": null,
   "type": "[void,mzone*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_zone_ptr_set_size",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_zone_ptr_size",
-  "args": "()",
+  "args": null,
   "type": "[i64,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_zone_reset",
-  "args": "()",
+  "args": null,
   "type": "[mzone*,mzone*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "log1p",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "log1pf",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "log2f",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "logb",
-  "args": "()",
+  "args": null,
   "type": "[i32,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "logbf",
-  "args": "()",
+  "args": null,
   "type": "[i32,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "longjmp",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "lrint",
-  "args": "()",
+  "args": null,
   "type": "[i64,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "lrintf",
-  "args": "()",
+  "args": null,
   "type": "[i64,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "lround",
-  "args": "()",
+  "args": null,
   "type": "[i32,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "lroundf",
-  "args": "()",
+  "args": null,
   "type": "[i32,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "malloc",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "malloc16",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "memccpy",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*,i32,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "memchr",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i32,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "memcmp",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i8*,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "memcpy",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "memmove",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "memset",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i32,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "mk_cptr",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "mk_double",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "mk_float",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "mk_i1",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i1]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "mk_i16",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i16]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "mk_i32",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "mk_i64",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "mk_i8",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "mk_string",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "mutex_create",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "mutex_destroy",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "mutex_lock",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "mutex_trylock",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "mutex_unlock",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "nan",
-  "args": "()",
+  "args": null,
   "type": "[double,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "nanf",
-  "args": "()",
+  "args": null,
   "type": "[float,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "new_address_table",
-  "args": "()",
+  "args": null,
   "type": "[clsvar*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "next_prime",
-  "args": "()",
+  "args": null,
   "type": "[i64,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "nextafter",
-  "args": "()",
+  "args": null,
   "type": "[double,double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "nextafterf",
-  "args": "()",
+  "args": null,
   "type": "[float,float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "nexttoward",
-  "args": "()",
+  "args": null,
   "type": "[double,double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "nexttowardf",
-  "args": "()",
+  "args": null,
   "type": "[float,float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "pclose",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "perror",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "popen",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ptrtoi16",
-  "args": "()",
+  "args": null,
   "type": "[i16,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ptrtoi32",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ptrtoi64",
-  "args": "()",
+  "args": null,
   "type": "[i64,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "putc",
-  "args": "()",
+  "args": null,
   "type": "[i32,i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "putc_unlocked",
-  "args": "()",
+  "args": null,
   "type": "[i32,i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "putchar",
-  "args": "()",
+  "args": null,
   "type": "[i32,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "putchar_unlocked",
-  "args": "()",
+  "args": null,
   "type": "[i32,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "puts",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "putw",
-  "args": "()",
+  "args": null,
   "type": "[i32,i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "r32value",
-  "args": "()",
+  "args": null,
   "type": "[float,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "r64value",
-  "args": "()",
+  "args": null,
   "type": "[double,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "rand",
-  "args": "()",
+  "args": null,
   "type": "[i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "register_for_window_events",
-  "args": "()",
+  "args": null,
   "type": "[i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "remainder",
-  "args": "()",
+  "args": null,
   "type": "[double,double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "remainderf",
-  "args": "()",
+  "args": null,
   "type": "[float,float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "remove",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "remquo",
-  "args": "()",
+  "args": null,
   "type": "[double,double,double,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "remquof",
-  "args": "()",
+  "args": null,
   "type": "[float,float,float,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "rename",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "rewind",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "rint",
-  "args": "()",
+  "args": null,
   "type": "[i32,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "rintf",
-  "args": "()",
+  "args": null,
   "type": "[i32,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "rmatch",
-  "args": "()",
+  "args": null,
   "type": "[i1,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "rreplace",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "rsplit",
-  "args": "()",
+  "args": null,
   "type": "[i1,i8*,i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "scalbn",
-  "args": "()",
+  "args": null,
   "type": "[double,double,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "scalbnf",
-  "args": "()",
+  "args": null,
   "type": "[float,float,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "setbuf",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "setenv",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i8*,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "setjmp",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "setvbuf",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i8*,i32,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "sinhf",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "strcat",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "strchr",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "strcmp",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "strcoll",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "strcpy",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "strcspn",
-  "args": "()",
+  "args": null,
   "type": "[i64,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "strdup",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "strerror",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "string_hash",
-  "args": "()",
+  "args": null,
   "type": "[i64,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "string_value",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "strlen",
-  "args": "()",
+  "args": null,
   "type": "[i64,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "strncat",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "strncmp",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*,i8*,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "strncpy",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "strpbrk",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "strrchr",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "strspn",
-  "args": "()",
+  "args": null,
   "type": "[i64,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "strstr",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "strtok",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "strtok_r",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*,i8**]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "strxfrm",
-  "args": "()",
+  "args": null,
   "type": "[i64,i8*,i8*,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "swap32f",
-  "args": "()",
+  "args": null,
   "type": "[i32,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "swap32i",
-  "args": "()",
+  "args": null,
   "type": "[i32,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "swap64f",
-  "args": "()",
+  "args": null,
   "type": "[i64,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "swap64i",
-  "args": "()",
+  "args": null,
   "type": "[i64,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "system",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "tanf",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "tanhf",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "tempnam",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "tgamma",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "tgammaf",
-  "args": "()",
+  "args": null,
   "type": "[float,float]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "thread_fork",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "thread_join",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "thread_kill",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "thread_self",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "thread_sleep",
-  "args": "()",
+  "args": null,
   "type": "[i64,i64,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "tmpfile",
-  "args": "()",
+  "args": null,
   "type": "[i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "tmpnam",
-  "args": "()",
+  "args": null,
   "type": "[i8*,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "trunc",
-  "args": "()",
+  "args": null,
   "type": "[double,double]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ui16tod",
-  "args": "()",
+  "args": null,
   "type": "[double,i16]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ui16tof",
-  "args": "()",
+  "args": null,
   "type": "[float,i16]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ui1tod",
-  "args": "()",
+  "args": null,
   "type": "[double,i1]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ui1tof",
-  "args": "()",
+  "args": null,
   "type": "[float,i1]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ui32tod",
-  "args": "()",
+  "args": null,
   "type": "[double,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ui32tof",
-  "args": "()",
+  "args": null,
   "type": "[float,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ui64tod",
-  "args": "()",
+  "args": null,
   "type": "[double,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ui64tof",
-  "args": "()",
+  "args": null,
   "type": "[float,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ui8tod",
-  "args": "()",
+  "args": null,
   "type": "[double,i8]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ui8tof",
-  "args": "()",
+  "args": null,
   "type": "[float,i8]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "ungetc",
-  "args": "()",
+  "args": null,
   "type": "[i32,i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "unsetenv",
-  "args": "()",
+  "args": null,
   "type": "[i32,i8*]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "unswap32f",
-  "args": "()",
+  "args": null,
   "type": "[float,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "unswap32i",
-  "args": "()",
+  "args": null,
   "type": "[i32,i32]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "unswap64f",
-  "args": "()",
+  "args": null,
   "type": "[double,i64]*",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "unswap64i",
-  "args": "()",
+  "args": null,
   "type": "[i64,i64]*",
   "docstring": null
 },
@@ -7002,140 +7058,140 @@
 {
   "category": "polymorphic closure",
   "name": "String_format",
-  "args": "()",
+  "args": null,
   "type": "[String*,String*]* [String*,double]* [String*,float]* [String*,i64]* [String*,i32]* [String*,i8]* [String*,i1]*",
-  "docstring": "poly'd closures: String_format_String String_format_d String_format_f String_format_i64 String_format_i32 String_format_i8 String_format_i1"
+  "docstring": null
 },
 {
   "category": "polymorphic closure",
   "name": "equal",
-  "args": "()",
+  "args": null,
   "type": "[i1,String*,String*]*",
-  "docstring": "poly'd closures: String_equal"
+  "docstring": null
 },
 {
   "category": "polymorphic closure",
   "name": "Str_h",
-  "args": "()",
+  "args": null,
   "type": "[String*,String*]* [String*,i8*]*",
-  "docstring": "poly'd closures: String_copy_h String_from_cptr_h"
+  "docstring": null
 },
 {
   "category": "polymorphic closure",
   "name": "Str",
-  "args": "()",
+  "args": null,
   "type": "[String*,String*]* [String*,i8*]*",
-  "docstring": "poly'd closures: String_copy String_from_cptr"
+  "docstring": null
 },
 {
   "category": "polymorphic closure",
   "name": "toString",
-  "args": "()",
+  "args": null,
   "type": "[String*,i8*]* [String*,double]* [String*,float]* [String*,i64]* [String*,i32]* [String*,i8]* [String*,i1]* [String*,String*]*",
-  "docstring": "poly'd closures: toString_voidptr toString_d toString_f toString_i64 toString_i32 toString_i8 toString_i1 String_toString"
+  "docstring": null
 },
 {
   "category": "polymorphic closure",
   "name": "print",
-  "args": "()",
+  "args": null,
   "type": "[void,i8*]* [void,double]* [void,float]* [void,i64]* [void,i32]* [void,i8]* [void,i1]* [void,String*]*",
-  "docstring": "poly'd closures: print_voidptr print_d print_f print_i64 print_i32 print_i8 print_i1 String_print"
+  "docstring": null
 },
 {
   "category": "polymorphic closure",
   "name": "hfree",
-  "args": "()",
+  "args": null,
   "type": "[void,String*]*",
-  "docstring": "poly'd closures: String_hfree"
+  "docstring": null
 },
 {
   "category": "polymorphic closure",
   "name": "hcopy",
-  "args": "()",
+  "args": null,
   "type": "[String*,String*]*",
-  "docstring": "poly'd closures: String_hcopy"
+  "docstring": null
 },
 {
   "category": "polymorphic closure",
   "name": "zcopy",
-  "args": "()",
+  "args": null,
   "type": "[String*,String*,mzone*,mzone*]* [double,double,mzone*,mzone*]* [float,float,mzone*,mzone*]* [i64,i64,mzone*,mzone*]* [i32,i32,mzone*,mzone*]* [i8,i8,mzone*,mzone*]* [i1,i1,mzone*,mzone*]*",
-  "docstring": "poly'd closures: String_zcopy zcopy_d zcopy_f zcopy_i64 zcopy_i32 zcopy_i8 zcopy_i1"
+  "docstring": null
 },
 {
   "category": "polymorphic closure",
   "name": "atan2",
-  "args": "()",
+  "args": null,
   "type": "[double,double,double]* [float,float,float]*",
-  "docstring": "poly'd closures: llvm_atan2 atan2f"
+  "docstring": null
 },
 {
   "category": "polymorphic closure",
   "name": "atan",
-  "args": "()",
+  "args": null,
   "type": "[double,double]* [float,float]*",
-  "docstring": "poly'd closures: llvm_atan atanf"
+  "docstring": null
 },
 {
   "category": "polymorphic closure",
   "name": "asin",
-  "args": "()",
+  "args": null,
   "type": "[double,double]* [float,float]*",
-  "docstring": "poly'd closures: llvm_asin asinf"
+  "docstring": null
 },
 {
   "category": "polymorphic closure",
   "name": "acos",
-  "args": "()",
+  "args": null,
   "type": "[double,double]* [float,float]*",
-  "docstring": "poly'd closures: llvm_acos acosf"
+  "docstring": null
 },
 {
   "category": "polymorphic closure",
   "name": "sinh",
-  "args": "()",
+  "args": null,
   "type": "[double,double]* [float,float]*",
-  "docstring": "poly'd closures: llvm_sinh sinhf"
+  "docstring": null
 },
 {
   "category": "polymorphic closure",
   "name": "tanh",
-  "args": "()",
+  "args": null,
   "type": "[double,double]* [float,float]*",
-  "docstring": "poly'd closures: llvm_tanh tanhf"
+  "docstring": null
 },
 {
   "category": "polymorphic closure",
   "name": "cosh",
-  "args": "()",
+  "args": null,
   "type": "[double,double]* [float,float]*",
-  "docstring": "poly'd closures: llvm_cosh coshf"
+  "docstring": null
 },
 {
   "category": "polymorphic closure",
   "name": "tan",
-  "args": "()",
+  "args": null,
   "type": "[double,double]* [float,float]*",
-  "docstring": "poly'd closures: llvm_tan tanf"
+  "docstring": null
 },
 {
   "category": "polymorphic closure",
   "name": "random",
-  "args": "()",
+  "args": null,
   "type": "[double,double,double]* [double,double]* [float,float,float]* [float,float]* [i64,i64,i64]* [i64,i64]* [i32,i32,i32]* [i32,i32]* [double]* [float]*",
-  "docstring": "poly'd closures: imp_rand2_d imp_rand1_d imp_rand2_f imp_rand1_f imp_rand2_i64 imp_rand1_i64 imp_rand2_i32 imp_rand1_i32 imp_randd imp_randf"
+  "docstring": "polymorphic (pseudo)random number generation"
 },
 {
   "category": "global var",
   "name": "NaNd",
-  "args": "()",
+  "args": null,
   "type": "double*",
   "docstring": null
 },
 {
   "category": "global var",
   "name": "NaNf",
-  "args": "()",
+  "args": null,
   "type": "float*",
   "docstring": null
 }
