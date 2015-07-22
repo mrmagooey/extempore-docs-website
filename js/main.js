@@ -27,7 +27,7 @@ var DocumentBox = React.createClass({displayName: "DocumentBox",
     
     handleSearchTerm: function(newTerm) {
         var filteredData = _.filter(this.state.fullData, function(a){
-            return _.startsWith(a.name, newTerm)
+            return _.startsWith(a.name, newTerm);
         });
         this.setState({currentData:filteredData});
     },
@@ -72,10 +72,12 @@ var DocumentItem = React.createClass({displayName: "DocumentItem",
         return (
             React.createElement("div", {className: "documentItem"}, 
             React.createElement("h2", {className: "documentName"}, this.props.name), 
-            React.createElement("p", null, " ", this.props.category, " "), 
-            React.createElement("p", null, " ", this.props.args, " "), 
-            React.createElement("p", null, " ", this.props.type, " "), 
-            React.createElement("p", null, " ", this.props.docstring, " ")
+            React.createElement("ul", null, 
+            React.createElement("li", null, this.props.category), 
+            React.createElement("li", null, this.props.args), 
+            React.createElement("li", null, this.props.type), 
+            React.createElement("li", null, this.props.docstring)
+            )
             )
         );
     }
@@ -86,12 +88,17 @@ var SearchForm = React.createClass({displayName: "SearchForm",
     render: function() {
         return (
             React.createElement("div", {className: "form-group"}, 
-            React.createElement("form", {className: "searchForm"}, 
+            React.createElement("form", {className: "searchForm", onSubmit: this.handleSubmit}, 
             React.createElement("input", {type: "text", ref: "term", className: "form-control", placeholder: "Search", onKeyUp: this.handleKeyPress})
             )
             )
         )
     },
+    
+    handleSubmit: function(evt) {
+        evt.preventDefault();
+    },
+    
     handleKeyPress: function(evt){
         var searchTerm = React.findDOMNode(this.refs.term).value;
         this.props.onSearchTerm(searchTerm);

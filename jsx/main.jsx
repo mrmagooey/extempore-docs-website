@@ -27,7 +27,7 @@ var DocumentBox = React.createClass({
     
     handleSearchTerm: function(newTerm) {
         var filteredData = _.filter(this.state.fullData, function(a){
-            return _.startsWith(a.name, newTerm)
+            return _.startsWith(a.name, newTerm);
         });
         this.setState({currentData:filteredData});
     },
@@ -72,10 +72,12 @@ var DocumentItem = React.createClass({
         return (
             <div className="documentItem">
             <h2 className="documentName">{this.props.name}</h2>
-            <p> {this.props.category} </p>
-            <p> {this.props.args} </p>
-            <p> {this.props.type} </p>
-            <p> {this.props.docstring} </p>
+            <ul>
+            <li>{this.props.category}</li>
+            <li>{this.props.args}</li>
+            <li>{this.props.type}</li>
+            <li>{this.props.docstring}</li>
+            </ul>
             </div>
         );
     }
@@ -86,12 +88,17 @@ var SearchForm = React.createClass({
     render: function() {
         return (
             <div className="form-group">
-            <form className="searchForm">
-            <input type="text" ref="term" className="form-control" placeholder="Search" onKeyUp={this.handleKeyPress}></input>
+            <form className="searchForm" onSubmit={this.handleSubmit}>
+            <input type="text" ref="term" className="form-control" placeholder="Search" onKeyUp={this.handleKeyPress} ></input>
             </form>
             </div>
         )
     },
+    
+    handleSubmit: function(evt) {
+        evt.preventDefault();
+    },
+    
     handleKeyPress: function(evt){
         var searchTerm = React.findDOMNode(this.refs.term).value;
         this.props.onSearchTerm(searchTerm);
