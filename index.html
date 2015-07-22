@@ -9,7 +9,7 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="/bower_components/modernizr/modernizr.js"></script>
   </head>
   <body>
     <!--[if lt IE 9]>
@@ -21,18 +21,20 @@
       <div id="navbar-container" class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">Extempore Documentation</a>
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-          </form>
         </div>
       </div>
     </nav>
-    
+    <div class="container">
+      <div class="row" id="">
+        <div class="col-xs-8 col-md-offset-2" id="content">
+          
+        </div>
+      </div>
+    </div>
+    <script src="/bower_components/lodash/lodash.min.js"></script>
     <script src="/bower_components/react/react.js"></script>
     <script src="/bower_components/react/JSXTransformer.js"></script>
-    <script src="/bower_components/jquery/jquery.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>

@@ -217,62 +217,6 @@
   "docstring": null
 },
 {
-  "category": "xtlang alias",
-  "name": "DSPMCMT",
-  "args": "()",
-  "type": (213 -1 201 101 2 108),
-  "docstring": ("buffered (multithreaded) audio output callback type")
-},
-{
-  "category": "xtlang alias",
-  "name": "DSPMC",
-  "args": "()",
-  "type": (213 -1 101 101 2 108),
-  "docstring": ("buffered audio output callback type")
-},
-{
-  "category": "xtlang alias",
-  "name": "DSPMT",
-  "args": "()",
-  "type": (213 1 101 2 2 101),
-  "docstring": ("(multithreaded) audio output callback type")
-},
-{
-  "category": "xtlang alias",
-  "name": "DSP",
-  "args": "()",
-  "type": (213 1 1 2 2 101),
-  "docstring": ("audio output callback type")
-},
-{
-  "category": "xtlang alias",
-  "name": "SAMPLE",
-  "args": "()",
-  "type": 1,
-  "docstring": ("audio I/O sample type in the dsp processing chain")
-},
-{
-  "category": "xtlang alias",
-  "name": "enum",
-  "args": "()",
-  "type": 4,
-  "docstring": ("useful for working with C libraries")
-},
-{
-  "category": "xtlang alias",
-  "name": "size_t",
-  "args": "()",
-  "type": 2,
-  "docstring": ("useful for working with C libraries")
-},
-{
-  "category": "xtlang alias",
-  "name": "bool",
-  "args": "()",
-  "type": 10,
-  "docstring": ("boolean true/false type")
-},
-{
   "category": "xtlang closure",
   "name": "sys_unsetenv",
   "args": "((var_name))",
@@ -5827,14 +5771,14 @@
   "category": "C function",
   "name": "llvm_fprintf",
   "args": "()",
-  "type": (),
+  "type": "manually fixed here",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_fscanf",
   "args": "()",
-  "type": (),
+  "type": "manually fixed here",
   "docstring": null
 },
 {
@@ -5911,7 +5855,7 @@
   "category": "C function",
   "name": "llvm_printf",
   "args": "()",
-  "type": (),
+  "type": "manually fixed here",
   "docstring": null
 },
 {
@@ -5967,14 +5911,14 @@
   "category": "C function",
   "name": "llvm_sprintf",
   "args": "()",
-  "type": (),
+  "type": "manually fixed here",
   "docstring": null
 },
 {
   "category": "C function",
   "name": "llvm_sscanf",
   "args": "()",
-  "type": (),
+  "type": "manually fixed here",
   "docstring": null
 },
 {
