@@ -1,5 +1,4 @@
 
-
 module.exports = function(grunt) {
     
     require('load-grunt-tasks')(grunt); 
@@ -16,6 +15,7 @@ module.exports = function(grunt) {
                 src: [
                     "bower_components/lodash/lodash.min.js",
                     "bower_components/react/react.js",
+                    'bower_components/modernizr/modernizr.js'
                 ],
                 dest: 'js/third-party.js'
             }
