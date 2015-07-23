@@ -2,7 +2,6 @@
 var DocumentBox = React.createClass({
     getInitialState: function() {
         return {
-            data: [],
             currentData: [],
             fullData: [],
         };
