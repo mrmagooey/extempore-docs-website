@@ -13,9 +13,12 @@ module.exports = function(grunt) {
             },
             build: {
                 src: [
+                    "bower_components/jquery/dist/jquery.min.js",
                     "bower_components/lodash/lodash.min.js",
                     "bower_components/react/react.js",
-                    'bower_components/modernizr/modernizr.js'
+                    'bower_components/modernizr/modernizr.js',
+                    "bower_components/bootstrap/js/button.js",
+                    
                 ],
                 dest: 'js/third-party.js'
             }
