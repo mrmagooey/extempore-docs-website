@@ -89,9 +89,6 @@ var DocumentBox = React.createClass({
             }
             return category;
         });
-        console.log(active, name);
-        console.log(newCats);
-        console.log(cats);
         
         this.setState({categories: newCats}, function() {
             this.updateDocsList();
@@ -114,7 +111,6 @@ var DocumentBox = React.createClass({
                             .filter('active')
                             .pluck('name')
                             .value();
-                    console.log("activeCategories", activeCategories);
                     return _.contains(activeCategories, a.category);
                 })
                 .value();
@@ -239,13 +235,23 @@ var CategoryButton = React.createClass({
         });
     },
     
+    // 
+    handleFocus:function(evt) {
+        React.findDOMNode(this).blur();
+    },
+    
     render: function() {
-        var classes = "btn btn-primary btn-sm ";
+        var classes = "categoryButton btn btn-primary btn-sm ";
         if (this.state.active){
             classes += 'active';
         }
         return (
-                <button className={classes} onClick={this.handleChange}>{this.props.name}</button>
+                <button tabindex="-1" 
+            className={classes} 
+            onFocus={this.handleFocus} 
+            onClick={this.handleChange}>
+                {this.props.name}
+            </button>
         );
     }
 });

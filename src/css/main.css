@@ -2,3 +2,27 @@
 .documentStatus {
     font-size:smaller;
 }
+
+.categoryButton:not(.active) {
+    background-color: grey;
+    
+}
+
+.categoryButton:focus {
+    outline:none; 
+    outline-color: transparent;
+    outline-style: none;
+    background-color: rgb(40, 96, 144);
+}
+
+.categoryButton:hover {
+    outline:none;
+    outline-color: transparent;
+    outline-style: none;
+    background-color: rgb(40, 96, 144);
+}
+
+.categoryButton.active {
+    background-color: rgb(40, 96, 144);
+    
+}
