@@ -24,5 +24,10 @@
 
 .categoryButton.active {
     background-color: rgb(40, 96, 144);
-    
+}
+
+.documentCategory {
+    font-size: small;
+    color: grey;
+    padding-left: 10px;
 }

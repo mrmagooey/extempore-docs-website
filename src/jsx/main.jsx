@@ -166,17 +166,58 @@ var DocumentList = React.createClass({
 
 var DocumentItem = React.createClass({
     render: function(){
-        return (
-                <div className="documentItem">
-                <h2 className="documentName">{this.props.name}</h2>
-                <ul>
-                <li>{this.props.category}</li>
-                <li>{this.props.args}</li>
-                <li>{this.props.type}</li>
-                <li>{this.props.docstring}</li>
-                </ul>
-                </div>
-        );
+      
+      var inputPairs = [];
+      if (this.props.args && this.props.type){
+        var args = this.props.args
+              .replace(/[\(\)]+/g, "")
+              .replace(/"/g, "")
+              .split(' ');
+        var types = this.props.type
+              .replace(/[\[\]]+/g, "").split(',');
+        var returnType = types[0];
+        var inputTypes = types.slice(1);
+        if (args.length === inputTypes.length){
+          args.forEach(function(arg, index){
+            var type = inputTypes[index];
+            inputPairs.push(
+                <li key={index}>{arg} : {type}</li>
+            );
+          });
+        }
+      }
+      
+      var typeArgs = undefined;
+      if (inputPairs.length > 0){
+        typeArgs = inputPairs;
+      }
+      
+      var docStringElements = undefined;
+      if (_.isString(this.props.docstring)){
+        docStringElements = _.chain(this.props.docstring.split('\n'))
+          .compact()
+          .map(function(doc, index){
+            return (<p key={index}>{doc}</p>);
+          })
+          .value();
+      }
+      
+      var functionHeading = (
+          <h2 className="documentName">{this.props.name} 
+          <span className="documentCategory">{this.props.category}</span></h2>
+      );
+      
+      return (
+        <div className="documentItem">
+        {functionHeading}
+        {docStringElements}
+        <p>Type Signature: {this.props.type}</p>
+          <ul>
+          {inputPairs}
+          </ul>
+        </div>
+      );
+      
     }
 });
 

@@ -14,16 +14,16 @@ var DocumentBox = React.createClass({
             fullData: [],
             searchTerm: "",
             categories: [{
-                name: "xtlang builtin",
+                name: "builtin",
                 active: true
             }, {
                 name: "polymorphic closure",
                 active: true
             }, {
-                name: "xtlang closure",
+                name: "closure",
                 active: true
             }, {
-                name: "xtlang alias",
+                name: "type alias",
                 active: true
             }, {
                 name: "named type",
@@ -162,37 +162,69 @@ var DocumentItem = React.createClass({
     displayName: "DocumentItem",
 
     render: function render() {
+
+        var inputPairs = [];
+        if (this.props.args && this.props.type) {
+            var args = this.props.args.replace(/[\(\)]+/g, "").replace(/"/g, "").split(' ');
+            var types = this.props.type.replace(/[\[\]]+/g, "").split(',');
+            var returnType = types[0];
+            var inputTypes = types.slice(1);
+            if (args.length === inputTypes.length) {
+                args.forEach(function (arg, index) {
+                    var type = inputTypes[index];
+                    inputPairs.push(React.createElement(
+                        "li",
+                        { key: index },
+                        arg,
+                        " : ",
+                        type
+                    ));
+                });
+            }
+        }
+
+        var typeArgs = undefined;
+        if (inputPairs.length > 0) {
+            typeArgs = inputPairs;
+        }
+
+        var docStringElements = undefined;
+        if (_.isString(this.props.docstring)) {
+            docStringElements = _.chain(this.props.docstring.split('\n')).compact().map(function (doc, index) {
+                return React.createElement(
+                    "p",
+                    { key: index },
+                    doc
+                );
+            }).value();
+        }
+
+        var functionHeading = React.createElement(
+            "h2",
+            { className: "documentName" },
+            this.props.name,
+            React.createElement(
+                "span",
+                { className: "documentCategory" },
+                this.props.category
+            )
+        );
+
         return React.createElement(
             "div",
             { className: "documentItem" },
+            functionHeading,
+            docStringElements,
             React.createElement(
-                "h2",
-                { className: "documentName" },
-                this.props.name
+                "p",
+                null,
+                "Type Signature: ",
+                this.props.type
             ),
             React.createElement(
                 "ul",
                 null,
-                React.createElement(
-                    "li",
-                    null,
-                    this.props.category
-                ),
-                React.createElement(
-                    "li",
-                    null,
-                    this.props.args
-                ),
-                React.createElement(
-                    "li",
-                    null,
-                    this.props.type
-                ),
-                React.createElement(
-                    "li",
-                    null,
-                    this.props.docstring
-                )
+                inputPairs
             )
         );
     }
