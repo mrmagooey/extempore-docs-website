@@ -246,7 +246,7 @@ var CategoryButton = React.createClass({
             classes += 'active';
         }
         return (
-                <button tabindex="-1" 
+                <button tabIndex="-1" 
             className={classes} 
             onFocus={this.handleFocus} 
             onClick={this.handleChange}>

@@ -278,7 +278,7 @@ var CategoryButton = React.createClass({
         }
         return React.createElement(
             "button",
-            { tabindex: "-1",
+            { tabIndex: "-1",
                 className: classes,
                 onFocus: this.handleFocus,
                 onClick: this.handleChange },
