@@ -11,7 +11,7 @@ var DocumentBox = React.createClass({
             searchTerm: "",
             categories: [
             {
-                name: "xtlang builtin",
+                name: "builtin",
                 active: true
             }, 
             {
@@ -19,11 +19,11 @@ var DocumentBox = React.createClass({
                 active: true
             },
             {
-                name:"xtlang closure", 
+                name:"closure", 
                 active: true
             },
             {
-                name:"xtlang alias", 
+                name:"type alias", 
                 active: true
             },
             {
