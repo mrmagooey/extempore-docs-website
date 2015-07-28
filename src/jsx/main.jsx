@@ -10,39 +10,39 @@ var DocumentBox = React.createClass({
             fullData: [],
             searchTerm: "",
             categories: [
-            {
-                name: "builtin",
-                active: true
-            }, 
-            {
-                name:"polymorphic closure", 
-                active: true
-            },
-            {
-                name:"closure", 
-                active: true
-            },
-            {
-                name:"type alias", 
-                active: true
-            },
-            {
-                name:"named type", 
-                active: true
-            },
-            {
-                name:"generic closure", 
-                active: true
-            },
-            {
-                name:"global var",
-                active: true
-            },
-            {
-                name:"C function", 
-                active: false
-            },
-        ],
+                {
+                    name: "builtin",
+                    active: true
+                }, 
+                {
+                    name:"polymorphic closure", 
+                    active: true
+                },
+                {
+                    name:"closure", 
+                    active: true
+                },
+                {
+                    name:"type alias", 
+                    active: true
+                },
+                {
+                    name:"named type", 
+                    active: true
+                },
+                {
+                    name:"generic closure", 
+                    active: true
+                },
+                {
+                    name:"global var",
+                    active: true
+                },
+                {
+                    name:"C function", 
+                    active: false
+                },
+            ],
         };
     },
     
@@ -50,7 +50,6 @@ var DocumentBox = React.createClass({
         var _this = this;
         var request = new XMLHttpRequest();
         request.open('GET', this.props.url, true);
-        
         request.onload = function(data) {
             var jsonData = JSON.parse(request.responseText);
             var sortedJsonData = _.sortBy(jsonData, function(a){
@@ -58,7 +57,6 @@ var DocumentBox = React.createClass({
             });
             _this.setState({fullData:sortedJsonData});
             _this.updateDocsList(); // start with no filter in place
-
         };
         request.send();
     },
@@ -127,7 +125,6 @@ var DocumentBox = React.createClass({
                 this.setState({"status": ""});
             }
         }
-        
         this.setState({currentData:newData});        
     },
     
@@ -166,58 +163,81 @@ var DocumentList = React.createClass({
 
 var DocumentItem = React.createClass({
     render: function(){
-      
-      var inputPairs = [];
-      if (this.props.args && this.props.type){
-        var args = this.props.args
-              .replace(/[\(\)]+/g, "")
-              .replace(/"/g, "")
-              .split(' ');
-        var types = this.props.type
-              .replace(/[\[\]]+/g, "").split(',');
-        var returnType = types[0];
-        var inputTypes = types.slice(1);
-        if (args.length === inputTypes.length){
-          args.forEach(function(arg, index){
-            var type = inputTypes[index];
-            inputPairs.push(
-                <li key={index}>{arg} : {type}</li>
-            );
-          });
+        var inputPairs = [],
+            types;
+        
+
+        if (_.contains(['builtin', 'closure', 'named type', 'generic closure'], this.props.category)){
+            types = getTypes(this.props.type);
+            var returnType = types[0];
+            var inputTypes = types.slice(1);
+            var args = this.props.args
+                    .replace(/[\(\)]+/g, "")
+                    .split(' ');
+            var inputParamDocstrings = ;
+            
+            if (args.length === inputTypes.length){
+                args.forEach(function(arg, index){
+                    var type = inputTypes[index];
+                    inputPairs.push(
+                            <tr key={index}>
+                            <td>{}</td>
+                            <td></td>
+                            <td></td>
+                            </tr>
+                            <li key={index}>{arg} : {type}</li>
+                    );
+                });
+            }
+            
+        } else if (this.props.category === "type alias") {
+            types = this.props.type;
         }
-      }
-      
-      var typeArgs = undefined;
-      if (inputPairs.length > 0){
-        typeArgs = inputPairs;
-      }
-      
-      var docStringElements = undefined;
-      if (_.isString(this.props.docstring)){
-        docStringElements = _.chain(this.props.docstring.split('\n'))
-          .compact()
-          .map(function(doc, index){
-            return (<p key={index}>{doc}</p>);
-          })
-          .value();
-      }
-      
-      var functionHeading = (
-          <h2 className="documentName">{this.props.name} 
-          <span className="documentCategory">{this.props.category}</span></h2>
-      );
-      
-      return (
-        <div className="documentItem">
-        {functionHeading}
-        {docStringElements}
-        <p>Type Signature: {this.props.type}</p>
-          <ul>
-          {inputPairs}
-          </ul>
-        </div>
-      );
-      
+        
+        if (this.props.args && this.props.type){
+            var types = this.props.type
+                    .replace(/[\[\]]+/g, "").split(',');
+            
+            
+        }
+        
+        var typeArgs = undefined;
+        if (inputPairs.length > 0){
+            typeArgs = inputPairs;
+        }
+        
+        var docStringElements = undefined;
+        if (_.isString(this.props.docstring)){
+            docStringElements = _.chain(this.props.docstring.split('\n'))
+                .compact()
+                .map(function(doc, index){
+                    return (<p key={index}>{doc}</p>);
+                })
+                .value();
+        }
+        
+        var functionHeading = (
+                <h2 className="documentName">{this.props.name} 
+                <span className="documentCategory">{this.props.category}</span></h2>
+        );
+        
+        var table = (
+            <table className="table table-bordered">
+                
+            </table>
+        );
+        
+        return (
+                <div className="documentItem">
+                {functionHeading}
+            {docStringElements}
+                <p>Type Signature: {this.props.type}</p>
+                <ul>
+                {inputPairs}
+            </ul>
+                </div>
+        );
+        
     }
 });
 
@@ -242,9 +262,9 @@ var SearchForm = React.createClass({
                 <div className="form-group"> 
                 <div className="btn-group" data-toggle="buttons">
                 {buttons}
-                </div> {/* end btn-group */}
-                </div> {/* end form-group */}
-                </form>
+            </div> {/* end btn-group */}
+            </div> {/* end form-group */}
+            </form>
                 </div>
         );
     },

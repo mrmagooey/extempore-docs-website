@@ -26,8 +26,9 @@
     background-color: rgb(40, 96, 144);
 }
 
-.documentCategory {
+span.documentCategory {
     font-size: small;
     color: grey;
     padding-left: 10px;
 }
+

@@ -9,26 +9,40 @@ module.exports = function(grunt) {
         
         uglify: {
             options: {
-                banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+                banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
+                mangle: false,
+                beautify: true,
             },
-            build: {
+            build_third_party: {
                 src: [
                     "bower_components/lodash/lodash.min.js",
                     "bower_components/react/react.js",
                     'bower_components/modernizr/modernizr.js',
                 ],
                 dest: 'js/third-party.js'
+            },
+            build_src: {
+                src: 'build/js/*.js',
+                dest: 'js/main.js'
             }
+            
         },
         
         babel: {
             options: {
-                sourceMap: false
+                sourceMap: false,
             },
             dist: {
-                files: {
-                    'js/main.js': 'src/jsx/main.jsx'
-                }
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'src',
+                        src: 'jsx/*',
+                        dest: 'build/js/',
+                        ext: '.js',
+                        flatten: true,
+                    }
+                ]
             }
         },
         
@@ -47,7 +61,7 @@ module.exports = function(grunt) {
         watch: {
             jsx: {
                 files: ['src/jsx/*.jsx'],
-                tasks: ['babel'],
+                tasks: ['babel', 'uglify:build_src'],
             },
             css: {
                 files: ['bower_components/bootstrap/dist/css/bootstrap.min.css',
