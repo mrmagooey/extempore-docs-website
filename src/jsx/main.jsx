@@ -60,11 +60,14 @@ var DocumentBox = React.createClass({
         };
         request.send();
         
+        // history and hash url routing
         if (window.location.hash){
-            this.setState({searchTerm: (window.location.hash.slice(1))}, function() {
-                console.log(this.state);
-            });
+            this.setState({searchTerm: (window.location.hash.slice(1))});
         }
+        // set up event watching the browser url
+        window.onpopstate = function(evt) {
+            _this.setState({searchTerm: (window.location.hash.slice(1))});
+        };
     },
     
     render: function(){
@@ -93,10 +96,7 @@ var DocumentBox = React.createClass({
             }
             return category;
         });
-        
-        this.setState({categories: newCats}, function() {
-            this.updateDocsList();
-        });
+        this.setState({categories: newCats});
     },
     
     handleSearchTerm: function(newTerm) {
@@ -106,9 +106,14 @@ var DocumentBox = React.createClass({
         else {
             location.hash = '#' + newTerm;
         }
-        this.setState({searchTerm:newTerm}, function() {
+        this.setState({searchTerm:newTerm});
+    },
+    
+    componentDidUpdate: function(previousProps, previousState) {
+        // setup interdepence between states
+        if (previousState.searchTerm !== this.state.searchTerm){
             this.updateDocsList();
-        });
+        }
     },
     
     updateDocsList: function() {
@@ -308,7 +313,6 @@ var SearchForm = React.createClass({
             ref="term" 
             className="form-control" 
             placeholder="Search" 
-            onKeyUp={this.handleKeyPress} 
             onChange={this.handleOnChange}
             value={this.props.searchTerm}>
                 </input>
@@ -331,10 +335,10 @@ var SearchForm = React.createClass({
         this.props.onCategoryUpdate(active, name);
     },
     
-    handleKeyPress: function(evt){
-        var searchTerm = React.findDOMNode(this.refs.term).value;
-        this.props.onSearchUpdate(searchTerm);
-    },
+    // handleKeyPress: function(evt){
+    //     var searchTerm = React.findDOMNode(this.refs.term).value;
+    //     this.props.onSearchUpdate(searchTerm);
+    // },
     
     // this is to stop the textinput trying to post and refreshing the page
     handleSubmit: function(evt) {

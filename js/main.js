@@ -47,9 +47,11 @@ var MAX_DOCS_SHOWN = 30, DocumentBox = React.createClass({
             }), _this.updateDocsList();
         }, request.send(), window.location.hash && this.setState({
             searchTerm: window.location.hash.slice(1)
-        }, function() {
-            console.log(this.state);
-        });
+        }), window.onpopstate = function(evt) {
+            _this.setState({
+                searchTerm: window.location.hash.slice(1)
+            });
+        };
     },
     render: function() {
         return React.createElement("div", {
@@ -71,17 +73,16 @@ var MAX_DOCS_SHOWN = 30, DocumentBox = React.createClass({
         }));
         this.setState({
             categories: newCats
-        }, function() {
-            this.updateDocsList();
         });
     },
     handleSearchTerm: function(newTerm) {
         history.pushState ? history.pushState(null, null, "#" + newTerm) : location.hash = "#" + newTerm, 
         this.setState({
             searchTerm: newTerm
-        }, function() {
-            this.updateDocsList();
         });
+    },
+    componentDidUpdate: function(previousProps, previousState) {
+        previousState.searchTerm !== this.state.searchTerm && this.updateDocsList();
     },
     updateDocsList: function() {
         var newData, _this = this, filteredData = _.chain(this.state.fullData).filter(function(a) {
@@ -188,7 +189,6 @@ var MAX_DOCS_SHOWN = 30, DocumentBox = React.createClass({
             ref: "term",
             className: "form-control",
             placeholder: "Search",
-            onKeyUp: this.handleKeyPress,
             onChange: this.handleOnChange,
             value: this.props.searchTerm
         })), " ", React.createElement("div", {
@@ -203,10 +203,6 @@ var MAX_DOCS_SHOWN = 30, DocumentBox = React.createClass({
     },
     handleCategoryUpdate: function(active, name) {
         this.props.onCategoryUpdate(active, name);
-    },
-    handleKeyPress: function(evt) {
-        var searchTerm = React.findDOMNode(this.refs.term).value;
-        this.props.onSearchUpdate(searchTerm);
     },
     handleSubmit: function(evt) {
         evt.preventDefault();
