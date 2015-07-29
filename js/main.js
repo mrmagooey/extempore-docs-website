@@ -45,7 +45,11 @@ var MAX_DOCS_SHOWN = 30, DocumentBox = React.createClass({
             _this.setState({
                 fullData: sortedJsonData
             }), _this.updateDocsList();
-        }, request.send();
+        }, request.send(), window.location.hash && this.setState({
+            searchTerm: window.location.hash.slice(1)
+        }, function() {
+            console.log(this.state);
+        });
     },
     render: function() {
         return React.createElement("div", {
@@ -72,6 +76,7 @@ var MAX_DOCS_SHOWN = 30, DocumentBox = React.createClass({
         });
     },
     handleSearchTerm: function(newTerm) {
+        history.pushState ? history.pushState(null, null, "#" + newTerm) : location.hash = "#" + newTerm, 
         this.setState({
             searchTerm: newTerm
         }, function() {
@@ -106,14 +111,15 @@ var MAX_DOCS_SHOWN = 30, DocumentBox = React.createClass({
 }), DocumentList = React.createClass({
     displayName: "DocumentList",
     render: function() {
-        var docItems = this.props.data.map(function(doc) {
+        var docItems = this.props.data.map(function(doc, index) {
             return React.createElement(DocumentItem, {
                 key: doc.category + " " + doc.name,
                 category: doc.category,
                 name: doc.name,
                 args: doc.args,
                 type: doc.type,
-                docstring: doc.docstring
+                docstring: doc.docstring,
+                odd: index % 2 === 1
             });
         });
         return React.createElement("div", {
@@ -123,8 +129,8 @@ var MAX_DOCS_SHOWN = 30, DocumentBox = React.createClass({
 }), DocumentItem = React.createClass({
     displayName: "DocumentItem",
     renderCallable: function() {
-        var parsedDocstring = parseDocstring(this.props.docstring || ""), types = parseType(this.props.type || "No args for function"), inputTypes = (types[0], 
-        types.slice(1)), args = this.props.args || "no_args_supplied", argItems = args.replace(/[\(\)]+/g, "").split(" "), argumentItems = [];
+        var parsedDocstring = parseDocstring(this.props.docstring || ""), args = this.props.args || "", argItems = args.replace(/[\(\)]+/g, "").split(" "), types = parseType(this.props.type || "No args for function"), inputTypes = (types[0], 
+        types.slice(1)), argumentItems = [];
         argItems.forEach(function(arg, index) {
             var type = _.get(inputTypes, index, "");
             _.get(parsedDocstring.docstringParams, index, "");
@@ -135,25 +141,16 @@ var MAX_DOCS_SHOWN = 30, DocumentBox = React.createClass({
         var paramsTable = React.createElement("table", {
             className: "table "
         }, React.createElement("thead", null, React.createElement("tr", null, React.createElement("th", null, "Argument"), React.createElement("th", null, "Type"), React.createElement("th", null, "Docstring"))), React.createElement("tbody", null, argumentItems)), shortDescription = _.get(parsedDocstring, "shortDescription", "No short description in docstring");
-        return React.createElement("div", null, React.createElement("p", null, shortDescription), React.createElement("p", null, " ", parsedDocstring.longDescription, " "), paramsTable);
+        return args.length > 0 ? React.createElement("div", null, React.createElement("p", null, shortDescription), React.createElement("p", null, " ", parsedDocstring.longDescription, " "), paramsTable) : React.createElement("div", null, React.createElement("p", null, shortDescription), React.createElement("p", null, " ", parsedDocstring.longDescription, " "));
     },
     renderNonCallables: function() {
-        var parsedDocstring = parseDocstring(this.props.docstring || ""), functionHeading = React.createElement("h2", {
-            className: "documentName"
-        }, this.props.name, React.createElement("span", {
-            className: "documentCategory"
-        }, this.props.category));
+        var parsedDocstring = parseDocstring(this.props.docstring || "");
         return React.createElement("div", {
             className: "documentItem"
-        }, functionHeading, React.createElement("p", null, parsedDocstring.shortDescription), React.createElement("p", null, parsedDocstring.longDescription, " "));
+        }, React.createElement("p", null, parsedDocstring.shortDescription), React.createElement("p", null, parsedDocstring.longDescription, " "));
     },
     renderPolyClosure: function() {
         var parsedDocstring = parseDocstring(this.props.docstring || "");
-        React.createElement("h2", {
-            className: "documentName"
-        }, this.props.name, React.createElement("span", {
-            className: "documentCategory"
-        }, this.props.category));
         return React.createElement("div", null, React.createElement("p", null, parsedDocstring.shortDescription), React.createElement("p", null, parsedDocstring.longDescription), React.createElement("p", null, "Types: ", this.props.type));
     },
     render: function() {
@@ -162,9 +159,10 @@ var MAX_DOCS_SHOWN = 30, DocumentBox = React.createClass({
         }, this.props.name, React.createElement("span", {
             className: "documentCategory"
         }, this.props.category)));
-        return _.contains([ "builtin", "closure", "named type", "generic closure" ], this.props.category) ? body = this.renderCallable() : "type alias" === this.props.category || "global var" === this.props.category ? body = this.renderNonCallables() : "polymorphic closure" === this.props.category && (body = this.renderPolyClosure()), 
-        React.createElement("div", {
-            className: "documentItem"
+        _.contains([ "builtin", "closure", "named type", "generic closure" ], this.props.category) ? body = this.renderCallable() : "type alias" === this.props.category || "global var" === this.props.category ? body = this.renderNonCallables() : "polymorphic closure" === this.props.category && (body = this.renderPolyClosure());
+        var classes = "documentItem";
+        return this.props.odd && (classes += " odd"), React.createElement("div", {
+            className: classes
         }, functionHeading, body);
     }
 }), SearchForm = React.createClass({
@@ -190,13 +188,18 @@ var MAX_DOCS_SHOWN = 30, DocumentBox = React.createClass({
             ref: "term",
             className: "form-control",
             placeholder: "Search",
-            onKeyUp: this.handleKeyPress
+            onKeyUp: this.handleKeyPress,
+            onChange: this.handleOnChange,
+            value: this.props.searchTerm
         })), " ", React.createElement("div", {
             className: "form-group"
         }, React.createElement("div", {
             className: "btn-group",
             "data-toggle": "buttons"
         }, buttons), " "), " "));
+    },
+    handleOnChange: function(evt) {
+        this.props.onSearchUpdate(evt.target.value);
     },
     handleCategoryUpdate: function(active, name) {
         this.props.onCategoryUpdate(active, name);
