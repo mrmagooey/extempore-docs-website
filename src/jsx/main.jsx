@@ -144,7 +144,7 @@ var DocumentList = React.createClass({
         var docItems = this.props.data.map(function(doc) {
             return (
                     <DocumentItem 
-                key={doc.category + doc.name}
+                key={doc.category + " " + doc.name}
                 category={doc.category}
                 name={doc.name}
                 args={doc.args}
@@ -165,18 +165,14 @@ var DocumentItem = React.createClass({
     
     renderCallable: function() {
         var parsedDocstring = parseDocstring(this.props.docstring || "");
-        var functionHeading = (
-                <h2 className="documentName">{this.props.name} 
-                <span className="documentCategory">{this.props.category}</span></h2>
-        );
-        
-        var types = parseType(this.props.type);
+        var types = parseType(this.props.type || "No args for function");
         var returnType = types[0];
         var inputTypes = types.slice(1);
         var args = this.props.args || "no_args_supplied";
         var argItems = args.replace(/[\(\)]+/g, "")
                 .split(' ');
         var argumentItems = [];
+        
         argItems.forEach(function(arg, index){
             var type = _.get(inputTypes, index, "");
             var docstring = _.get(parsedDocstring.docstringParams, index, "");
@@ -207,13 +203,11 @@ var DocumentItem = React.createClass({
         var shortDescription = _.get(parsedDocstring, 
                                      'shortDescription', 
                                      "No short description in docstring");
-        return (
-                <div className="documentItem">
-                {functionHeading}
+        return (<div>
                 <p>{shortDescription}</p>
                 <p> {parsedDocstring.longDescription} </p>
                 {paramsTable}
-            </div>
+                </div>
         );
         
     },
@@ -238,11 +232,9 @@ var DocumentItem = React.createClass({
                 <h2 className="documentName">{this.props.name} 
                 <span className="documentCategory">{this.props.category}</span></h2>
         );
-        
-        return (<div className="documentItem">
-                {functionHeading}
+        return (<div>
                 <p>{parsedDocstring.shortDescription}</p>
-                <p>{parsedDocstring.longDescription} </p>
+                <p>{parsedDocstring.longDescription}</p>
                 <p>Types: {this.props.type}</p>
                 </div>);
     },
@@ -250,24 +242,31 @@ var DocumentItem = React.createClass({
     render: function(){
         var parsedDocstring = parseDocstring(this.props.docstring || "");
         var functionHeading = (
-                <h2 className="documentName">{this.props.name} 
-                <span className="documentCategory">{this.props.category}</span></h2>
+                <h2 className="documentName">
+                {this.props.name}
+                <span className="documentCategory">
+                {this.props.category}
+            </span>
+                </h2>
         );
+        var body;
         
         if (_.contains(['builtin', 'closure', 'named type', 'generic closure'], 
                        this.props.category)){
-            return this.renderCallable();
+             body = this.renderCallable();
         } else if (this.props.category === "type alias" ||
-                   this.props.category === "global vars") {
-            return this.renderNonCallables();
+                   this.props.category === "global var") {
+             body = this.renderNonCallables();
         } else if (this.props.category === "polymorphic closure") {
-            return this.renderPolyClosure();
-        } else {
-            return (<div className="documentItem">
-                    {functionHeading}
-                    <p> I don't know how to render this category of item </p>
-                    </div>);
-        }
+             body = this.renderPolyClosure();
+        } 
+
+        return (<div className="documentItem">
+                {functionHeading}
+                {body}
+                </div>);
+        
+        
     },
 });
 
@@ -314,6 +313,7 @@ var SearchForm = React.createClass({
     },
     
 });
+
 
 var CategoryButton = React.createClass({
     getInitialState: function() {

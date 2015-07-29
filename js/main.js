@@ -108,7 +108,7 @@ var MAX_DOCS_SHOWN = 30, DocumentBox = React.createClass({
     render: function() {
         var docItems = this.props.data.map(function(doc) {
             return React.createElement(DocumentItem, {
-                key: doc.category + doc.name,
+                key: doc.category + " " + doc.name,
                 category: doc.category,
                 name: doc.name,
                 args: doc.args,
@@ -123,11 +123,7 @@ var MAX_DOCS_SHOWN = 30, DocumentBox = React.createClass({
 }), DocumentItem = React.createClass({
     displayName: "DocumentItem",
     renderCallable: function() {
-        var parsedDocstring = parseDocstring(this.props.docstring || ""), functionHeading = React.createElement("h2", {
-            className: "documentName"
-        }, this.props.name, React.createElement("span", {
-            className: "documentCategory"
-        }, this.props.category)), types = parseType(this.props.type), inputTypes = (types[0], 
+        var parsedDocstring = parseDocstring(this.props.docstring || ""), types = parseType(this.props.type || "No args for function"), inputTypes = (types[0], 
         types.slice(1)), args = this.props.args || "no_args_supplied", argItems = args.replace(/[\(\)]+/g, "").split(" "), argumentItems = [];
         argItems.forEach(function(arg, index) {
             var type = _.get(inputTypes, index, "");
@@ -139,9 +135,7 @@ var MAX_DOCS_SHOWN = 30, DocumentBox = React.createClass({
         var paramsTable = React.createElement("table", {
             className: "table "
         }, React.createElement("thead", null, React.createElement("tr", null, React.createElement("th", null, "Argument"), React.createElement("th", null, "Type"), React.createElement("th", null, "Docstring"))), React.createElement("tbody", null, argumentItems)), shortDescription = _.get(parsedDocstring, "shortDescription", "No short description in docstring");
-        return React.createElement("div", {
-            className: "documentItem"
-        }, functionHeading, React.createElement("p", null, shortDescription), React.createElement("p", null, " ", parsedDocstring.longDescription, " "), paramsTable);
+        return React.createElement("div", null, React.createElement("p", null, shortDescription), React.createElement("p", null, " ", parsedDocstring.longDescription, " "), paramsTable);
     },
     renderNonCallables: function() {
         var parsedDocstring = parseDocstring(this.props.docstring || ""), functionHeading = React.createElement("h2", {
@@ -154,24 +148,24 @@ var MAX_DOCS_SHOWN = 30, DocumentBox = React.createClass({
         }, functionHeading, React.createElement("p", null, parsedDocstring.shortDescription), React.createElement("p", null, parsedDocstring.longDescription, " "));
     },
     renderPolyClosure: function() {
-        var parsedDocstring = parseDocstring(this.props.docstring || ""), functionHeading = React.createElement("h2", {
+        var parsedDocstring = parseDocstring(this.props.docstring || "");
+        React.createElement("h2", {
             className: "documentName"
         }, this.props.name, React.createElement("span", {
             className: "documentCategory"
         }, this.props.category));
-        return React.createElement("div", {
-            className: "documentItem"
-        }, functionHeading, React.createElement("p", null, parsedDocstring.shortDescription), React.createElement("p", null, parsedDocstring.longDescription, " "), React.createElement("p", null, "Types: ", this.props.type));
+        return React.createElement("div", null, React.createElement("p", null, parsedDocstring.shortDescription), React.createElement("p", null, parsedDocstring.longDescription), React.createElement("p", null, "Types: ", this.props.type));
     },
     render: function() {
-        var functionHeading = (parseDocstring(this.props.docstring || ""), React.createElement("h2", {
+        var body, functionHeading = (parseDocstring(this.props.docstring || ""), React.createElement("h2", {
             className: "documentName"
         }, this.props.name, React.createElement("span", {
             className: "documentCategory"
         }, this.props.category)));
-        return _.contains([ "builtin", "closure", "named type", "generic closure" ], this.props.category) ? this.renderCallable() : "type alias" === this.props.category || "global vars" === this.props.category ? this.renderNonCallables() : "polymorphic closure" === this.props.category ? this.renderPolyClosure() : React.createElement("div", {
+        return _.contains([ "builtin", "closure", "named type", "generic closure" ], this.props.category) ? body = this.renderCallable() : "type alias" === this.props.category || "global var" === this.props.category ? body = this.renderNonCallables() : "polymorphic closure" === this.props.category && (body = this.renderPolyClosure()), 
+        React.createElement("div", {
             className: "documentItem"
-        }, functionHeading, React.createElement("p", null, " I don't know how to render this category of item "));
+        }, functionHeading, body);
     }
 }), SearchForm = React.createClass({
     displayName: "SearchForm",
