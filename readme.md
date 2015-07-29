@@ -21,6 +21,172 @@ Use your favourite webserver and serve the root directory of this repository, ea
     
 Point your browser to the index.html.
 
+## Category Reference
+
+This documentation set tracks several categories of Extempore language items.
+
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Description</th>
+<th>Args?</th>
+<th>Type?</th>
+<th>Docstring?</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+builtin
+</td>
+<td>
+Defined within the compiler
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+</tr>
+
+
+<tr>
+<td>
+polymorphic closure
+</td>
+<td>
+A closure that can defer to multiple underlying closures, depending on the types of the passed arguments. The result of a bind-poly call.
+</td>
+<td>
+✓
+</td>
+<td>
+✓ (one type for each underlying function)
+</td>
+<td>
+✓ (one for the poly version, and links to the poly'd over functions)
+</td>
+</tr>
+
+<tr>
+<td>
+closure
+</td>
+<td>
+A function that has closed over its environment variables. The result of a bind-func call.
+</td>
+<td>
+✓
+</td>
+<td>
+✓ 
+</td>
+<td>
+✓ 
+</td>
+</tr>
+
+<tr>
+<td>
+named type
+</td>
+<td>
+A named data structure. The result of a bind-type call.
+</td>
+<td>
+✓
+</td>
+<td>
+✓ 
+</td>
+<td>
+✓ 
+</td>
+</tr>
+
+<tr>
+<td>
+type alias
+</td>
+<td>
+A alternate name for a type. The result of a bind-alias call.
+</td>
+<td>
+x
+</td>
+<td>
+✓ 
+</td>
+<td>
+✓ 
+</td>
+</tr>
+
+<tr>
+<td>
+generic closure
+</td>
+<td>
+A closure that does type inferencing at compile time, choosing type depending on the passed arguments. Result of bind-func call with `!var` generic variables.
+</td>
+<td>
+✓ 
+</td>
+<td>
+✓ 
+</td>
+<td>
+✓ 
+</td>
+</tr>
+
+<tr>
+<td>
+global var
+</td>
+<td>
+A mutable globally available variable. Result of bind-val call.
+</td>
+<td>
+x
+</td>
+<td>
+✓ 
+</td>
+<td>
+✓ 
+</td>
+</tr>
+
+
+<tr>
+<td>
+C functions
+</td>
+<td>
+Functions from C libraries that have been imported either through the clang compiler or from manually imported libraries. Result of sys:load-dylib and bind-lib calls.
+</td>
+<td>
+✓ 
+</td>
+<td>
+✓ 
+</td>
+<td>
+✓ 
+</td>
+</tr>
+
+</tbody>
+</table>
+
+
 ## Development
 
 ### Dependencies
