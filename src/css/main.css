@@ -3,10 +3,15 @@
     font-size:smaller;
 }
 
+.categoryButton {
+    margin-top: 5px;
+}
+
 .categoryButton:not(.active) {
     background-color: grey;
     
 }
+
 
 .categoryButton:focus {
     outline:none; 
