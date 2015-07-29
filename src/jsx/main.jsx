@@ -153,7 +153,7 @@ var DocumentStatus = React.createClass({
 
 var DocumentList = React.createClass({
     render: function() {
-        var docItems = this.props.data.map(function(doc) {
+        var docItems = this.props.data.map(function(doc, index) {
             return (
                     <DocumentItem 
                 key={doc.category + " " + doc.name}
@@ -162,6 +162,7 @@ var DocumentList = React.createClass({
                 args={doc.args}
                 type={doc.type}
                 docstring={doc.docstring}
+                odd={index%2 === 1}
                     ></DocumentItem>
             );
         });
@@ -272,8 +273,13 @@ var DocumentItem = React.createClass({
         } else if (this.props.category === "polymorphic closure") {
              body = this.renderPolyClosure();
         } 
-
-        return (<div className="documentItem">
+        
+        var classes = 'documentItem';
+        if (this.props.odd){
+            classes += ' odd';
+        } 
+        
+        return (<div className={classes}>
                 {functionHeading}
                 {body}
                 </div>);

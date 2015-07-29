@@ -3,6 +3,22 @@
     font-size:smaller;
 }
 
+.documentItem {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 15px 10px 5px 10px;
+}
+
+.documentItem.odd {
+    background-color: #eee;
+    
+}
+
+.documentItem .documentName {
+    margin-top: 0px;
+}
+
 .categoryButton {
     margin-top: 5px;
 }
@@ -11,7 +27,6 @@
     background-color: grey;
     
 }
-
 
 .categoryButton:focus {
     outline:none; 
