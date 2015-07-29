@@ -178,14 +178,15 @@ var DocumentItem = React.createClass({
     
     renderCallable: function() {
         var parsedDocstring = parseDocstring(this.props.docstring || "");
+        var args = this.props.args || "";
+        var argItems = args.replace(/[\(\)]+/g, "")
+                .split(' ');
+
         var types = parseType(this.props.type || "No args for function");
         var returnType = types[0];
         var inputTypes = types.slice(1);
-        var args = this.props.args || "no_args_supplied";
-        var argItems = args.replace(/[\(\)]+/g, "")
-                .split(' ');
-        var argumentItems = [];
         
+        var argumentItems = [];
         argItems.forEach(function(arg, index){
             var type = _.get(inputTypes, index, "");
             var docstring = _.get(parsedDocstring.docstringParams, index, "");
@@ -216,24 +217,29 @@ var DocumentItem = React.createClass({
         var shortDescription = _.get(parsedDocstring, 
                                      'shortDescription', 
                                      "No short description in docstring");
-        return (<div>
-                <p>{shortDescription}</p>
-                <p> {parsedDocstring.longDescription} </p>
-                {paramsTable}
-                </div>
-        );
+        
+        // if we have no args, don't render the args table
+        if (args.length > 0){
+            return (<div>
+                    <p>{shortDescription}</p>
+                    <p> {parsedDocstring.longDescription} </p>
+                    {paramsTable}
+                    </div>
+                   );
+        } else {
+            return (<div>
+                    <p>{shortDescription}</p>
+                    <p> {parsedDocstring.longDescription} </p>
+                    </div>
+                   );
+        }
         
     },
     
     renderNonCallables: function(){
         var parsedDocstring = parseDocstring(this.props.docstring || "");
-        var functionHeading = (
-                <h2 className="documentName">{this.props.name} 
-                <span className="documentCategory">{this.props.category}</span></h2>
-        );
         
         return (<div className="documentItem">
-                    {functionHeading}
                     <p>{parsedDocstring.shortDescription}</p>
                     <p>{parsedDocstring.longDescription} </p>
                     </div>);
@@ -241,10 +247,6 @@ var DocumentItem = React.createClass({
     
     renderPolyClosure: function(){
         var parsedDocstring = parseDocstring(this.props.docstring || "");
-        var functionHeading = (
-                <h2 className="documentName">{this.props.name} 
-                <span className="documentCategory">{this.props.category}</span></h2>
-        );
         return (<div>
                 <p>{parsedDocstring.shortDescription}</p>
                 <p>{parsedDocstring.longDescription}</p>
@@ -283,8 +285,6 @@ var DocumentItem = React.createClass({
                 {functionHeading}
                 {body}
                 </div>);
-        
-        
     },
 });
 
