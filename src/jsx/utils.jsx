@@ -1,6 +1,6 @@
 
 // state machine for getting types
-var getTypes = function(typeString){
+var parseType = function(typeString){
     var currentState = undefined,
         nestedTypeStack = [],
         closureCount = 0,
@@ -10,13 +10,19 @@ var getTypes = function(typeString){
         typesList = [],
         currentType = "";
     
+    // shortcircuit on non callable or non type typestrings
+    if (!(typeString[0] === '[' || typeString[0] === '<')){    
+        return [typeString];
+    }
+    
     var states = {
         start: function(character) {
-            if (character === '[' || character === '>'){
-                return states.readType;
-            } else {
-                throw "incorrect start character";
-            }
+            return states.readType;
+        },
+        
+        simpleType: function(character) {
+            currentType += character;
+            return states.simpleType;
         },
         
         readType: function(character){
@@ -117,7 +123,7 @@ var getTypes = function(typeString){
     return typesList;
 };
 
-// testing for state machine //
+// // testing for state machine //
 // var testTypeStrings = [
 //     ["[i64,[i32,i8]*]*", ["i64", "[i32,i8]*"]],
 //     ["[!a,Point:<!a,!a>*]*", ["!a", "Point:<!a,!a>*"]],
@@ -134,29 +140,28 @@ var getTypes = function(typeString){
 //     ["[float,float,i64,i64,float*]*", ["float", "float", "i64", "i64", "float*"]],
 //     ["[!ga_103,!ga_103,mzone*,mzone*]*", ["!ga_103", "!ga_103", "mzone*", "mzone*"]],
 //     ["[BTree:<!v,BTree*,BTree*>*,BTree:<!b,BTree*,BTree*>*,[!v,!r]*]*", 
-//      ["BTree:<!v,BTree*,BTree*>*", "BTree:<!b,BTree*,BTree*>*", "[!v,!r]*"]]
+//      ["BTree:<!v,BTree*,BTree*>*", "BTree:<!b,BTree*,BTree*>*", "[!v,!r]*"]],
+//     ["<i8*,i32,i8*,i64,clsvar*>", ["i8*", "i32","i8*", "i64", "clsvar*"]],
+//     ["<i64,i8*>", ["i64", "i8*"]],
+//     ["<i8*,i64,i64,i64,mzone*>", ["i8*", "i64", "i64", "i64", "mzone*"]],
+//     ["i32", ["i32"]],
+//     ["float", ["float"]],
 // ];
 
 // testTypeStrings.forEach(function(x) {
-//     var result = typeStateMachine(x[0]);
-//     console.log(result, x[1], _.isEqual(result, x[1]));
+//     var result = parseType(x[0]);
 // });
 
 var SHORT_DESCRIPTION_RE = /^.*\n/;
 var LONG_DESCRIPTION_RE = /[\w\s\S]*$/gm;
-
 var DOCSTRING_PARAM = /@param (\w)* - (.*)\n/gm;
 var DOCSTRING_RETURN = /@return (.*)\n/gm;
 
 var parseDocstring = function(docstring) {
     return {
-        shortDescription : docstring.match(SHORT_DESCRIPTION_RE),
-        longDescription : docstring.match(LONG_DESCRIPTION_RE),
-        docstringParams : docstring.match(DOCSTRING_PARAM),
-        docstringReturn : docstring.match(DOCSTRING_RETURN),
+        shortDescription: docstring.match(SHORT_DESCRIPTION_RE),
+        longDescription: docstring.match(LONG_DESCRIPTION_RE),
+        docstringParams: docstring.match(DOCSTRING_PARAM),
+        docstringReturn: docstring.match(DOCSTRING_RETURN),
     };
-};
-
-var getTypeDoctrings = function(docstring) {
-    
 };

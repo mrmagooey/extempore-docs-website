@@ -1,4 +1,4 @@
-/*! extempore-docs-website 2015-07-28 */
+/*! extempore-docs-website 2015-07-29 */
 "use strict";
 
 var MAX_DOCS_SHOWN = 30, DocumentBox = React.createClass({
@@ -122,38 +122,56 @@ var MAX_DOCS_SHOWN = 30, DocumentBox = React.createClass({
     }
 }), DocumentItem = React.createClass({
     displayName: "DocumentItem",
-    render: function() {
-        var types, inputPairs = [];
-        if (_.contains([ "builtin", "closure", "named type", "generic closure" ], this.props.category)) {
-            types = getTypes(this.props.type);
-            var inputTypes = (types[0], types.slice(1)), args = this.props.args.replace(/[\(\)]+/g, "").split(" ");
-            args.length === inputTypes.length && args.forEach(function(arg, index) {
-                var type = inputTypes[index];
-                inputPairs.push(React.createElement("li", {
-                    key: index
-                }, arg, " : ", type));
-            });
-        } else "type alias" === this.props.category && (types = this.props.type);
-        if (this.props.args && this.props.type) var types = this.props.type.replace(/[\[\]]+/g, "").split(",");
-        var typeArgs = void 0;
-        inputPairs.length > 0 && (typeArgs = inputPairs);
-        var docStringElements = void 0;
-        _.isString(this.props.docstring) && (docStringElements = _.chain(this.props.docstring.split("\n")).compact().map(function(doc, index) {
-            return React.createElement("p", {
+    renderCallable: function() {
+        var parsedDocstring = parseDocstring(this.props.docstring || ""), functionHeading = React.createElement("h2", {
+            className: "documentName"
+        }, this.props.name, React.createElement("span", {
+            className: "documentCategory"
+        }, this.props.category)), types = parseType(this.props.type), inputTypes = (types[0], 
+        types.slice(1)), args = this.props.args || "no_args_supplied", argItems = args.replace(/[\(\)]+/g, "").split(" "), argumentItems = [];
+        argItems.forEach(function(arg, index) {
+            var type = _.get(inputTypes, index, "");
+            _.get(parsedDocstring.docstringParams, index, "");
+            argumentItems.push(React.createElement("tr", {
                 key: index
-            }, doc);
-        }).value());
-        var functionHeading = React.createElement("h2", {
+            }, React.createElement("td", null, arg), React.createElement("td", null, type), React.createElement("td", null)));
+        });
+        var paramsTable = React.createElement("table", {
+            className: "table "
+        }, React.createElement("thead", null, React.createElement("tr", null, React.createElement("th", null, "Argument"), React.createElement("th", null, "Type"), React.createElement("th", null, "Docstring"))), React.createElement("tbody", null, argumentItems)), shortDescription = _.get(parsedDocstring, "shortDescription", "No short description in docstring");
+        return React.createElement("div", {
+            className: "documentItem"
+        }, functionHeading, React.createElement("p", null, shortDescription), React.createElement("p", null, " ", parsedDocstring.longDescription, " "), paramsTable);
+    },
+    renderNonCallables: function() {
+        var parsedDocstring = parseDocstring(this.props.docstring || ""), functionHeading = React.createElement("h2", {
             className: "documentName"
         }, this.props.name, React.createElement("span", {
             className: "documentCategory"
         }, this.props.category));
-        React.createElement("table", {
-            className: "table table-bordered"
-        });
         return React.createElement("div", {
             className: "documentItem"
-        }, functionHeading, docStringElements, React.createElement("p", null, "Type Signature: ", this.props.type), React.createElement("ul", null, inputPairs));
+        }, functionHeading, React.createElement("p", null, parsedDocstring.shortDescription), React.createElement("p", null, parsedDocstring.longDescription, " "));
+    },
+    renderPolyClosure: function() {
+        var parsedDocstring = parseDocstring(this.props.docstring || ""), functionHeading = React.createElement("h2", {
+            className: "documentName"
+        }, this.props.name, React.createElement("span", {
+            className: "documentCategory"
+        }, this.props.category));
+        return React.createElement("div", {
+            className: "documentItem"
+        }, functionHeading, React.createElement("p", null, parsedDocstring.shortDescription), React.createElement("p", null, parsedDocstring.longDescription, " "), React.createElement("p", null, "Types: ", this.props.type));
+    },
+    render: function() {
+        var functionHeading = (parseDocstring(this.props.docstring || ""), React.createElement("h2", {
+            className: "documentName"
+        }, this.props.name, React.createElement("span", {
+            className: "documentCategory"
+        }, this.props.category)));
+        return _.contains([ "builtin", "closure", "named type", "generic closure" ], this.props.category) ? this.renderCallable() : "type alias" === this.props.category || "global vars" === this.props.category ? this.renderNonCallables() : "polymorphic closure" === this.props.category ? this.renderPolyClosure() : React.createElement("div", {
+            className: "documentItem"
+        }, functionHeading, React.createElement("p", null, " I don't know how to render this category of item "));
     }
 }), SearchForm = React.createClass({
     displayName: "SearchForm",
@@ -228,11 +246,15 @@ React.render(React.createElement(DocumentBox, {
     url: "xtmdoc.json"
 }), document.getElementById("content"));
 
-var getTypes = function(typeString) {
-    var currentState = void 0, nestedTypeStack = [], typesList = [], currentType = "", states = {
+var parseType = function(typeString) {
+    var currentState = void 0, nestedTypeStack = [], typesList = [], currentType = "";
+    if ("[" !== typeString[0] && "<" !== typeString[0]) return [ typeString ];
+    var states = {
         start: function(character) {
-            if ("[" === character || ">" === character) return states.readType;
-            throw "incorrect start character";
+            return states.readType;
+        },
+        simpleType: function(character) {
+            return currentType += character, states.simpleType;
         },
         readType: function(character) {
             return currentType += character, _.contains([ "[", "<", "/" ], character) ? (nestedTypeStack.push(character), 
@@ -272,4 +294,11 @@ var getTypes = function(typeString) {
     currentState = states.start;
     for (var i = 0; i < typeString.length; i++) currentState = currentState(typeString[i]);
     return typesList;
+}, SHORT_DESCRIPTION_RE = /^.*\n/, LONG_DESCRIPTION_RE = /[\w\s\S]*$/gm, DOCSTRING_PARAM = /@param (\w)* - (.*)\n/gm, DOCSTRING_RETURN = /@return (.*)\n/gm, parseDocstring = function(docstring) {
+    return {
+        shortDescription: docstring.match(SHORT_DESCRIPTION_RE),
+        longDescription: docstring.match(LONG_DESCRIPTION_RE),
+        docstringParams: docstring.match(DOCSTRING_PARAM),
+        docstringReturn: docstring.match(DOCSTRING_RETURN)
+    };
 };

@@ -162,83 +162,113 @@ var DocumentList = React.createClass({
 });
 
 var DocumentItem = React.createClass({
-    render: function(){
-        var inputPairs = [],
-            types;
-        
-
-        if (_.contains(['builtin', 'closure', 'named type', 'generic closure'], this.props.category)){
-            types = getTypes(this.props.type);
-            var returnType = types[0];
-            var inputTypes = types.slice(1);
-            var args = this.props.args
-                    .replace(/[\(\)]+/g, "")
-                    .split(' ');
-            var inputParamDocstrings = ;
-            
-            if (args.length === inputTypes.length){
-                args.forEach(function(arg, index){
-                    var type = inputTypes[index];
-                    inputPairs.push(
-                            <tr key={index}>
-                            <td>{}</td>
-                            <td></td>
-                            <td></td>
-                            </tr>
-                            <li key={index}>{arg} : {type}</li>
-                    );
-                });
-            }
-            
-        } else if (this.props.category === "type alias") {
-            types = this.props.type;
-        }
-        
-        if (this.props.args && this.props.type){
-            var types = this.props.type
-                    .replace(/[\[\]]+/g, "").split(',');
-            
-            
-        }
-        
-        var typeArgs = undefined;
-        if (inputPairs.length > 0){
-            typeArgs = inputPairs;
-        }
-        
-        var docStringElements = undefined;
-        if (_.isString(this.props.docstring)){
-            docStringElements = _.chain(this.props.docstring.split('\n'))
-                .compact()
-                .map(function(doc, index){
-                    return (<p key={index}>{doc}</p>);
-                })
-                .value();
-        }
-        
+    
+    renderCallable: function() {
+        var parsedDocstring = parseDocstring(this.props.docstring || "");
         var functionHeading = (
                 <h2 className="documentName">{this.props.name} 
                 <span className="documentCategory">{this.props.category}</span></h2>
         );
         
-        var table = (
-            <table className="table table-bordered">
-                
-            </table>
+        var types = parseType(this.props.type);
+        var returnType = types[0];
+        var inputTypes = types.slice(1);
+        var args = this.props.args || "no_args_supplied";
+        var argItems = args.replace(/[\(\)]+/g, "")
+                .split(' ');
+        var argumentItems = [];
+        argItems.forEach(function(arg, index){
+            var type = _.get(inputTypes, index, "");
+            var docstring = _.get(parsedDocstring.docstringParams, index, "");
+            argumentItems.push(
+                    <tr key={index}>
+                    <td>{arg}</td>
+                    <td>{type}</td>
+                    <td></td>
+                    </tr>
+            );
+        });
+        
+        var paramsTable = (
+                <table className="table ">
+                <thead> 
+                <tr>
+                <th>Argument</th>
+                <th>Type</th>
+                <th>Docstring</th>
+                </tr>
+                </thead> 
+                <tbody>
+                {argumentItems}
+            </tbody>
+                </table>
         );
         
+        var shortDescription = _.get(parsedDocstring, 
+                                     'shortDescription', 
+                                     "No short description in docstring");
         return (
                 <div className="documentItem">
                 {functionHeading}
-            {docStringElements}
-                <p>Type Signature: {this.props.type}</p>
-                <ul>
-                {inputPairs}
-            </ul>
-                </div>
+                <p>{shortDescription}</p>
+                <p> {parsedDocstring.longDescription} </p>
+                {paramsTable}
+            </div>
         );
         
-    }
+    },
+    
+    renderNonCallables: function(){
+        var parsedDocstring = parseDocstring(this.props.docstring || "");
+        var functionHeading = (
+                <h2 className="documentName">{this.props.name} 
+                <span className="documentCategory">{this.props.category}</span></h2>
+        );
+        
+        return (<div className="documentItem">
+                    {functionHeading}
+                    <p>{parsedDocstring.shortDescription}</p>
+                    <p>{parsedDocstring.longDescription} </p>
+                    </div>);
+    },
+    
+    renderPolyClosure: function(){
+        var parsedDocstring = parseDocstring(this.props.docstring || "");
+        var functionHeading = (
+                <h2 className="documentName">{this.props.name} 
+                <span className="documentCategory">{this.props.category}</span></h2>
+        );
+        
+        return (<div className="documentItem">
+                {functionHeading}
+                <p>{parsedDocstring.shortDescription}</p>
+                <p>{parsedDocstring.longDescription} </p>
+                <p>Types: {this.props.type}</p>
+                </div>);
+    },
+    
+    render: function(){
+        var parsedDocstring = parseDocstring(this.props.docstring || "");
+        var functionHeading = (
+                <h2 className="documentName">{this.props.name} 
+                <span className="documentCategory">{this.props.category}</span></h2>
+        );
+        
+        if (_.contains(['builtin', 'closure', 'named type', 'generic closure'], 
+                       this.props.category)){
+            return this.renderCallable();
+        } else if (this.props.category === "type alias" ||
+                   this.props.category === "global vars") {
+            return this.renderNonCallables();
+        } else if (this.props.category === "polymorphic closure") {
+            return this.renderPolyClosure();
+        } else {
+            return (<div className="documentItem">
+                    {functionHeading}
+                    <p> I don't know how to render this category of item </p>
+                    </div>);
+        }
+    },
 });
 
 var SearchForm = React.createClass({
