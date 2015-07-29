@@ -59,6 +59,12 @@ var DocumentBox = React.createClass({
             _this.updateDocsList(); // start with no filter in place
         };
         request.send();
+        
+        if (window.location.hash){
+            this.setState({searchTerm: (window.location.hash.slice(1))}, function() {
+                console.log(this.state);
+            });
+        }
     },
     
     render: function(){
@@ -94,6 +100,12 @@ var DocumentBox = React.createClass({
     },
     
     handleSearchTerm: function(newTerm) {
+        if(history.pushState) {
+            history.pushState(null, null, '#' + newTerm);
+        }
+        else {
+            location.hash = '#' + newTerm;
+        }
         this.setState({searchTerm:newTerm}, function() {
             this.updateDocsList();
         });
@@ -286,7 +298,14 @@ var SearchForm = React.createClass({
                 <div className="form-group">
                 <form className="searchForm" onSubmit={this.handleSubmit}>
                 <div className="form-group">
-                <input type="text" ref="term" className="form-control" placeholder="Search" onKeyUp={this.handleKeyPress} ></input>
+                <input type="text" 
+            ref="term" 
+            className="form-control" 
+            placeholder="Search" 
+            onKeyUp={this.handleKeyPress} 
+            onChange={this.handleOnChange}
+            value={this.props.searchTerm}>
+                </input>
                 </div> {/*  end form-group */}
                 <div className="form-group"> 
                 <div className="btn-group" data-toggle="buttons">
@@ -296,6 +315,10 @@ var SearchForm = React.createClass({
             </form>
                 </div>
         );
+    },
+    
+    handleOnChange: function(evt) {
+        this.props.onSearchUpdate(evt.target.value);
     },
     
     handleCategoryUpdate: function(active, name) {
