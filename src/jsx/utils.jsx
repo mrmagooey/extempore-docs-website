@@ -152,16 +152,101 @@ var parseType = function(typeString){
 //     var result = parseType(x[0]);
 // });
 
-var SHORT_DESCRIPTION_RE = /^.*\n/;
-var LONG_DESCRIPTION_RE = /[\w\s\S]*$/gm;
-var DOCSTRING_PARAM = /@param (\w)* - (.*)\n/gm;
-var DOCSTRING_RETURN = /@return (.*)\n/gm;
+var SHORT_DESCRIPTION_RE = /^(.*)(\n|$)/;
+var LONG_DESCRIPTION_RE = /(?:[\n\r]+)(?!@)([\w\s\S]*?)(?:(\n+(@|$))|$)/g;
+var DOCSTRING_PARAM = /@param(?: )?(\w*)? - (.*)(@|$)/gm;
+var DOCSTRING_RETURN = /@return(?:.*?) - (.*?)(?:(@|$))/gm;
+var DOCSTRING_SEE = /@see (\w*?) - (.*?)(?:(\n@|$))/gm;
+var DOCSTRING_EXAMPLE = /@example([\w\s\S]*?)(\n@|$)/g;
 
 var parseDocstring = function(docstring) {
+    var regexArray, 
+        paramsList = [],
+        seeList = [],
+        examplesList = [];
+    
+    while ((regexArray = DOCSTRING_PARAM.exec(docstring)) !== null) {
+        paramsList.push([regexArray[1]|| "", regexArray[2]]);
+    }
+
+    while ((regexArray = DOCSTRING_SEE.exec(docstring)) !== null) {
+        seeList.push([regexArray[1], regexArray[2]]);
+    }
+    
+    while ((regexArray = DOCSTRING_EXAMPLE.exec(docstring)) !== null) {
+        examplesList.push(regexArray[1]);
+    }
+    
     return {
-        shortDescription: docstring.match(SHORT_DESCRIPTION_RE),
-        longDescription: docstring.match(LONG_DESCRIPTION_RE),
-        docstringParams: docstring.match(DOCSTRING_PARAM),
-        docstringReturn: docstring.match(DOCSTRING_RETURN),
+        shortDescription: _.get(SHORT_DESCRIPTION_RE.exec(docstring), 1, ""),
+        longDescription: _.get(LONG_DESCRIPTION_RE.exec(docstring), 1, ""),
+        docstringParams: paramsList,
+        docstringReturn: _.get(DOCSTRING_RETURN.exec(docstring), 1, ""),
+        docstringSees: seeList,
+        docstringExamples: examplesList,
     };
 };
+
+var testDocstrings = [
+    ["Takes a String* and returns the size of allocated memory\n\nNot necessarily the same as String_length\n@param str - the String\n@return size - size of alloc'ed memory", 
+     { shortDescription: "Takes a String* and returns the size of allocated memory",
+       longDescription: "Not necessarily the same as String_length",
+       docstringParams: [["str", "the String"]],
+       docstringReturn: "size of alloc'ed memory",
+       docstringSees: [],
+       docstringExamples: [],
+     }],
+    ["a (one-line) description of the function: this is Ben's great function for adding two numbers together\n\
+\n\
+Here's some more detail. Sometimes, you just need to add two numbers.\n\
+And the + operator just isn't up to the job.  Well, that's when you need\n\
+bens_great_function (well, as long as the numbers are i64).\n\
+\n\
+@param - the first number to add\n\
+@param - the second number to add\n\
+@return - the sum of the two input arguments\n\
+@example\n\
+(bens_great_function 4 7) ;; returns 11\n\
+@see bens_other_great_function - another great function to check out", 
+     { shortDescription: "a (one-line) description of the function: this is Ben's great function for adding two numbers together",
+       longDescription: "Here's some more detail. Sometimes, you just need to add two numbers.\n\
+And the + operator just isn't up to the job.  Well, that's when you need\n\
+bens_great_function (well, as long as the numbers are i64).",
+       docstringParams: [["", "the first number to add"], ["", "the second number to add"]],
+       docstringReturn: "the sum of the two input arguments",
+       docstringExamples: ["\n(bens_great_function 4 7) ;; returns 11"],
+       docstringSees: [['bens_other_great_function', 'another great function to check out']]
+     }],
+    ["Just a short description", 
+     { shortDescription: "Just a short description",
+       longDescription: "",
+       docstringParams: [],
+       docstringReturn: "",
+       docstringSees: [],
+       docstringExamples: [],
+     }],
+    ["Return an i8* pointer to the underlying char array\n\
+\n\
+@param str\n\
+@return c_str - the underlying i8 'char' array", 
+     {shortDescription: "Return an i8* pointer to the underlying char array",
+      longDescription: "",
+      docstringParams: [],
+      docstringReturn: "the underlying i8 'char' array",
+      docstringSees: [],
+      docstringExamples: [],
+     }],
+];
+
+testDocstrings.forEach(function(x) {
+    var result = parseDocstring(x[0]);
+    var eq = _.isEqual(result, x[1]);
+    if (eq){
+        console.log(eq);
+    } else {
+        console.log("not equal");
+        console.log("result", JSON.stringify(result, null, 4));
+        console.log("expected", JSON.stringify(x[1], null, 4));
+        console.log('\n');
+    }
+});

@@ -194,12 +194,22 @@ var DocumentItem = React.createClass({
         var argumentItems = [];
         argItems.forEach(function(arg, index){
             var type = _.get(inputTypes, index, "");
-            var docstring = _.get(parsedDocstring.docstringParams, index, "");
+            var paramPair = _.chain(parsedDocstring.docstringParams)
+                    .filter(function(x, index) {
+                        return x[0] === arg;
+                    })
+                    .first()
+                    .value();
+            var paramDescription;
+            if (!_.isUndefined(paramPair)) {
+                paramDescription = paramPair[1];
+            }
+            
             argumentItems.push(
                     <tr key={index}>
                     <td>{arg}</td>
                     <td>{type}</td>
-                    <td></td>
+                    <td>{paramDescription}</td>
                     </tr>
             );
         });
@@ -208,9 +218,9 @@ var DocumentItem = React.createClass({
                 <table className="table ">
                 <thead> 
                 <tr>
-                <th>Argument</th>
+                <th>Parameter Name</th>
                 <th>Type</th>
-                <th>Docstring</th>
+                <th>Parameter Description</th>
                 </tr>
                 </thead> 
                 <tbody>
@@ -222,12 +232,13 @@ var DocumentItem = React.createClass({
         var shortDescription = _.get(parsedDocstring, 
                                      'shortDescription', 
                                      "No short description in docstring");
-        
-        // if we have no args, don't render the args table
+        // console.log(parsedDocstring);
+        // console.log(this.props.docstring);
+        // if no args, don't render the args table
         if (args.length > 0){
             return (<div>
                     <p>{shortDescription}</p>
-                    <p> {parsedDocstring.longDescription} </p>
+                    <p>{parsedDocstring.longDescription}</p>
                     {paramsTable}
                     </div>
                    );
@@ -243,7 +254,6 @@ var DocumentItem = React.createClass({
     
     renderNonCallables: function(){
         var parsedDocstring = parseDocstring(this.props.docstring || "");
-        
         return (<div className="documentItem">
                     <p>{parsedDocstring.shortDescription}</p>
                     <p>{parsedDocstring.longDescription} </p>
@@ -271,11 +281,10 @@ var DocumentItem = React.createClass({
         );
         var body;
         
-        if (_.contains(['builtin', 'closure', 'named type', 'generic closure'], 
-                       this.props.category)){
+        if (_.contains(['builtin', 'closure', 'named type', 'generic closure'], this.props.category)){
              body = this.renderCallable();
-        } else if (this.props.category === "type alias" ||
-                   this.props.category === "global var") {
+        } else if (this.props.category === "type alias" || this.props.category === "global var") {
+                   
              body = this.renderNonCallables();
         } else if (this.props.category === "polymorphic closure") {
              body = this.renderPolyClosure();
