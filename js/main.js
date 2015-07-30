@@ -1,4 +1,4 @@
-/*! extempore-docs-website 2015-07-29 */
+/*! extempore-docs-website 2015-07-30 */
 "use strict";
 
 var MAX_DOCS_SHOWN = 30, DocumentBox = React.createClass({
@@ -56,7 +56,7 @@ var MAX_DOCS_SHOWN = 30, DocumentBox = React.createClass({
     render: function() {
         return React.createElement("div", {
             className: "documentBox"
-        }, React.createElement("h1", null, "Documentation"), React.createElement(SearchForm, {
+        }, React.createElement("h1", null, "Extempore Documentation"), React.createElement(SearchForm, {
             onSearchUpdate: this.handleSearchTerm,
             onCategoryUpdate: this.handleCategoryUpdate,
             categories: this.state.categories,
@@ -133,16 +133,17 @@ var MAX_DOCS_SHOWN = 30, DocumentBox = React.createClass({
         var parsedDocstring = parseDocstring(this.props.docstring || ""), args = this.props.args || "", argItems = args.replace(/[\(\)]+/g, "").split(" "), types = parseType(this.props.type || "No args for function"), inputTypes = (types[0], 
         types.slice(1)), argumentItems = [];
         argItems.forEach(function(arg, index) {
-            var type = _.get(inputTypes, index, "");
-            _.get(parsedDocstring.docstringParams, index, "");
-            argumentItems.push(React.createElement("tr", {
+            var paramDescription, type = _.get(inputTypes, index, ""), paramPair = _.chain(parsedDocstring.docstringParams).filter(function(x, index) {
+                return x[0] === arg;
+            }).first().value();
+            _.isUndefined(paramPair) || (paramDescription = paramPair[1]), argumentItems.push(React.createElement("tr", {
                 key: index
-            }, React.createElement("td", null, arg), React.createElement("td", null, type), React.createElement("td", null)));
+            }, React.createElement("td", null, arg), React.createElement("td", null, type), React.createElement("td", null, paramDescription)));
         });
         var paramsTable = React.createElement("table", {
             className: "table "
-        }, React.createElement("thead", null, React.createElement("tr", null, React.createElement("th", null, "Argument"), React.createElement("th", null, "Type"), React.createElement("th", null, "Docstring"))), React.createElement("tbody", null, argumentItems)), shortDescription = _.get(parsedDocstring, "shortDescription", "No short description in docstring");
-        return args.length > 0 ? React.createElement("div", null, React.createElement("p", null, shortDescription), React.createElement("p", null, " ", parsedDocstring.longDescription, " "), paramsTable) : React.createElement("div", null, React.createElement("p", null, shortDescription), React.createElement("p", null, " ", parsedDocstring.longDescription, " "));
+        }, React.createElement("thead", null, React.createElement("tr", null, React.createElement("th", null, "Parameter Name"), React.createElement("th", null, "Type"), React.createElement("th", null, "Parameter Description"))), React.createElement("tbody", null, argumentItems)), shortDescription = _.get(parsedDocstring, "shortDescription", "No short description in docstring");
+        return args.length > 0 ? React.createElement("div", null, React.createElement("p", null, shortDescription), React.createElement("p", null, parsedDocstring.longDescription), paramsTable) : React.createElement("div", null, React.createElement("p", null, shortDescription), React.createElement("p", null, " ", parsedDocstring.longDescription, " "));
     },
     renderNonCallables: function() {
         var parsedDocstring = parseDocstring(this.props.docstring || "");
@@ -287,11 +288,50 @@ var parseType = function(typeString) {
     currentState = states.start;
     for (var i = 0; i < typeString.length; i++) currentState = currentState(typeString[i]);
     return typesList;
-}, SHORT_DESCRIPTION_RE = /^.*\n/, LONG_DESCRIPTION_RE = /[\w\s\S]*$/gm, DOCSTRING_PARAM = /@param (\w)* - (.*)\n/gm, DOCSTRING_RETURN = /@return (.*)\n/gm, parseDocstring = function(docstring) {
+}, SHORT_DESCRIPTION_RE = /^(.*)(\n|$)/, LONG_DESCRIPTION_RE = /(?:[\n\r]+)(?!@)([\w\s\S]*?)(?:(\n+(@|$))|$)/g, DOCSTRING_PARAM = /@param(?: )?(\w*)? - (.*)(@|$)/gm, DOCSTRING_RETURN = /@return(?:.*?) - (.*?)(?:(@|$))/gm, DOCSTRING_SEE = /@see (\w*?) - (.*?)(?:(\n@|$))/gm, DOCSTRING_EXAMPLE = /@example([\w\s\S]*?)(\n@|$)/g, parseDocstring = function(docstring) {
+    for (var regexArray, paramsList = [], seeList = [], examplesList = []; null !== (regexArray = DOCSTRING_PARAM.exec(docstring)); ) paramsList.push([ regexArray[1] || "", regexArray[2] ]);
+    for (;null !== (regexArray = DOCSTRING_SEE.exec(docstring)); ) seeList.push([ regexArray[1], regexArray[2] ]);
+    for (;null !== (regexArray = DOCSTRING_EXAMPLE.exec(docstring)); ) examplesList.push(regexArray[1]);
     return {
-        shortDescription: docstring.match(SHORT_DESCRIPTION_RE),
-        longDescription: docstring.match(LONG_DESCRIPTION_RE),
-        docstringParams: docstring.match(DOCSTRING_PARAM),
-        docstringReturn: docstring.match(DOCSTRING_RETURN)
+        shortDescription: _.get(SHORT_DESCRIPTION_RE.exec(docstring), 1, ""),
+        longDescription: _.get(LONG_DESCRIPTION_RE.exec(docstring), 1, ""),
+        docstringParams: paramsList,
+        docstringReturn: _.get(DOCSTRING_RETURN.exec(docstring), 1, ""),
+        docstringSees: seeList,
+        docstringExamples: examplesList
     };
-};
+}, testDocstrings = [ [ "Takes a String* and returns the size of allocated memory\n\nNot necessarily the same as String_length\n@param str - the String\n@return size - size of alloc'ed memory", {
+    shortDescription: "Takes a String* and returns the size of allocated memory",
+    longDescription: "Not necessarily the same as String_length",
+    docstringParams: [ [ "str", "the String" ] ],
+    docstringReturn: "size of alloc'ed memory",
+    docstringSees: [],
+    docstringExamples: []
+} ], [ "a (one-line) description of the function: this is Ben's great function for adding two numbers together\n\nHere's some more detail. Sometimes, you just need to add two numbers.\nAnd the + operator just isn't up to the job.  Well, that's when you need\nbens_great_function (well, as long as the numbers are i64).\n\n@param - the first number to add\n@param - the second number to add\n@return - the sum of the two input arguments\n@example\n(bens_great_function 4 7) ;; returns 11\n@see bens_other_great_function - another great function to check out", {
+    shortDescription: "a (one-line) description of the function: this is Ben's great function for adding two numbers together",
+    longDescription: "Here's some more detail. Sometimes, you just need to add two numbers.\nAnd the + operator just isn't up to the job.  Well, that's when you need\nbens_great_function (well, as long as the numbers are i64).",
+    docstringParams: [ [ "", "the first number to add" ], [ "", "the second number to add" ] ],
+    docstringReturn: "the sum of the two input arguments",
+    docstringExamples: [ "\n(bens_great_function 4 7) ;; returns 11" ],
+    docstringSees: [ [ "bens_other_great_function", "another great function to check out" ] ]
+} ], [ "Just a short description", {
+    shortDescription: "Just a short description",
+    longDescription: "",
+    docstringParams: [],
+    docstringReturn: "",
+    docstringSees: [],
+    docstringExamples: []
+} ], [ "Return an i8* pointer to the underlying char array\n\n@param str\n@return c_str - the underlying i8 'char' array", {
+    shortDescription: "Return an i8* pointer to the underlying char array",
+    longDescription: "",
+    docstringParams: [],
+    docstringReturn: "the underlying i8 'char' array",
+    docstringSees: [],
+    docstringExamples: []
+} ] ];
+
+testDocstrings.forEach(function(x) {
+    var result = parseDocstring(x[0]), eq = _.isEqual(result, x[1]);
+    eq ? console.log(eq) : (console.log("not equal"), console.log("result", JSON.stringify(result, null, 4)), 
+    console.log("expected", JSON.stringify(x[1], null, 4)), console.log("\n"));
+});
