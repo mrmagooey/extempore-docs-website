@@ -73,7 +73,7 @@ var DocumentBox = React.createClass({
     render: function(){
         return (
                 <div className="documentBox">
-                <h1>Documentation</h1>
+                <h1>Extempore Documentation</h1>
                 
                 <SearchForm 
             onSearchUpdate={this.handleSearchTerm} 
