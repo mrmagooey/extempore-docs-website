@@ -300,38 +300,4 @@ var parseType = function(typeString) {
         docstringSees: seeList,
         docstringExamples: examplesList
     };
-}, testDocstrings = [ [ "Takes a String* and returns the size of allocated memory\n\nNot necessarily the same as String_length\n@param str - the String\n@return size - size of alloc'ed memory", {
-    shortDescription: "Takes a String* and returns the size of allocated memory",
-    longDescription: "Not necessarily the same as String_length",
-    docstringParams: [ [ "str", "the String" ] ],
-    docstringReturn: "size of alloc'ed memory",
-    docstringSees: [],
-    docstringExamples: []
-} ], [ "a (one-line) description of the function: this is Ben's great function for adding two numbers together\n\nHere's some more detail. Sometimes, you just need to add two numbers.\nAnd the + operator just isn't up to the job.  Well, that's when you need\nbens_great_function (well, as long as the numbers are i64).\n\n@param - the first number to add\n@param - the second number to add\n@return - the sum of the two input arguments\n@example\n(bens_great_function 4 7) ;; returns 11\n@see bens_other_great_function - another great function to check out", {
-    shortDescription: "a (one-line) description of the function: this is Ben's great function for adding two numbers together",
-    longDescription: "Here's some more detail. Sometimes, you just need to add two numbers.\nAnd the + operator just isn't up to the job.  Well, that's when you need\nbens_great_function (well, as long as the numbers are i64).",
-    docstringParams: [ [ "", "the first number to add" ], [ "", "the second number to add" ] ],
-    docstringReturn: "the sum of the two input arguments",
-    docstringExamples: [ "\n(bens_great_function 4 7) ;; returns 11" ],
-    docstringSees: [ [ "bens_other_great_function", "another great function to check out" ] ]
-} ], [ "Just a short description", {
-    shortDescription: "Just a short description",
-    longDescription: "",
-    docstringParams: [],
-    docstringReturn: "",
-    docstringSees: [],
-    docstringExamples: []
-} ], [ "Return an i8* pointer to the underlying char array\n\n@param str\n@return c_str - the underlying i8 'char' array", {
-    shortDescription: "Return an i8* pointer to the underlying char array",
-    longDescription: "",
-    docstringParams: [],
-    docstringReturn: "the underlying i8 'char' array",
-    docstringSees: [],
-    docstringExamples: []
-} ] ];
-
-testDocstrings.forEach(function(x) {
-    var result = parseDocstring(x[0]), eq = _.isEqual(result, x[1]);
-    eq ? console.log(eq) : (console.log("not equal"), console.log("result", JSON.stringify(result, null, 4)), 
-    console.log("expected", JSON.stringify(x[1], null, 4)), console.log("\n"));
-});
+};
