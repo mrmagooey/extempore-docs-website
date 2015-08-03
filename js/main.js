@@ -151,8 +151,9 @@ var MAX_DOCS_SHOWN = 50, DocumentBox = React.createClass({
         var sees;
         if (parsedDocstring.docstringSees.length > 0) {
             var seeItems = parsedDocstring.docstringSees.map(function(x, index) {
+                var hrefHash = "#" + x[0];
                 return React.createElement("p", null, " ", React.createElement("a", {
-                    href: "#{x[0]}"
+                    href: hrefHash
                 }, x[1]));
             });
             sees = React.createElement("div", null, React.createElement("h3", null, "See"), seeItems);
