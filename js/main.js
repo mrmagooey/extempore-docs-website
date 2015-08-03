@@ -68,9 +68,12 @@ var MAX_DOCS_SHOWN = 50, DocumentBox = React.createClass({
         }));
     },
     handleCategoryUpdate: function(active, name) {
-        var newCats = (this.state.categories, _.map(this.state.categories, function(category) {
-            return category.name == name && (category.active = active), category;
-        }));
+        var newCats = _.map(this.state.categories, function(category) {
+            return category.name == name ? {
+                name: category.name,
+                active: active
+            } : category;
+        });
         this.setState({
             categories: newCats
         });
@@ -82,7 +85,7 @@ var MAX_DOCS_SHOWN = 50, DocumentBox = React.createClass({
         });
     },
     componentDidUpdate: function(previousProps, previousState) {
-        previousState.searchTerm !== this.state.searchTerm && this.updateDocsList();
+        previousState.searchTerm !== this.state.searchTerm ? this.updateDocsList() : _.isEqual(previousState.categories, this.state.categories) || this.updateDocsList();
     },
     updateDocsList: function() {
         var newData, _this = this, filteredData = _.chain(this.state.fullData).filter(function(a) {

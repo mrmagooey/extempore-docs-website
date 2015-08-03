@@ -74,14 +74,12 @@ var DocumentBox = React.createClass({
         return (
                 <div className="documentBox">
                 <h1>Extempore Documentation</h1>
-                
                 <SearchForm 
             onSearchUpdate={this.handleSearchTerm} 
             onCategoryUpdate={this.handleCategoryUpdate}
             categories={this.state.categories}
             searchTerm={this.state.searchTerm}
                 />
-                
                 <DocumentStatus status={this.state.status}/>
                 <DocumentList data={this.state.currentData}/>
                 </div>
@@ -89,12 +87,13 @@ var DocumentBox = React.createClass({
     },
     
     handleCategoryUpdate:function(active, name) {
-        var cats = this.state.categories;
         var newCats = _.map(this.state.categories, function(category){
             if (category.name == name){
-                category.active = active;
+                return {name: category.name, active: active};
+            } else {
+                return category;
             }
-            return category;
+            
         });
         this.setState({categories: newCats});
     },
@@ -106,14 +105,17 @@ var DocumentBox = React.createClass({
         else {
             location.hash = '#' + newTerm;
         }
-        this.setState({searchTerm:newTerm});
+        this.setState({searchTerm: newTerm});
     },
     
     componentDidUpdate: function(previousProps, previousState) {
         // setup interdepence between states
         if (previousState.searchTerm !== this.state.searchTerm){
             this.updateDocsList();
+        } else if (!_.isEqual(previousState.categories, this.state.categories)){
+            this.updateDocsList();
         }
+        
     },
     
     updateDocsList: function() {
@@ -254,8 +256,6 @@ var DocumentItem = React.createClass({
         
         var sees;
         if (parsedDocstring.docstringSees.length > 0){
-            // console.log(parsedDocstring.docstringSees);
-            
             var seeItems = parsedDocstring.docstringSees.map(function(x, index) {
                 var hrefHash = "#" + x[0];
                 return (<p> <a href={hrefHash}>{x[1]}</a></p>);
@@ -368,11 +368,6 @@ var SearchForm = React.createClass({
         this.props.onCategoryUpdate(active, name);
     },
     
-    // handleKeyPress: function(evt){
-    //     var searchTerm = React.findDOMNode(this.refs.term).value;
-    //     this.props.onSearchUpdate(searchTerm);
-    // },
-    
     // this is to stop the textinput trying to post and refreshing the page
     handleSubmit: function(evt) {
         evt.preventDefault();
@@ -392,7 +387,7 @@ var CategoryButton = React.createClass({
         });
     },
     
-    // 
+    // try to fix button default behaviour
     handleFocus:function(evt) {
         React.findDOMNode(this).blur();
     },
