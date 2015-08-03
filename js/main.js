@@ -88,11 +88,11 @@ var MAX_DOCS_SHOWN = 50, DocumentBox = React.createClass({
         previousState.searchTerm !== this.state.searchTerm ? this.updateDocsList() : _.isEqual(previousState.categories, this.state.categories) || this.updateDocsList();
     },
     updateDocsList: function() {
-        var newData, _this = this, filteredData = _.chain(this.state.fullData).filter(function(a) {
-            return _.startsWith(a.name, _this.state.searchTerm);
-        }).filter(function(a) {
+        var newData, _this = this, filteredData = _.chain(this.state.fullData).filter(function(doc) {
+            return _.startsWith(doc.name.toLowerCase(), _this.state.searchTerm.toLowerCase());
+        }).filter(function(doc) {
             var activeCategories = _.chain(_this.state.categories).filter("active").pluck("name").value();
-            return _.contains(activeCategories, a.category);
+            return _.contains(activeCategories, doc.category);
         }).value();
         filteredData.length > MAX_DOCS_SHOWN ? (newData = _.slice(filteredData, 0, MAX_DOCS_SHOWN), 
         this.setState({

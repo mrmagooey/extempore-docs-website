@@ -121,14 +121,14 @@ var DocumentBox = React.createClass({
     updateDocsList: function() {
         var _this = this;
         var filteredData =  _.chain(this.state.fullData)
-                .filter(function(a){
-                    return _.startsWith(a.name, _this.state.searchTerm);
-                }).filter(function(a) {
+                .filter(function(doc){
+                    return _.startsWith(doc.name.toLowerCase(), _this.state.searchTerm.toLowerCase());
+                }).filter(function(doc) {
                     var activeCategories = _.chain(_this.state.categories)
                             .filter('active')
                             .pluck('name')
                             .value();
-                    return _.contains(activeCategories, a.category);
+                    return _.contains(activeCategories, doc.category);
                 })
                 .value();
         
