@@ -31,6 +31,10 @@
     
 }
 
+.code {
+    font-family: 'Source Code Pro';
+}
+
 .categoryButton:focus {
     outline:none; 
     outline-color: transparent;

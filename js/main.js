@@ -170,7 +170,7 @@ var MAX_DOCS_SHOWN = 50, DocumentBox = React.createClass({
     },
     render: function() {
         var body, functionHeading = (parseDocstring(this.props.docstring || ""), React.createElement("h2", {
-            className: "documentName"
+            className: "documentName code"
         }, this.props.name, React.createElement("span", {
             className: "documentCategory"
         }, this.props.category)));

@@ -297,7 +297,7 @@ var DocumentItem = React.createClass({
     render: function(){
         var parsedDocstring = parseDocstring(this.props.docstring || "");
         var functionHeading = (
-                <h2 className="documentName">
+                <h2 className="documentName code">
                 {this.props.name}
                 <span className="documentCategory">
                 {this.props.category}
