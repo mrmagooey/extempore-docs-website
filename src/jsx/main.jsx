@@ -255,8 +255,10 @@ var DocumentItem = React.createClass({
         var sees;
         if (parsedDocstring.docstringSees.length > 0){
             // console.log(parsedDocstring.docstringSees);
+            
             var seeItems = parsedDocstring.docstringSees.map(function(x, index) {
-                return (<p> <a href="#{x[0]}">{x[1]}</a></p>);
+                var hrefHash = "#" + x[0];
+                return (<p> <a href={hrefHash}>{x[1]}</a></p>);
             });
             sees = (
                     <div>
@@ -266,7 +268,6 @@ var DocumentItem = React.createClass({
             );
         }
         
-        
         return (<div>
                 {description}
                 {paramsTable}
@@ -274,7 +275,6 @@ var DocumentItem = React.createClass({
                 {sees}
                 </div>
                );
-        
     },
     
     renderNonCallables: function(){
@@ -312,7 +312,7 @@ var DocumentItem = React.createClass({
              body = this.renderNonCallables();
         } else if (this.props.category === "polymorphic closure") {
              body = this.renderPolyClosure();
-        } 
+        }
         
         var classes = 'documentItem';
         if (this.props.odd){
