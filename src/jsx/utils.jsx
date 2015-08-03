@@ -153,10 +153,16 @@ var parseType = function(typeString){
 // });
 
 var SHORT_DESCRIPTION_RE = /^(.*)(\n|$)/;
-var LONG_DESCRIPTION_RE = /(?:[\n\r]+)(?!@)([\w\s\S]*?)(?:(\n+(@|$))|$)/g;
-var DOCSTRING_PARAM = /@param(?: )?(\w*)? - (.*)(@|$)/gm;
-var DOCSTRING_RETURN = /@return(?:.*?) - (.*?)(?:(@|$))/gm;
-var DOCSTRING_SEE = /@see (\w*?) - (.*?)(?:(\n@|$))/gm;
+
+// find the line after a newline or carriage return
+// that doesn't have a @ as the first character
+// get everything (newlines, alphanumeric, whitepace) lazily
+// up to either a newline and @, or the end of the string
+var LONG_DESCRIPTION_RE = /(?:[\n\r]+)(?!@)([\w\s\S]*?)(?:(\n+@)|$)/;
+
+var DOCSTRING_PARAM = /@param(?: )?(\w*)? - (.*)/gm;
+var DOCSTRING_RETURN = /@return(?:.*?) - (.*)/gm;
+var DOCSTRING_SEE = /@see (.*?) - (.*)/g;
 var DOCSTRING_EXAMPLE = /@example([\w\s\S]*?)(\n@|$)/g;
 
 var parseDocstring = function(docstring) {
@@ -236,6 +242,25 @@ var parseDocstring = function(docstring) {
 //       docstringSees: [],
 //       docstringExamples: [],
 //      }],
+//     ["What a great function\nSo great it's because it has docs\n@param how - how indeed\n@param do - replaced by begin\n@param\
+// i - think therefore i am\n@param variable - laskdjf\n@param nothing - lkj\n@see String - it's \
+// good too\n@see String_ - A bunch of string functions\n@example (petes_test_function a b c d)",
+//      {shortDescription: "What a great function",
+//       longDescription: "So great it's because it has docs",
+//       docstringParams: [
+//           ["how", "how indeed"],
+//           ["do", "replaced by begin"],
+//           ["i", "think therefore i am"],
+//           ["variable", "laskdjf"],
+//           ["nothing", "lkj"]
+//       ],
+//       docstringReturn: "",
+//       docstringSees: [
+//           ["String", "it's good too"],
+//           ["String_", "A bunch of string functions"],
+//       ],
+//       docstringExamples: [" (petes_test_function a b c d)"],
+//      }]
 // ];
 
 // testDocstrings.forEach(function(x) {
