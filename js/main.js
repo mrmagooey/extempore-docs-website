@@ -1,7 +1,7 @@
-/*! extempore-docs-website 2015-07-30 */
+/*! extempore-docs-website 2015-08-03 */
 "use strict";
 
-var MAX_DOCS_SHOWN = 30, DocumentBox = React.createClass({
+var MAX_DOCS_SHOWN = 50, DocumentBox = React.createClass({
     displayName: "DocumentBox",
     getInitialState: function() {
         return {
@@ -130,7 +130,9 @@ var MAX_DOCS_SHOWN = 30, DocumentBox = React.createClass({
 }), DocumentItem = React.createClass({
     displayName: "DocumentItem",
     renderCallable: function() {
-        var parsedDocstring = parseDocstring(this.props.docstring || ""), args = this.props.args || "", argItems = args.replace(/[\(\)]+/g, "").split(" "), types = parseType(this.props.type || "No args for function"), inputTypes = (types[0], 
+        var description, parsedDocstring = parseDocstring(this.props.docstring || "");
+        parsedDocstring.shortDescription.length > 0 && (description = React.createElement("div", null, React.createElement("p", null, parsedDocstring.shortDescription), React.createElement("p", null, parsedDocstring.longDescription)));
+        var args = this.props.args || "", argItems = args.replace(/[\(\)]+/g, "").split(" "), types = parseType(this.props.type || "No args for function"), inputTypes = (types[0], 
         types.slice(1)), argumentItems = [];
         argItems.forEach(function(arg, index) {
             var paramDescription, type = _.get(inputTypes, index, ""), paramPair = _.chain(parsedDocstring.docstringParams).filter(function(x, index) {
@@ -140,16 +142,26 @@ var MAX_DOCS_SHOWN = 30, DocumentBox = React.createClass({
                 key: index
             }, React.createElement("td", null, arg), React.createElement("td", null, type), React.createElement("td", null, paramDescription)));
         });
-        var paramsTable = React.createElement("table", {
-            className: "table "
-        }, React.createElement("thead", null, React.createElement("tr", null, React.createElement("th", null, "Parameter Name"), React.createElement("th", null, "Type"), React.createElement("th", null, "Parameter Description"))), React.createElement("tbody", null, argumentItems)), shortDescription = _.get(parsedDocstring, "shortDescription", "No short description in docstring");
-        return args.length > 0 ? React.createElement("div", null, React.createElement("p", null, shortDescription), React.createElement("p", null, parsedDocstring.longDescription), paramsTable) : React.createElement("div", null, React.createElement("p", null, shortDescription), React.createElement("p", null, " ", parsedDocstring.longDescription, " "));
+        var paramsTable;
+        args.length > 0 && (paramsTable = React.createElement("div", null, React.createElement("h3", null, "Parameters"), React.createElement("table", {
+            className: "table"
+        }, React.createElement("thead", null, React.createElement("tr", null, React.createElement("th", null, "Parameter Name"), React.createElement("th", null, "Type"), React.createElement("th", null, "Parameter Description"))), React.createElement("tbody", null, argumentItems))));
+        var returns;
+        parsedDocstring.docstringReturn.length > 0 && (returns = React.createElement("div", null, React.createElement("h3", null, "Returns"), React.createElement("p", null, " ", parsedDocstring.returns)));
+        var sees;
+        if (parsedDocstring.docstringSees.length > 0) {
+            var seeItems = parsedDocstring.docstringSees.map(function(x, index) {
+                return React.createElement("p", null, " ", React.createElement("a", {
+                    href: "#{x[0]}"
+                }, x[1]));
+            });
+            sees = React.createElement("div", null, React.createElement("h3", null, "See"), seeItems);
+        }
+        return React.createElement("div", null, description, paramsTable, returns, sees);
     },
     renderNonCallables: function() {
         var parsedDocstring = parseDocstring(this.props.docstring || "");
-        return React.createElement("div", {
-            className: "documentItem"
-        }, React.createElement("p", null, parsedDocstring.shortDescription), React.createElement("p", null, parsedDocstring.longDescription, " "));
+        return React.createElement("div", null, React.createElement("p", null, parsedDocstring.shortDescription), React.createElement("p", null, parsedDocstring.longDescription, " "));
     },
     renderPolyClosure: function() {
         var parsedDocstring = parseDocstring(this.props.docstring || "");
@@ -288,7 +300,7 @@ var parseType = function(typeString) {
     currentState = states.start;
     for (var i = 0; i < typeString.length; i++) currentState = currentState(typeString[i]);
     return typesList;
-}, SHORT_DESCRIPTION_RE = /^(.*)(\n|$)/, LONG_DESCRIPTION_RE = /(?:[\n\r]+)(?!@)([\w\s\S]*?)(?:(\n+(@|$))|$)/g, DOCSTRING_PARAM = /@param(?: )?(\w*)? - (.*)(@|$)/gm, DOCSTRING_RETURN = /@return(?:.*?) - (.*?)(?:(@|$))/gm, DOCSTRING_SEE = /@see (\w*?) - (.*?)(?:(\n@|$))/gm, DOCSTRING_EXAMPLE = /@example([\w\s\S]*?)(\n@|$)/g, parseDocstring = function(docstring) {
+}, SHORT_DESCRIPTION_RE = /^(.*)(\n|$)/, LONG_DESCRIPTION_RE = /(?:[\n\r]+)(?!@)([\w\s\S]*?)(?:(\n+@)|$)/, DOCSTRING_PARAM = /@param(?: )?(\w*)? - (.*)/gm, DOCSTRING_RETURN = /@return(?:.*?) - (.*)/gm, DOCSTRING_SEE = /@see (.*?) - (.*)/g, DOCSTRING_EXAMPLE = /@example([\w\s\S]*?)(\n@|$)/g, parseDocstring = function(docstring) {
     for (var regexArray, paramsList = [], seeList = [], examplesList = []; null !== (regexArray = DOCSTRING_PARAM.exec(docstring)); ) paramsList.push([ regexArray[1] || "", regexArray[2] ]);
     for (;null !== (regexArray = DOCSTRING_SEE.exec(docstring)); ) seeList.push([ regexArray[1], regexArray[2] ]);
     for (;null !== (regexArray = DOCSTRING_EXAMPLE.exec(docstring)); ) examplesList.push(regexArray[1]);
