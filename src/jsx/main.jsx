@@ -1,6 +1,6 @@
 
 // the maximum number of documentation artifacts that will be displayed at a time
-var MAX_DOCS_SHOWN = 30;
+var MAX_DOCS_SHOWN = 50;
 
 var DocumentBox = React.createClass({
     getInitialState: function() {
@@ -183,14 +183,25 @@ var DocumentItem = React.createClass({
     
     renderCallable: function() {
         var parsedDocstring = parseDocstring(this.props.docstring || "");
+        
+        // short and long descriptions //
+        var description;
+        if (parsedDocstring.shortDescription.length > 0) {
+            description = (
+                    <div>
+                    <p>{parsedDocstring.shortDescription}</p>
+                    <p>{parsedDocstring.longDescription}</p>
+                    </div>
+            );
+        }
+        
+        // params table // 
         var args = this.props.args || "";
         var argItems = args.replace(/[\(\)]+/g, "")
                 .split(' ');
-
         var types = parseType(this.props.type || "No args for function");
         var returnType = types[0];
         var inputTypes = types.slice(1);
-        
         var argumentItems = [];
         argItems.forEach(function(arg, index){
             var type = _.get(inputTypes, index, "");
@@ -204,7 +215,6 @@ var DocumentItem = React.createClass({
             if (!_.isUndefined(paramPair)) {
                 paramDescription = paramPair[1];
             }
-            
             argumentItems.push(
                     <tr key={index}>
                     <td>{arg}</td>
@@ -213,51 +223,66 @@ var DocumentItem = React.createClass({
                     </tr>
             );
         });
-        
-        var paramsTable = (
-                <table className="table ">
-                <thead> 
-                <tr>
-                <th>Parameter Name</th>
-                <th>Type</th>
-                <th>Parameter Description</th>
-                </tr>
-                </thead> 
-                <tbody>
-                {argumentItems}
-            </tbody>
-                </table>
-        );
-        
-        var shortDescription = _.get(parsedDocstring, 
-                                     'shortDescription', 
-                                     "No short description in docstring");
-        // console.log(parsedDocstring);
-        // console.log(this.props.docstring);
-        // if no args, don't render the args table
+        var paramsTable;
         if (args.length > 0){
-            return (<div>
-                    <p>{shortDescription}</p>
-                    <p>{parsedDocstring.longDescription}</p>
-                    {paramsTable}
+            paramsTable = (
+                    <div>                
+                    <h3>Parameters</h3>
+                    <table className="table">
+                    <thead> 
+                    <tr>
+                    <th>Parameter Name</th>
+                    <th>Type</th>
+                    <th>Parameter Description</th>
+                    </tr>
+                    </thead> 
+                    <tbody>{argumentItems}</tbody>
+                    </table>
                     </div>
-                   );
-        } else {
-            return (<div>
-                    <p>{shortDescription}</p>
-                    <p> {parsedDocstring.longDescription} </p>
-                    </div>
-                   );
+            );
         }
+        
+        var returns;
+        if (parsedDocstring.docstringReturn.length > 0){
+            returns = (
+                    <div>
+                    <h3>Returns</h3>
+                    <p> {parsedDocstring.returns}</p>
+                    </div>
+            );
+        }
+        
+        var sees;
+        if (parsedDocstring.docstringSees.length > 0){
+            // console.log(parsedDocstring.docstringSees);
+            var seeItems = parsedDocstring.docstringSees.map(function(x, index) {
+                return (<p> <a href="#{x[0]}">{x[1]}</a></p>);
+            });
+            sees = (
+                    <div>
+                    <h3>See</h3>
+                    {seeItems}
+                    </div>
+            );
+        }
+        
+        
+        return (<div>
+                {description}
+                {paramsTable}
+                {returns}
+                {sees}
+                </div>
+               );
         
     },
     
     renderNonCallables: function(){
         var parsedDocstring = parseDocstring(this.props.docstring || "");
-        return (<div className="documentItem">
-                    <p>{parsedDocstring.shortDescription}</p>
-                    <p>{parsedDocstring.longDescription} </p>
-                    </div>);
+        return (<div>
+                <p>{parsedDocstring.shortDescription}</p>
+                <p>{parsedDocstring.longDescription} </p>
+                </div>);
     },
     
     renderPolyClosure: function(){
@@ -284,7 +309,6 @@ var DocumentItem = React.createClass({
         if (_.contains(['builtin', 'closure', 'named type', 'generic closure'], this.props.category)){
              body = this.renderCallable();
         } else if (this.props.category === "type alias" || this.props.category === "global var") {
-                   
              body = this.renderNonCallables();
         } else if (this.props.category === "polymorphic closure") {
              body = this.renderPolyClosure();
