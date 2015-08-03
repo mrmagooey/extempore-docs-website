@@ -12,11 +12,14 @@
 
 .documentItem.odd {
     background-color: #eee;
-    
 }
 
 .documentItem .documentName {
     margin-top: 0px;
+}
+
+.documentItem h3 {
+    font-size:16px;
 }
 
 .categoryButton {
