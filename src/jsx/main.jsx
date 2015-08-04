@@ -183,53 +183,82 @@ var DocumentList = React.createClass({
 
 var DocumentItem = React.createClass({
     
-    renderCallable: function() {
-        var parsedDocstring = parseDocstring(this.props.docstring || "");
-        
-        // short and long descriptions //
-        var description;
-        if (parsedDocstring.shortDescription.length > 0) {
-            description = (
-                    <div>
-                    <p>{parsedDocstring.shortDescription}</p>
-                    <p>{parsedDocstring.longDescription}</p>
-                    </div>
-            );
-        }
-        
-        // params table // 
-        var args = this.props.args || "";
-        var argItems = args.replace(/[\(\)]+/g, "")
-                .split(' ');
-        var types = parseType(this.props.type || "No args for function");
-        var returnType = types[0];
-        var inputTypes = types.slice(1);
-        var argumentItems = [];
-        argItems.forEach(function(arg, index){
-            var type = _.get(inputTypes, index, "");
-            var paramPair = _.chain(parsedDocstring.docstringParams)
-                    .filter(function(x, index) {
-                        return x[0] === arg;
-                    })
-                    .first()
-                    .value();
-            var paramDescription;
-            if (!_.isUndefined(paramPair)) {
-                paramDescription = paramPair[1];
-            }
-            argumentItems.push(
-                    <tr key={index}>
-                    <td>{arg}</td>
-                    <td>{type}</td>
-                    <td>{paramDescription}</td>
+    fragmentSees: function(ds) {
+        if (ds.docstringSees.length > 0){
+            var seeItems = ds.docstringSees.map(function(x, index) {
+                var hrefHash = "#" + x[0];
+                return (<p> <a href={hrefHash}>{x[1]}</a></p>);
+            });
+            return (
+                    <tr>
+                    <td>
+                    See
+                    </td>
+                    <td>
+                    {seeItems}
+                    </td>
                     </tr>
             );
-        });
-        var paramsTable;
-        if (args.length > 0){
-            paramsTable = (
-                    <div>                
-                    <h3>Parameters</h3>
+        } else {
+            return undefined;
+        }
+        
+    },
+    
+    fragmentReturns: function(ds) {
+        if (_.isNull(this.props.args)){
+            return undefined;
+        } else {
+            var returnType = this.props.args[0];        
+            if (ds.docstringReturn.length > 0){
+                return  (
+                        <tr>
+                        <td>
+                        Returns
+                    </td>
+                        <td>
+                        <p> {ds.returns} </p>
+                        </td>
+                        </tr>
+                );
+            } else {
+                return undefined;
+            }
+        }
+    },
+
+    fragmentParams: function(ds) {
+        if (_.isNull(this.props.args)){
+            return undefined;
+        } else {
+            var inputTypes = this.props.args.slice(1);
+            var argumentItems = [];
+            inputTypes.forEach(function(arg, index){
+                var paramDescription = _.chain(ds.docstringParams)
+                        .filter(function(x, index) {
+                            // match docstring and types on argument name
+                            return x[0] === arg[0];
+                        })
+                        .pluck(1)
+                        .first()
+                        .value();
+                
+                argumentItems.push(
+                        <tr key={index}>
+                        <td>{arg[0]}</td>
+                        <td>{arg[1]}</td>
+                        <td>{paramDescription}</td>
+                        </tr>
+                );
+            });
+            
+            return (
+                    <tr>
+                    <td>
+                    Parameters
+                </td>
+                    
+                    <td>
                     <table className="table">
                     <thead> 
                     <tr>
@@ -240,62 +269,63 @@ var DocumentItem = React.createClass({
                     </thead> 
                     <tbody>{argumentItems}</tbody>
                     </table>
-                    </div>
+                    </td>
+                    
+                    </tr>
             );
+ 
+        }
+    },
+
+    fragmentDescription: function(ds) {
+        if (ds.longDescription.length > 0) {
+            return (
+                    <tr>
+                    <td> <p>Description</p> </td>
+                    <td> <p> {ds.longDescription} </p> </td>
+                    </tr>
+            );
+        } else {
+            return undefined;
         }
         
-        var returns;
-        if (parsedDocstring.docstringReturn.length > 0){
-            returns = (
-                    <div>
-                    <h3>Returns</h3>
-                    <p> {parsedDocstring.returns}</p>
-                    </div>
-            );
-        }
-        
-        var sees;
-        if (parsedDocstring.docstringSees.length > 0){
-            var seeItems = parsedDocstring.docstringSees.map(function(x, index) {
-                var hrefHash = "#" + x[0];
-                return (<p> <a href={hrefHash}>{x[1]}</a></p>);
-            });
-            sees = (
-                    <div>
-                    <h3>See</h3>
-                    {seeItems}
-                    </div>
-            );
-        }
-        
-        return (<div>
+    },
+    
+    renderCallable: function() {
+        var parsedDocstring = parseDocstring(this.props.docstring || "");
+        var description = this.fragmentDescription(parsedDocstring);
+        var paramsTable = this.fragmentParams(parsedDocstring);
+        var returns = this.fragmentReturns(parsedDocstring);
+        var sees = this.fragmentSees(parsedDocstring);
+
+        return (<tbody className="table">
                 {description}
                 {paramsTable}
                 {returns}
                 {sees}
-                </div>
+                </tbody>
                );
     },
     
     renderNonCallables: function(){
         var parsedDocstring = parseDocstring(this.props.docstring || "");
-        return (<div>
-                <p>{parsedDocstring.shortDescription}</p>
-                <p>{parsedDocstring.longDescription} </p>
-                </div>);
+        var description = this.fragmentDescription(parsedDocstring);
+        return (<tbody>
+                {description}
+                </tbody>);
     },
     
     renderPolyClosure: function(){
         var parsedDocstring = parseDocstring(this.props.docstring || "");
-        return (<div>
-                <p>{parsedDocstring.shortDescription}</p>
-                <p>{parsedDocstring.longDescription}</p>
-                <p>Types: {this.props.type}</p>
-                </div>);
+        var description = this.fragmentDescription(parsedDocstring);
+        return (<tbody>
+                {description}
+                </tbody>);
     },
     
     render: function(){
         var parsedDocstring = parseDocstring(this.props.docstring || "");
+        var body;
         var functionHeading = (
                 <h2 className="documentName code">
                 {this.props.name}
@@ -304,24 +334,28 @@ var DocumentItem = React.createClass({
             </span>
                 </h2>
         );
-        var body;
         
         if (_.contains(['builtin', 'closure', 'named type', 'generic closure'], this.props.category)){
-             body = this.renderCallable();
+            body = this.renderCallable();
         } else if (this.props.category === "type alias" || this.props.category === "global var") {
-             body = this.renderNonCallables();
+            body = this.renderNonCallables();
         } else if (this.props.category === "polymorphic closure") {
-             body = this.renderPolyClosure();
+            body = this.renderPolyClosure();
         }
         
         var classes = 'documentItem';
-        if (this.props.odd){
-            classes += ' odd';
-        } 
+        // if (this.props.odd){
+        //     classes += ' odd';
+        // }
         
         return (<div className={classes}>
                 {functionHeading}
+                <p>{parsedDocstring.shortDescription}</p>
+                <table className="table">
+                <thead>
+                </thead>
                 {body}
+                </table>
                 </div>);
     },
 });

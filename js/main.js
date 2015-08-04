@@ -1,4 +1,4 @@
-/*! extempore-docs-website 2015-08-03 */
+/*! extempore-docs-website 2015-08-04 */
 "use strict";
 
 var MAX_DOCS_SHOWN = 50, DocumentBox = React.createClass({
@@ -132,56 +132,67 @@ var MAX_DOCS_SHOWN = 50, DocumentBox = React.createClass({
     }
 }), DocumentItem = React.createClass({
     displayName: "DocumentItem",
-    renderCallable: function() {
-        var description, parsedDocstring = parseDocstring(this.props.docstring || "");
-        parsedDocstring.shortDescription.length > 0 && (description = React.createElement("div", null, React.createElement("p", null, parsedDocstring.shortDescription), React.createElement("p", null, parsedDocstring.longDescription)));
-        var args = this.props.args || "", argItems = args.replace(/[\(\)]+/g, "").split(" "), types = parseType(this.props.type || "No args for function"), inputTypes = (types[0], 
-        types.slice(1)), argumentItems = [];
-        argItems.forEach(function(arg, index) {
-            var paramDescription, type = _.get(inputTypes, index, ""), paramPair = _.chain(parsedDocstring.docstringParams).filter(function(x, index) {
-                return x[0] === arg;
-            }).first().value();
-            _.isUndefined(paramPair) || (paramDescription = paramPair[1]), argumentItems.push(React.createElement("tr", {
-                key: index
-            }, React.createElement("td", null, arg), React.createElement("td", null, type), React.createElement("td", null, paramDescription)));
-        });
-        var paramsTable;
-        args.length > 0 && (paramsTable = React.createElement("div", null, React.createElement("h3", null, "Parameters"), React.createElement("table", {
-            className: "table"
-        }, React.createElement("thead", null, React.createElement("tr", null, React.createElement("th", null, "Parameter Name"), React.createElement("th", null, "Type"), React.createElement("th", null, "Parameter Description"))), React.createElement("tbody", null, argumentItems))));
-        var returns;
-        parsedDocstring.docstringReturn.length > 0 && (returns = React.createElement("div", null, React.createElement("h3", null, "Returns"), React.createElement("p", null, " ", parsedDocstring.returns)));
-        var sees;
-        if (parsedDocstring.docstringSees.length > 0) {
-            var seeItems = parsedDocstring.docstringSees.map(function(x, index) {
+    fragmentSees: function(ds) {
+        if (ds.docstringSees.length > 0) {
+            var seeItems = ds.docstringSees.map(function(x, index) {
                 var hrefHash = "#" + x[0];
                 return React.createElement("p", null, " ", React.createElement("a", {
                     href: hrefHash
                 }, x[1]));
             });
-            sees = React.createElement("div", null, React.createElement("h3", null, "See"), seeItems);
+            return React.createElement("tr", null, React.createElement("td", null, "See"), React.createElement("td", null, seeItems));
         }
-        return React.createElement("div", null, description, paramsTable, returns, sees);
+        return void 0;
+    },
+    fragmentReturns: function(ds) {
+        if (_.isNull(this.props.args)) return void 0;
+        this.props.args[0];
+        return ds.docstringReturn.length > 0 ? React.createElement("tr", null, React.createElement("td", null, "Returns"), React.createElement("td", null, React.createElement("p", null, " ", ds.returns, " "))) : void 0;
+    },
+    fragmentParams: function(ds) {
+        if (_.isNull(this.props.args)) return void 0;
+        var inputTypes = this.props.args.slice(1), argumentItems = [];
+        return inputTypes.forEach(function(arg, index) {
+            var paramDescription = _.chain(ds.docstringParams).filter(function(x, index) {
+                return x[0] === arg[0];
+            }).pluck(1).first().value();
+            argumentItems.push(React.createElement("tr", {
+                key: index
+            }, React.createElement("td", null, arg[0]), React.createElement("td", null, arg[1]), React.createElement("td", null, paramDescription)));
+        }), React.createElement("tr", null, React.createElement("td", null, "Parameters"), React.createElement("td", null, React.createElement("table", {
+            className: "table"
+        }, React.createElement("thead", null, React.createElement("tr", null, React.createElement("th", null, "Parameter Name"), React.createElement("th", null, "Type"), React.createElement("th", null, "Parameter Description"))), React.createElement("tbody", null, argumentItems))));
+    },
+    fragmentDescription: function(ds) {
+        return ds.longDescription.length > 0 ? React.createElement("tr", null, React.createElement("td", null, " ", React.createElement("p", null, "Description"), " "), React.createElement("td", null, " ", React.createElement("p", null, " ", ds.longDescription, " "), " ")) : void 0;
+    },
+    renderCallable: function() {
+        var parsedDocstring = parseDocstring(this.props.docstring || ""), description = this.fragmentDescription(parsedDocstring), paramsTable = this.fragmentParams(parsedDocstring), returns = this.fragmentReturns(parsedDocstring), sees = this.fragmentSees(parsedDocstring);
+        return React.createElement("tbody", {
+            className: "table"
+        }, description, paramsTable, returns, sees);
     },
     renderNonCallables: function() {
-        var parsedDocstring = parseDocstring(this.props.docstring || "");
-        return React.createElement("div", null, React.createElement("p", null, parsedDocstring.shortDescription), React.createElement("p", null, parsedDocstring.longDescription, " "));
+        var parsedDocstring = parseDocstring(this.props.docstring || ""), description = this.fragmentDescription(parsedDocstring);
+        return React.createElement("tbody", null, description);
     },
     renderPolyClosure: function() {
-        var parsedDocstring = parseDocstring(this.props.docstring || "");
-        return React.createElement("div", null, React.createElement("p", null, parsedDocstring.shortDescription), React.createElement("p", null, parsedDocstring.longDescription), React.createElement("p", null, "Types: ", this.props.type));
+        var parsedDocstring = parseDocstring(this.props.docstring || ""), description = this.fragmentDescription(parsedDocstring);
+        return React.createElement("tbody", null, description);
     },
     render: function() {
-        var body, functionHeading = (parseDocstring(this.props.docstring || ""), React.createElement("h2", {
+        var body, parsedDocstring = parseDocstring(this.props.docstring || ""), functionHeading = React.createElement("h2", {
             className: "documentName code"
         }, this.props.name, React.createElement("span", {
             className: "documentCategory"
-        }, this.props.category)));
+        }, this.props.category));
         _.contains([ "builtin", "closure", "named type", "generic closure" ], this.props.category) ? body = this.renderCallable() : "type alias" === this.props.category || "global var" === this.props.category ? body = this.renderNonCallables() : "polymorphic closure" === this.props.category && (body = this.renderPolyClosure());
         var classes = "documentItem";
-        return this.props.odd && (classes += " odd"), React.createElement("div", {
+        return React.createElement("div", {
             className: classes
-        }, functionHeading, body);
+        }, functionHeading, React.createElement("p", null, parsedDocstring.shortDescription), React.createElement("table", {
+            className: "table"
+        }, React.createElement("thead", null), body));
     }
 }), SearchForm = React.createClass({
     displayName: "SearchForm",
