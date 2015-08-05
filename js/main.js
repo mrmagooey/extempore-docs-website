@@ -1,4 +1,4 @@
-/*! extempore-docs-website 2015-08-04 */
+/*! extempore-docs-website 2015-08-05 */
 "use strict";
 
 var MAX_DOCS_SHOWN = 50, DocumentBox = React.createClass({
@@ -132,25 +132,45 @@ var MAX_DOCS_SHOWN = 50, DocumentBox = React.createClass({
     }
 }), DocumentItem = React.createClass({
     displayName: "DocumentItem",
+    fragmentPoly: function(ds) {
+        if (ds.docstringPoly.length > 0) {
+            var polyItems = ds.docstringPoly.map(function(x, index) {
+                var hrefHash = "#" + x[0];
+                return React.createElement("p", {
+                    key: x[0]
+                }, " ", React.createElement("a", {
+                    href: hrefHash
+                }, x[0], ":", x[1]));
+            });
+            return React.createElement("tr", null, React.createElement("td", {
+                className: "col-md-2 description"
+            }, "Poly"), React.createElement("td", null, polyItems));
+        }
+        return void 0;
+    },
     fragmentSees: function(ds) {
         if (ds.docstringSees.length > 0) {
             var seeItems = ds.docstringSees.map(function(x, index) {
                 var hrefHash = "#" + x[0];
                 return React.createElement("p", null, " ", React.createElement("a", {
                     href: hrefHash
-                }, x[1]));
+                }, x[0], " - ", x[1]));
             });
-            return React.createElement("tr", null, React.createElement("td", null, "See"), React.createElement("td", null, seeItems));
+            return React.createElement("tr", null, React.createElement("td", {
+                className: "col-md-2 description"
+            }, "See"), React.createElement("td", null, seeItems));
         }
         return void 0;
     },
     fragmentReturns: function(ds) {
         if (_.isNull(this.props.args)) return void 0;
         this.props.args[0];
-        return ds.docstringReturn.length > 0 ? React.createElement("tr", null, React.createElement("td", null, "Returns"), React.createElement("td", null, React.createElement("p", null, " ", ds.returns, " "))) : void 0;
+        return ds.docstringReturn.length > 0 ? React.createElement("tr", null, React.createElement("td", {
+            className: "description"
+        }, "Returns"), React.createElement("td", null, React.createElement("p", null, " ", ds.returns, " "))) : void 0;
     },
     fragmentParams: function(ds) {
-        if (_.isNull(this.props.args)) return void 0;
+        if (_.isNull(this.props.args) || this.props.args.length < 2) return void 0;
         var inputTypes = this.props.args.slice(1), argumentItems = [];
         return inputTypes.forEach(function(arg, index) {
             var paramDescription = _.chain(ds.docstringParams).filter(function(x, index) {
@@ -159,26 +179,28 @@ var MAX_DOCS_SHOWN = 50, DocumentBox = React.createClass({
             argumentItems.push(React.createElement("tr", {
                 key: index
             }, React.createElement("td", null, arg[0]), React.createElement("td", null, arg[1]), React.createElement("td", null, paramDescription)));
-        }), React.createElement("tr", null, React.createElement("td", null, "Parameters"), React.createElement("td", null, React.createElement("table", {
+        }), React.createElement("tr", null, React.createElement("td", {
+            className: "col-md-2 description"
+        }, " Parameters "), React.createElement("td", null, React.createElement("table", {
             className: "table"
         }, React.createElement("thead", null, React.createElement("tr", null, React.createElement("th", null, "Parameter Name"), React.createElement("th", null, "Type"), React.createElement("th", null, "Parameter Description"))), React.createElement("tbody", null, argumentItems))));
     },
     fragmentDescription: function(ds) {
-        return ds.longDescription.length > 0 ? React.createElement("tr", null, React.createElement("td", null, " ", React.createElement("p", null, "Description"), " "), React.createElement("td", null, " ", React.createElement("p", null, " ", ds.longDescription, " "), " ")) : void 0;
+        return ds.longDescription.length > 0 ? React.createElement("tr", null, React.createElement("td", {
+            className: "col-md-2 description"
+        }, React.createElement("p", null, "Long Description")), React.createElement("td", null, React.createElement("p", null, ds.longDescription))) : void 0;
     },
     renderCallable: function() {
         var parsedDocstring = parseDocstring(this.props.docstring || ""), description = this.fragmentDescription(parsedDocstring), paramsTable = this.fragmentParams(parsedDocstring), returns = this.fragmentReturns(parsedDocstring), sees = this.fragmentSees(parsedDocstring);
-        return React.createElement("tbody", {
-            className: "table"
-        }, description, paramsTable, returns, sees);
+        return React.createElement("tbody", null, description, paramsTable, returns, sees);
     },
     renderNonCallables: function() {
         var parsedDocstring = parseDocstring(this.props.docstring || ""), description = this.fragmentDescription(parsedDocstring);
         return React.createElement("tbody", null, description);
     },
     renderPolyClosure: function() {
-        var parsedDocstring = parseDocstring(this.props.docstring || ""), description = this.fragmentDescription(parsedDocstring);
-        return React.createElement("tbody", null, description);
+        var parsedDocstring = parseDocstring(this.props.docstring || ""), description = this.fragmentDescription(parsedDocstring), sees = this.fragmentSees(parsedDocstring), polys = this.fragmentPoly(parsedDocstring);
+        return React.createElement("tbody", null, description, polys, sees);
     },
     render: function() {
         var body, parsedDocstring = parseDocstring(this.props.docstring || ""), functionHeading = React.createElement("h2", {
@@ -188,10 +210,10 @@ var MAX_DOCS_SHOWN = 50, DocumentBox = React.createClass({
         }, this.props.category));
         _.contains([ "builtin", "closure", "named type", "generic closure" ], this.props.category) ? body = this.renderCallable() : "type alias" === this.props.category || "global var" === this.props.category ? body = this.renderNonCallables() : "polymorphic closure" === this.props.category && (body = this.renderPolyClosure());
         var classes = "documentItem";
-        return React.createElement("div", {
+        return this.props.odd && (classes += " odd"), React.createElement("div", {
             className: classes
         }, functionHeading, React.createElement("p", null, parsedDocstring.shortDescription), React.createElement("table", {
-            className: "table"
+            className: "table table-bordered"
         }, React.createElement("thead", null), body));
     }
 }), SearchForm = React.createClass({
@@ -315,16 +337,18 @@ var parseType = function(typeString) {
     currentState = states.start;
     for (var i = 0; i < typeString.length; i++) currentState = currentState(typeString[i]);
     return typesList;
-}, SHORT_DESCRIPTION_RE = /^(.*)(\n|$)/, LONG_DESCRIPTION_RE = /(?:[\n\r]+)(?!@)([\w\s\S]*?)(?:(\n+@)|$)/, DOCSTRING_PARAM = /@param(?: )?(\w*)? - (.*)/gm, DOCSTRING_RETURN = /@return(?:.*?) - (.*)/gm, DOCSTRING_SEE = /@see (.*?) - (.*)/g, DOCSTRING_EXAMPLE = /@example([\w\s\S]*?)(\n@|$)/g, parseDocstring = function(docstring) {
-    for (var regexArray, paramsList = [], seeList = [], examplesList = []; null !== (regexArray = DOCSTRING_PARAM.exec(docstring)); ) paramsList.push([ regexArray[1] || "", regexArray[2] ]);
+}, SHORT_DESCRIPTION_RE = /^(.*)(\n|$)/, LONG_DESCRIPTION_RE = /(?:[\n\r]+)(?!@)([\w\s\S]*?)(?:(\n+@)|$)/, DOCSTRING_PARAM = /@param(?: )?(\w*)? - (.*)/gm, DOCSTRING_RETURN = /@return(?:.*?) - (.*)/gm, DOCSTRING_SEE = /@see (.*?) - (.*)/g, DOCSTRING_POLY = /@poly (.*?):(.*)/g, DOCSTRING_EXAMPLE = /@example([\w\s\S]*?)(\n@|$)/g, parseDocstring = function(docstring) {
+    for (var regexArray, paramsList = [], seeList = [], examplesList = [], polyList = []; null !== (regexArray = DOCSTRING_PARAM.exec(docstring)); ) paramsList.push([ regexArray[1] || "", regexArray[2] ]);
     for (;null !== (regexArray = DOCSTRING_SEE.exec(docstring)); ) seeList.push([ regexArray[1], regexArray[2] ]);
     for (;null !== (regexArray = DOCSTRING_EXAMPLE.exec(docstring)); ) examplesList.push(regexArray[1]);
+    for (;null !== (regexArray = DOCSTRING_POLY.exec(docstring)); ) polyList.push([ regexArray[1], regexArray[2] ]);
     return {
         shortDescription: _.get(SHORT_DESCRIPTION_RE.exec(docstring), 1, ""),
         longDescription: _.get(LONG_DESCRIPTION_RE.exec(docstring), 1, ""),
         docstringParams: paramsList,
         docstringReturn: _.get(DOCSTRING_RETURN.exec(docstring), 1, ""),
         docstringSees: seeList,
-        docstringExamples: examplesList
+        docstringExamples: examplesList,
+        docstringPoly: polyList
     };
 };
