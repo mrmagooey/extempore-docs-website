@@ -10,9 +10,9 @@
     padding: 15px 10px 5px 10px;
 }
 
-.documentItem.odd {
-    background-color: #eee;
-}
+/* .documentItem.odd { */
+/*     background-color: #eee; */
+/* } */
 
 .documentItem .documentName {
     margin-top: 0px;
