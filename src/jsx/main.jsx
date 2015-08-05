@@ -264,8 +264,8 @@ var DocumentItem = React.createClass({
                         .value();
                 argumentItems.push(
                         <tr key={index}>
-                        <td>{arg[0]}</td>
-                        <td>{arg[1]}</td>
+                        <td className="code">{arg[0]}</td>
+                        <td className="code">{arg[1]}</td>
                         <td>{paramDescription}</td>
                         </tr>
                 );
