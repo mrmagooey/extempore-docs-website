@@ -35,6 +35,10 @@
     background-color: grey;
 }
 
+code {
+    font-family: 'Source Code Pro';
+}
+
 .code {
     font-family: 'Source Code Pro';
 }
