@@ -178,12 +178,29 @@ var MAX_DOCS_SHOWN = 50, DocumentBox = React.createClass({
             }).pluck(1).first().value();
             argumentItems.push(React.createElement("tr", {
                 key: index
-            }, React.createElement("td", null, arg[0]), React.createElement("td", null, arg[1]), React.createElement("td", null, paramDescription)));
+            }, React.createElement("td", {
+                className: "code"
+            }, arg[0]), React.createElement("td", {
+                className: "code"
+            }, arg[1]), React.createElement("td", null, paramDescription)));
         }), React.createElement("tr", null, React.createElement("td", {
             className: "col-md-2 description"
         }, " Parameters "), React.createElement("td", null, React.createElement("table", {
             className: "table"
         }, React.createElement("thead", null, React.createElement("tr", null, React.createElement("th", null, "Parameter Name"), React.createElement("th", null, "Type"), React.createElement("th", null, "Parameter Description"))), React.createElement("tbody", null, argumentItems))));
+    },
+    fragmentExample: function(ds) {
+        if (ds.docstringExamples.length > 0) {
+            var exampleItems = ds.docstringExamples.map(function(x, index) {
+                return React.createElement("p", {
+                    key: index
+                }, React.createElement("code", null, x));
+            });
+            return React.createElement("tr", null, React.createElement("td", {
+                className: "col-md-2 description"
+            }, "Examples"), React.createElement("td", null, exampleItems));
+        }
+        return void 0;
     },
     fragmentDescription: function(ds) {
         return ds.longDescription.length > 0 ? React.createElement("tr", null, React.createElement("td", {
@@ -191,8 +208,8 @@ var MAX_DOCS_SHOWN = 50, DocumentBox = React.createClass({
         }, React.createElement("p", null, "Long Description")), React.createElement("td", null, React.createElement("p", null, ds.longDescription))) : void 0;
     },
     renderCallable: function() {
-        var parsedDocstring = parseDocstring(this.props.docstring || ""), description = this.fragmentDescription(parsedDocstring), paramsTable = this.fragmentParams(parsedDocstring), returns = this.fragmentReturns(parsedDocstring), sees = this.fragmentSees(parsedDocstring);
-        return React.createElement("tbody", null, description, paramsTable, returns, sees);
+        var parsedDocstring = parseDocstring(this.props.docstring || ""), description = this.fragmentDescription(parsedDocstring), paramsTable = this.fragmentParams(parsedDocstring), returns = this.fragmentReturns(parsedDocstring), sees = this.fragmentSees(parsedDocstring), examples = this.fragmentExample(parsedDocstring);
+        return React.createElement("tbody", null, description, paramsTable, returns, sees, examples);
     },
     renderNonCallables: function() {
         var parsedDocstring = parseDocstring(this.props.docstring || ""), description = this.fragmentDescription(parsedDocstring);

@@ -8383,7 +8383,7 @@
   "name": "String_cat2",
   "args": [["RETURN", "String*"], ["s1", "String*"], ["s2", "String*"]],
   "type": "[String*,String*,String*]*",
-  "docstring": "Concatenate 2 Strings\n\nIf one string is null, the alternate String will be returned.\nIf both strings are null an empty String will be returned \n\n@param s1 - first string to be concatenated\n@param s2 - second string to be concatenated\n@return - pointer to new String \n"
+  "docstring": "Concatenate 2 Strings\n\nIf one string is null, the alternate String will be returned.\nIf both strings are null an empty String will be returned \n\n@param s1 - first string to be concatenated\n@param s2 - second string to be concatenated\n@return - pointer to new String \n@example\n(String_cat2 (String \"hi\") (String \" world\"))"
 },
 {
   "category": "closure",

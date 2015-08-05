@@ -289,7 +289,28 @@ var DocumentItem = React.createClass({
             );
         }
     },
-
+    
+    fragmentExample: function(ds) {
+        if (ds.docstringExamples.length > 0) {
+            var exampleItems = ds.docstringExamples.map(function(x, index) {
+                return (<p key={index}><code>{x}</code></p>);
+            });
+            return (
+                    <tr>
+                    <td className="col-md-2 description">
+                    Examples
+                    </td>
+                    <td>
+                    {exampleItems}
+                    </td>
+                    </tr>
+            );
+            
+        } else {
+            return undefined;
+        }
+    },
+    
     fragmentDescription: function(ds) {
         if (ds.longDescription.length > 0) {
             return (
@@ -311,12 +332,13 @@ var DocumentItem = React.createClass({
         var paramsTable = this.fragmentParams(parsedDocstring);
         var returns = this.fragmentReturns(parsedDocstring);
         var sees = this.fragmentSees(parsedDocstring);
-        
+        var examples = this.fragmentExample(parsedDocstring);
         return (<tbody>
                 {description}
                 {paramsTable}
                 {returns}
                 {sees}
+                {examples}
                 </tbody>
                );
     },
