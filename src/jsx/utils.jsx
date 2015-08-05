@@ -163,13 +163,15 @@ var LONG_DESCRIPTION_RE = /(?:[\n\r]+)(?!@)([\w\s\S]*?)(?:(\n+@)|$)/;
 var DOCSTRING_PARAM = /@param(?: )?(\w*)? - (.*)/gm;
 var DOCSTRING_RETURN = /@return(?:.*?) - (.*)/gm;
 var DOCSTRING_SEE = /@see (.*?) - (.*)/g;
+var DOCSTRING_POLY = /@poly (.*?):(.*)/g;
 var DOCSTRING_EXAMPLE = /@example([\w\s\S]*?)(\n@|$)/g;
 
 var parseDocstring = function(docstring) {
     var regexArray, 
         paramsList = [],
         seeList = [],
-        examplesList = [];
+        examplesList = [],
+        polyList = [];
     
     while ((regexArray = DOCSTRING_PARAM.exec(docstring)) !== null) {
         paramsList.push([regexArray[1]|| "", regexArray[2]]);
@@ -183,6 +185,10 @@ var parseDocstring = function(docstring) {
         examplesList.push(regexArray[1]);
     }
     
+    while ((regexArray = DOCSTRING_POLY.exec(docstring)) !== null) {
+        polyList.push([regexArray[1], regexArray[2]]);
+    }
+    
     return {
         shortDescription: _.get(SHORT_DESCRIPTION_RE.exec(docstring), 1, ""),
         longDescription: _.get(LONG_DESCRIPTION_RE.exec(docstring), 1, ""),
@@ -190,6 +196,7 @@ var parseDocstring = function(docstring) {
         docstringReturn: _.get(DOCSTRING_RETURN.exec(docstring), 1, ""),
         docstringSees: seeList,
         docstringExamples: examplesList,
+        docstringPoly: polyList,
     };
 };
 

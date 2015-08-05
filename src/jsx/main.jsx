@@ -183,6 +183,27 @@ var DocumentList = React.createClass({
 
 var DocumentItem = React.createClass({
     
+    fragmentPoly: function(ds) {
+        if (ds.docstringPoly.length > 0){
+            var polyItems = ds.docstringPoly.map(function(x, index) {
+                var hrefHash = "#" + x[0];
+                return (<p key={x[0]}> <a href={hrefHash}>{x[0]}:{x[1]}</a></p>);
+            });
+            return (
+                    <tr>
+                    <td className="col-md-2 description">
+                    Poly
+                    </td>
+                    <td>
+                    {polyItems}
+                    </td>
+                    </tr>
+            );
+        } else {
+            return undefined;
+        }
+    },
+    
     fragmentSees: function(ds) {
         if (ds.docstringSees.length > 0){
             var seeItems = ds.docstringSees.map(function(x, index) {
@@ -310,8 +331,12 @@ var DocumentItem = React.createClass({
     renderNonCallables: function(){
         var parsedDocstring = parseDocstring(this.props.docstring || "");
         var description = this.fragmentDescription(parsedDocstring);
+        var sees = this.fragmentSees(parsedDocstring);
+        var polys = this.fragmentPoly(parsedDocstring);
         return (<tbody>
                 {description}
+                {polys}
+                {sees}
                 </tbody>);
     },
     
