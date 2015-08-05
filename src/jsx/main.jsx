@@ -208,11 +208,11 @@ var DocumentItem = React.createClass({
         if (ds.docstringSees.length > 0){
             var seeItems = ds.docstringSees.map(function(x, index) {
                 var hrefHash = "#" + x[0];
-                return (<p> <a href={hrefHash}>{x[1]}</a></p>);
+                return (<p> <a href={hrefHash}>{x[0]} - {x[1]}</a></p>);
             });
             return (
                     <tr>
-                    <td>
+                    <td className="col-md-2 description">
                     See
                     </td>
                     <td>
@@ -223,7 +223,6 @@ var DocumentItem = React.createClass({
         } else {
             return undefined;
         }
-        
     },
     
     fragmentReturns: function(ds) {
@@ -234,7 +233,7 @@ var DocumentItem = React.createClass({
             if (ds.docstringReturn.length > 0){
                 return  (
                         <tr>
-                        <td>
+                        <td className="description">
                         Returns
                     </td>
                         <td>
@@ -249,7 +248,7 @@ var DocumentItem = React.createClass({
     },
 
     fragmentParams: function(ds) {
-        if (_.isNull(this.props.args)){
+        if (_.isNull(this.props.args) || this.props.args.length < 2){
             return undefined;
         } else {
             var inputTypes = this.props.args.slice(1);
@@ -263,7 +262,6 @@ var DocumentItem = React.createClass({
                         .pluck(1)
                         .first()
                         .value();
-                
                 argumentItems.push(
                         <tr key={index}>
                         <td>{arg[0]}</td>
@@ -272,13 +270,9 @@ var DocumentItem = React.createClass({
                         </tr>
                 );
             });
-            
             return (
                     <tr>
-                    <td>
-                    Parameters
-                </td>
-                    
+                    <td className="col-md-2 description"> Parameters </td>
                     <td>
                     <table className="table">
                     <thead> 
@@ -291,10 +285,8 @@ var DocumentItem = React.createClass({
                     <tbody>{argumentItems}</tbody>
                     </table>
                     </td>
-                    
                     </tr>
             );
- 
         }
     },
 
@@ -302,14 +294,15 @@ var DocumentItem = React.createClass({
         if (ds.longDescription.length > 0) {
             return (
                     <tr>
-                    <td> <p>Description</p> </td>
-                    <td> <p> {ds.longDescription} </p> </td>
+                    <td className="col-md-2 description">
+                    <p>Long Description</p>
+                    </td>
+                    <td><p>{ds.longDescription}</p></td>
                     </tr>
             );
         } else {
             return undefined;
         }
-        
     },
     
     renderCallable: function() {
@@ -318,8 +311,8 @@ var DocumentItem = React.createClass({
         var paramsTable = this.fragmentParams(parsedDocstring);
         var returns = this.fragmentReturns(parsedDocstring);
         var sees = this.fragmentSees(parsedDocstring);
-
-        return (<tbody className="table">
+        
+        return (<tbody>
                 {description}
                 {paramsTable}
                 {returns}
@@ -331,6 +324,14 @@ var DocumentItem = React.createClass({
     renderNonCallables: function(){
         var parsedDocstring = parseDocstring(this.props.docstring || "");
         var description = this.fragmentDescription(parsedDocstring);
+        return (<tbody>
+                {description}
+                </tbody>);
+    },
+    
+    renderPolyClosure: function(){
+        var parsedDocstring = parseDocstring(this.props.docstring || "");
+        var description = this.fragmentDescription(parsedDocstring);
         var sees = this.fragmentSees(parsedDocstring);
         var polys = this.fragmentPoly(parsedDocstring);
         return (<tbody>
@@ -340,17 +341,8 @@ var DocumentItem = React.createClass({
                 </tbody>);
     },
     
-    renderPolyClosure: function(){
-        var parsedDocstring = parseDocstring(this.props.docstring || "");
-        var description = this.fragmentDescription(parsedDocstring);
-        return (<tbody>
-                {description}
-                </tbody>);
-    },
-    
     render: function(){
         var parsedDocstring = parseDocstring(this.props.docstring || "");
-        var body;
         var functionHeading = (
                 <h2 className="documentName code">
                 {this.props.name}
@@ -359,7 +351,7 @@ var DocumentItem = React.createClass({
             </span>
                 </h2>
         );
-        
+        var body;
         if (_.contains(['builtin', 'closure', 'named type', 'generic closure'], this.props.category)){
             body = this.renderCallable();
         } else if (this.props.category === "type alias" || this.props.category === "global var") {
@@ -369,14 +361,14 @@ var DocumentItem = React.createClass({
         }
         
         var classes = 'documentItem';
-        // if (this.props.odd){
-        //     classes += ' odd';
-        // }
+        if (this.props.odd){
+            classes += ' odd';
+        }
         
         return (<div className={classes}>
                 {functionHeading}
                 <p>{parsedDocstring.shortDescription}</p>
-                <table className="table">
+                <table className="table table-bordered">
                 <thead>
                 </thead>
                 {body}
