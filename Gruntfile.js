@@ -10,8 +10,8 @@ module.exports = function(grunt) {
         uglify: {
             options: {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
-                mangle: false,
-                beautify: true,
+                // mangle: false,
+                // beautify: true,
             },
             build_third_party: {
                 src: [
