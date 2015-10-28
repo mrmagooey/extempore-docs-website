@@ -1,5 +1,5458 @@
 [
 {
+  "category": "scheme closure",
+  "name": "zero?",
+  "args": [["n", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "xtmdoc-write-alist-as-json",
+  "args": [["xtmdoc-alist", ""],["file-port", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "xtmdoc-write-alist-args-as-json",
+  "args": [["xtmdoc-alist", ""],["file-port", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "xtmdoc-typealias-handler",
+  "args": [["name-sym", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "xtmdoc-strip-arg-type-annotations",
+  "args": [["form", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "xtmdoc-scheme-macro-handler",
+  "args": [["name-sym", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "xtmdoc-scheme-function-handler",
+  "args": [["name-sym", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "xtmdoc-polytype-handler",
+  "args": [["name-sym", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "xtmdoc-polyfunc-handler",
+  "args": [["name-sym", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "xtmdoc-nativefunc-handler",
+  "args": [["name-sym", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "xtmdoc-namedtype-handler",
+  "args": [["name-sym", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "xtmdoc-globalvar-handler",
+  "args": [["name-sym", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "xtmdoc-get-xtlang-genericfunc-args",
+  "args": [["fn-sym", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "xtmdoc-get-args-from-form",
+  "args": [["form", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "xtmdoc-generictype-handler",
+  "args": [["name-sym", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "xtmdoc-genericfunc-handler",
+  "args": [["name-sym", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "xtmdoc-export-caches-to-json",
+  "args": [["file-path", ""],["include-nativefuncs?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "xtmdoc-documentation-function",
+  "args": [["name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "xtmdoc-closure-handler",
+  "args": [["name-sym", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "xtmdoc-clean-nativefunc-alist",
+  "args": [["closure-alists", ""],["nativefunc-alists", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "xtmdoc-builtin-handler",
+  "args": [["name-sym", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "xtmdoc-all-doc-alists",
+  "args": [["include-nativefuncs?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "xtmdoc-alist-lessthan",
+  "args": [["left", ""],["right", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "xtm_audio_setup",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "with-output-to-file",
+  "args": [["s", ""],["p", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "with-input-output-from-to-files",
+  "args": [["si", ""],["so", ""],["p", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "with-input-from-file",
+  "args": [["s", ""],["p", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "weighted-selection",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "vector-fill!",
+  "args": [["v", ""],["e", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "vector-equal?",
+  "args": [["x", ""],["y", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "vector->list",
+  "args": [["v", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "unzip1-with-cdr-iterative",
+  "args": [["lists", ""],["cars", ""],["cdrs", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "unzip1-with-cdr",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "tri-wave",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "tree-member",
+  "args": [["mem", ""],["tree", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "tree-copy",
+  "args": [["tree", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "throw",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "tail",
+  "args": [["stream", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "sys:wait",
+  "args": [["until-time", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "sys:unset-env",
+  "args": [["var-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "sys:sleep",
+  "args": [["duration", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "sys:set-env",
+  "args": [["var-name", ""],["value", ""],["replace?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "sys:run-tests",
+  "args": [["test-files", ""],["print?", ""],["quit-on-exit?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "sys:load-preload-check",
+  "args": [["libname", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "sys:load-escape",
+  "args": [["msg", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "sys:load-dylib",
+  "args": [["dylib-path", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "sys:load",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "sys:livecoding-error-hook?",
+  "args": [["on?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "sys:get-env",
+  "args": [["var-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "sys:file-path-components",
+  "args": [["file-path", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "sys:compile-init-ll",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "suppress-compiler-messages",
+  "args": [["bool", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "succ",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "string>?",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "string>=?",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "string=?",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "string<?",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "string<=?",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "string-fill!",
+  "args": [["s", ""],["e", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "string-copy",
+  "args": [["str", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "string-cmp?",
+  "args": [["chcmp", ""],["cmp", ""],["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "string-ci>?",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "string-ci>=?",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "string-ci=?",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "string-ci<?",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "string-ci<=?",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "string->sexpr",
+  "args": [["str", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "string->number",
+  "args": [["str", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "string->list",
+  "args": [["s", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "string->anyatom",
+  "args": [["str", ""],["pred", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "string",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "slide",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "schedule",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "scan",
+  "args": [["proc", ""],["val", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "sanitize-platform-path",
+  "args": [["path", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "samples->clock",
+  "args": [["time", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "s-p-a-c-e-s___",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "rotate",
+  "args": [["lst", ""],["amt", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "replace-first",
+  "args": [["obj-a", ""],["obj-b", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "replace-all",
+  "args": [["lst", ""],["alst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "remv",
+  "args": [["val", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "remq",
+  "args": [["val", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "remove-first",
+  "args": [["obj", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "remove-all",
+  "args": [["obj", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "remove",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "regex:type-split",
+  "args": [["str", ""],["char", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "regex:replace-everything",
+  "args": [["str", ""],["finds", ""],["replaces", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "regex:replace-all",
+  "args": [["str", ""],["replace", ""],["with", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "rect",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "range-limit",
+  "args": [["value", ""],["min", ""],["max", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "range",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "random-next",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "random-envelope",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "random",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "ramp",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "push-handler",
+  "args": [["proc", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "printf",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "print-error",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pred",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "positive?",
+  "args": [["n", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pop-handler",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "play-note",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "permutations",
+  "args": [["set", ""],["size", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:transpose",
+  "args": [["val", ""],["lst", ""],["pc", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:scale-from-pc",
+  "args": [["pc", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:scale-from-chord",
+  "args": [["root", ""],["chord", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:scale",
+  "args": [["root", ""],["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:relative",
+  "args": [["pitch", ""],["i", ""],["pc", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:random",
+  "args": [["lower", ""],["upper", ""],["pc", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:quantize-low",
+  "args": [["pitch-in", ""],["pc", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:quantize-list",
+  "args": [["lst", ""],["pc", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:quantize",
+  "args": [["pitch-in", ""],["pc", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:pc",
+  "args": [["pitch", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:move-chord",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:melody-by-step",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:make-chord-fixed",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:make-chord",
+  "args": [["lower", ""],["upper", ""],["number", ""],["pc", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:invert",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:from-steps",
+  "args": [["pitch", ""],["steps", ""],["pc", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:from-intervals",
+  "args": [["plst", ""],["intervals", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:find-closest",
+  "args": [["plst", ""],["pc", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:distance-of-chord",
+  "args": [["chd", ""],["pc", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:distance",
+  "args": [["pitch", ""],["pc", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:diatonic",
+  "args": [["root", ""],["maj-min", ""],["degree", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:degree",
+  "args": [["value", ""],["pc", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:closest-pitch",
+  "args": [["pc", ""],["pitches", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:closest-pc",
+  "args": [["pitch", ""],["pc", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:chord-options",
+  "args": [["root", ""],["maj-min", ""],["pc", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:chord->scale",
+  "args": [["root", ""],["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:chord",
+  "args": [["root", ""],["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "pc:?",
+  "args": [["pitch", ""],["pc", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "parse-sample-names-2",
+  "args": [["file-list", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "parse-sample-names-1",
+  "args": [["file-list", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "parse-sample-names",
+  "args": [["file-list", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "parse-NI-piano-pp",
+  "args": [["file-list", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "parse-MIS-piano-mf",
+  "args": [["file-list", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "parse-MIS-piano-ff",
+  "args": [["file-list", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "odd?",
+  "args": [["n", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "number->string",
+  "args": [["n", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "note-name-to-midi-number",
+  "args": [["name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "negative?",
+  "args": [["n", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "multi-list-combination-2",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "multi-list-combination",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "more-handlers?",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "min",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "memv",
+  "args": [["obj", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "memq",
+  "args": [["obj", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "member",
+  "args": [["obj", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "max",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "math:variance",
+  "args": [["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "math:std-deviation",
+  "args": [["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "math:mean",
+  "args": [["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "map",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "make-vector-with-proc",
+  "args": [["num", ""],["func", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "make-timeline",
+  "args": [["timeline", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "make-rhythm",
+  "args": [["beats", ""],["tactus", ""],["syncopation", ""],["rhythm-list", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "make-metro",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "make-metre",
+  "args": [["metre", ""],["base", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "make-list-with-proc",
+  "args": [["lth", ""],["func", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "make-list",
+  "args": [["lth", ""],["obj", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "make-envelope-v",
+  "args": [["points", ""],["whole-num?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "make-envelope-l",
+  "args": [["points", ""],["whole-num?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "make-envelope",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "make-bezier",
+  "args": [["x1", ""],["y1", ""],["x2", ""],["y2", ""],["cx1", ""],["cy1", ""],["cx2", ""],["cy2", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "macro-expand",
+  "args": [["form", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "llvm:get-native-function",
+  "args": [["name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "llvm:get-native-closure",
+  "args": [["name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "llvm:get-closure-setter",
+  "args": [["name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "llvm:compile-ir-and-print",
+  "args": [["ir-string", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "llvm:compile-ir",
+  "args": [["ir-string", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "list-tail",
+  "args": [["x", ""],["k", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "list-ref",
+  "args": [["x", ""],["k", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "list-position",
+  "args": [["obj", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "list-head",
+  "args": [["lst", ""],["k", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "list->vector",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "list->string",
+  "args": [["charlist", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "list",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "limit-range",
+  "args": [["value", ""],["min", ""],["max", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "lcm",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "last-pair",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "jumble",
+  "args": [["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "ivl:transpose",
+  "args": [["val", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "ivl:melody-by-ivl",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "ivl:invert",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "ivl:expand/contract",
+  "args": [["lst", ""],["factor", ""],["pc", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "ipc:sync-receive",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "ipc:set-local-remote-mapping",
+  "args": [["local-name", ""],["remote-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "ipc:run-active-label",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "ipc:proc-name-with-mapping",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "ipc:mapcall",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "ipc:map",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "ipc:for-each",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "ipc:call",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "ipc:bind-func",
+  "args": [["procname", ""],["symname", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "ipc:audio-setup",
+  "args": [["proc", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "io:osc:send",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "io:osc:receive",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "insert-at-index",
+  "args": [["k", ""],["lst", ""],["obj", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "input-output-port?",
+  "args": [["p", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "inexact?",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:zone-alloc-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:while-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:while",
+  "args": [["ast", ""],["inbody?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:vtypes",
+  "args": [["name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:vtype-transforms",
+  "args": [["name", ""],["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:vtype-match?",
+  "args": [["name", ""],["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:void-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:vfill!",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:vector-shuffle-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:vector-set-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:vector-ref-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:update-var",
+  "args": [["sym", ""],["vars", ""],["kts", ""],["t", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:unity?",
+  "args": [["vars", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:unify-lists",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:unify",
+  "args": [["vars", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:typealias-exists?",
+  "args": [["typealias-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:type-unify",
+  "args": [["t", ""],["vars", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:type-normalize",
+  "args": [["t", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:type-clean",
+  "args": [["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:type-check-bound-lambda",
+  "args": [["sym", ""],["vars", ""],["kts", ""],["t", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:type-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:tuple-set-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:tuple-ref-ptr-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:tuple-ref-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:try-to-resolve-named-types",
+  "args": [["t", ""],["vars", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:tfill!",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:symbol-expand-reverse-check",
+  "args": [["vs", ""],["vars", ""],["all-vs", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:symbol-expand",
+  "args": [["vs", ""],["vars", ""],["all-vs", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:symbol-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:sym-unify",
+  "args": [["sym", ""],["types", ""],["vars", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:string-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:stack-alloc-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:sscanf-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:sprintln2",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:sprintln",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:sprintf-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:specialize-generictype",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:specialize-genericfunc",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:simplify-generic-pretty-type",
+  "args": [["pretty-type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:set-typealias-docstring",
+  "args": [["typealias-name", ""],["docstring", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:set-nativefunc-type",
+  "args": [["nativefunc-name", ""],["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:set-nativefunc-docstring",
+  "args": [["nativefunc-name", ""],["docstring", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:set-nativefunc-arg-names",
+  "args": [["nativefunc-name", ""],["arg-list", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:set-namedtype-docstring",
+  "args": [["namedtype-name", ""],["docstring", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:set-globalvar-docstring",
+  "args": [["globalvar-name", ""],["docstring", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:set-closure-zone-size",
+  "args": [["closure-name", ""],["body", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:set-closure-type",
+  "args": [["closure-name", ""],["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:set-closure-docstring",
+  "args": [["closure-name", ""],["docstring", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:set-closure-body",
+  "args": [["closure-name", ""],["body", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:set-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:set-builtin-type-str",
+  "args": [["builtin-name", ""],["type-str", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:set-builtin-docstring",
+  "args": [["builtin-name", ""],["docstring", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:set-builtin-args",
+  "args": [["builtin-name", ""],["args", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:scm_rt_check_string",
+  "args": [["n", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:run-type-check*",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:run-type-check",
+  "args": [["vars", ""],["forced-types", ""],["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:run",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:reverse-set-bangs-from-reified",
+  "args": [["poly", ""],["reified", ""],["gnum", ""],["vars", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:ret-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:reset-typealias-cache",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:reset-polytype-cache",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:reset-polyfunc-cache",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:reset-nativefunc-cache",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:reset-namedtype-cache",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:reset-globalvar-cache",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:reset-generictype-cache",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:reset-genericfunc-cache",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:reset-closure-cache",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:reset-builtin-cache",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:rename-all-shadow-vars",
+  "args": [["full-ast", ""],["syms", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:remove-single-element-lists",
+  "args": [["l", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:reify-generic-type-expand",
+  "args": [["type", ""],["gnum", ""],["spec", ""],["vars", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:reify-generic-type",
+  "args": [["vs", ""],["vars", ""],["all-vs", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:register-new-typealias",
+  "args": [["typealias-name", ""],["type", ""],["docstring", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:register-new-polytype",
+  "args": [["polytype-name", ""],["type-name", ""],["type", ""],["docstring", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:register-new-polyfunc",
+  "args": [["polyfunc-name", ""],["func-name", ""],["func-type", ""],["docstring", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:register-new-nativefunc",
+  "args": [["nativefunc-name", ""],["type", ""],["docstring", ""],["arg-list", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:register-new-namedtype",
+  "args": [["namedtype-name", ""],["type", ""],["docstring", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:register-new-globalvar",
+  "args": [["globalvar-name", ""],["type", ""],["docstring", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:register-new-generictype",
+  "args": [["name", ""],["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:register-new-genericfunc",
+  "args": [["code", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:register-new-closure",
+  "args": [["closure-name", ""],["type", ""],["zone-size", ""],["docstring", ""],["body", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:register-new-builtin",
+  "args": [["builtin-name", ""],["type-str", ""],["docstring", ""],["args", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:quote",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:push_zone-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:push_new_zone-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:println2",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:println",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:printf-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:print-typealias-cache",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:print-polytype-cache",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:print-polyfunc-cache",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:print-nativefunc-cache",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:print-namedtype-cache",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:print-globalvar-cache",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:print-generictype-cache",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:print-genericfunc-cache",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:print-closure-cache",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:print-builtin-cache",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:pref-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:pop_zone-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:polytype-pretty-print",
+  "args": [["polytype-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:polytype-match?",
+  "args": [["t1", ""],["t2", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:polytype-exists?",
+  "args": [["polytype-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:polyfunc-pretty-print",
+  "args": [["polyfunc-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:polyfunc-exists?",
+  "args": [["polyfunc-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:pointer-set-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:pointer-ref-ptr-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:pointer-ref-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:pfill!",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:pdref-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:parametric-poly-pass",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:or",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:numeric-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:numeric-cast-operator",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:null?-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:null-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:not",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:nativefunc-exists?",
+  "args": [["nativefunc-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:nativef-poly-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:nativef-generics-make-gtypes-unique",
+  "args": [["pt", ""],["gnum", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:nativef-generics-final-tests",
+  "args": [["ast", ""],["gpoly-type", ""],["gftype", ""],["gnum", ""],["vars", ""],["kts", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:nativef-generics-check-return-type",
+  "args": [["ast", ""],["lambda-code", ""],["gpoly-type", ""],["gnum", ""],["vars", ""],["args", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:nativef-generics-check-args",
+  "args": [["ast", ""],["gpoly-type", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:nativef-generics",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:nativef-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:namedtype-exists?",
+  "args": [["namedtype-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:memzone",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:math-intrinsic-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:math-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:mark-returns",
+  "args": [["ast", ""],["name", ""],["in-body?", ""],["last-pair?", ""],["blocked?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:lteq",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:list",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:letz",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:let-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:lambda-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:lambda",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:join",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:intersection*",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:initialize-closure-with-new-zone",
+  "args": [["func-name", ""],["zone-size", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:if-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:heap-alloc-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:handle-forced-types",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:gteq",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:globalvar-exists?",
+  "args": [["globalvar-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-var-types",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-var",
+  "args": [["sym", ""],["vars", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-typealias-type",
+  "args": [["typealias-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-typealias-ground-type",
+  "args": [["typealias-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-typealias-docstring",
+  "args": [["typealias-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-polytype-candidate-types",
+  "args": [["polytype-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-polytype-candidate-pretty-types",
+  "args": [["polytype-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-polytype-candidate-names",
+  "args": [["polytype-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-polytype-candidate-list",
+  "args": [["polytype-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-polytype-candidate",
+  "args": [["polytype-name", ""],["func-type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-polyfunc-docstring",
+  "args": [["polyfunc-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-polyfunc-candidate-types",
+  "args": [["polyfunc-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-polyfunc-candidate-pretty-types",
+  "args": [["polyfunc-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-polyfunc-candidate-names",
+  "args": [["polyfunc-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-polyfunc-candidate-list",
+  "args": [["polyfunc-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-polyfunc-candidate",
+  "args": [["polyfunc-name", ""],["func-type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-nativefunc-type",
+  "args": [["nativefunc-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-nativefunc-docstring",
+  "args": [["nativefunc-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-nativefunc-arg-types",
+  "args": [["name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-nativefunc-arg-names",
+  "args": [["nativefunc-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-namedtype-type",
+  "args": [["namedtype-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-namedtype-docstring",
+  "args": [["namedtype-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-named-type",
+  "args": [["name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-globalvar-type",
+  "args": [["globalvar-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-globalvar-docstring",
+  "args": [["globalvar-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-generictype-candidate-types",
+  "args": [["name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-expression-type",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-closure-zone-size",
+  "args": [["closure-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-closure-type",
+  "args": [["closure-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-closure-or-nativefunc-type",
+  "args": [["closure-or-nativefunc-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-closure-or-nativefunc-docstring",
+  "args": [["closure-or-nativefunc-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-closure-or-nativefunc-arg-types",
+  "args": [["closure-or-nativefunc-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-closure-names",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-closure-docstring",
+  "args": [["closure-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-closure-body",
+  "args": [["closure-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-closure-arg-types",
+  "args": [["name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-closure-arg-symbols",
+  "args": [["closure-sym", ""],["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-builtin-type-str",
+  "args": [["builtin-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-builtin-docstring",
+  "args": [["builtin-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:get-builtin-args",
+  "args": [["builtin-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:generictype-exists?",
+  "args": [["name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:genericfunc-types",
+  "args": [["name", ""],["arity", ""],["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:genericfunc-src-compiled",
+  "args": [["name", ""],["arity", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:genericfunc-src-changed",
+  "args": [["name", ""],["arity", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:genericfunc-pretty-print",
+  "args": [["name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:genericfunc-exists?",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:genericfunc-apply-macros",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:generic-types-matchup?",
+  "args": [["aa", ""],["bb", ""],["vars", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:generic-type-details",
+  "args": [["a", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:gen-shadow",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:fscanf-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:fptrcall-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:fprintf-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:format",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:force-vtypes",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:force-var",
+  "args": [["sym", ""],["vars", ""],["kts", ""],["t", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:flatten-1",
+  "args": [["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:first-transform",
+  "args": [["ast", ""],["inbody?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:find-unresolved-simple-types",
+  "args": [["union", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:find-all-vars",
+  "args": [["full-ast", ""],["syms", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:expand-generic-types",
+  "args": [["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:expand-generic-type-func-gpoly-arity",
+  "args": [["name", ""],["xvararity", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:expand-generic-type",
+  "args": [["t", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:dotimes-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:dotimes",
+  "args": [["ast", ""],["inbody?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:doloop",
+  "args": [["ast", ""],["inbody?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:descending-generic-type-match",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:create_zone-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:create-scm-wrapper?",
+  "args": [["func-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:create-scheme-wrapper",
+  "args": [["func-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:constrain-genericfunc",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:cond",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:complex-unify",
+  "args": [["sym", ""],["types", ""],["vars", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:complex-type?",
+  "args": [["t", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:completely-unwrap-named-type",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:compile-type-dataconstructors",
+  "args": [["name", ""],["type", ""],["generic", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:compare-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:coercion-run",
+  "args": [["ast", ""],["forced-types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:coerce-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:closure:convert",
+  "args": [["ast", ""],["esyms", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:closure-set-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:closure-refcheck-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:closure-ref-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:closure-or-nativefunc-exists?",
+  "args": [["closure-or-nativefunc-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:closure-is-being-compiled?",
+  "args": [["closure-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:closure-in-first-position",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:closure-exists?",
+  "args": [["closure-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:closure-call-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:clear-all-vars",
+  "args": [["vars", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:cleanup",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:clean-fvars",
+  "args": [["vars", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:check-to-update-generic-vars",
+  "args": [["atom", ""],["lists", ""],["vars", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:check-memzone-void?",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:check-for-vtypes",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:check-bang-against-reified",
+  "args": [["bang-sym", ""],["reified-sym", ""],["vars", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:carcdr-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:callback-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:callback",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:builtin-exists?",
+  "args": [["builtin-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:block:check-for-free-syms",
+  "args": [["ast", ""],["esyms", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:bitwise-not-to-eor",
+  "args": [["ast", ""],["inbody?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:bitconvert-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:bitcast-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:bind-lib",
+  "args": [["library", ""],["symname", ""],["type", ""],["calling-convention", ""],["docstring", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:bind-gl-lib",
+  "args": [["proc-name", ""],["type", ""],["docstring", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:binary-arity",
+  "args": [["ast", ""],["inbody?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:beginz",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:begin-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:bang-type?",
+  "args": [["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:array-set-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:array-ref-ptr-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:array-ref-check",
+  "args": [["ast", ""],["vars", ""],["kts", ""],["request?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:and",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:allocate-var?",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:afill!",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:add-vtype",
+  "args": [["name", ""],["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ti:add-types-to-source",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:void?",
+  "args": [["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:vector?",
+  "args": [["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:types-equal?",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:type?",
+  "args": [["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:tuple?",
+  "args": [["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:strip-space",
+  "args": [["str", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:str-list-check",
+  "args": [["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:signed?",
+  "args": [["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:scalar?",
+  "args": [["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:pretty-print-type",
+  "args": [["t", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:pptype",
+  "args": [["t", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:pointer?",
+  "args": [["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:pointer--",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:pointer++",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:other?",
+  "args": [["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:objectsize-intrinsic",
+  "args": [["object-name", ""],["rettype", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:number?",
+  "args": [["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:make-struct-str-env",
+  "args": [["t", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:make-struct-str",
+  "args": [["t", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:make-string",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:make-function-str",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:make-const-string",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:make-arglist-str",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:gname",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:get-vector-type-from-str",
+  "args": [["string-type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:get-type-str",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:get-type-size",
+  "args": [["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:get-type-joiner",
+  "args": [["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:get-type-from-str",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:get-type-from-pretty-vector",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:get-type-from-pretty-tuple",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:get-type-from-pretty-str",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:get-type-from-pretty-closure",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:get-type-from-pretty-array",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:get-tuple-type-size",
+  "args": [["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:get-tuple-type-from-str",
+  "args": [["string-type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:get-ptr-depth",
+  "args": [["t", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:get-pretty-tuple-arg-strings",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:get-pretty-closure-arg-strings",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:get-function-type-from-str",
+  "args": [["string-type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:get-closure-type-from-str",
+  "args": [["string-type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:get-base-type-g",
+  "args": [["str", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:get-base-type",
+  "args": [["str", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:get-array-type-from-str",
+  "args": [["string-type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:get-arity-from-pretty-closure",
+  "args": [["pretty-str", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:get-alignment",
+  "args": [["t", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:genericfunc-type-setup",
+  "args": [["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:genericfunc-stringify-generic-arg-strings",
+  "args": [["args", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:genericfunc-match-tuple-types",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:genericfunc-match-closure-types",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:gcnt",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:function-calling-convention",
+  "args": [["function-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:floating-point?",
+  "args": [["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:fixed-point?",
+  "args": [["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:convert-types",
+  "args": [["t", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:convert-from-pretty-types",
+  "args": [["t", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:zone-alloc-without-size",
+  "args": [["ast", ""],["types", ""],["hint?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:zone-alloc-with-size",
+  "args": [["ast", ""],["types", ""],["hint?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:zone-alloc",
+  "args": [["ast", ""],["types", ""],["hint?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:while-loop",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:void",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:vector-shuffle",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:vector-set",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:vector-ref",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:tuple-set",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:tuple-ref-ptr",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:tuple-ref",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:stack-alloc-without-size",
+  "args": [["ast", ""],["types", ""],["hint?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:stack-alloc-with-size",
+  "args": [["ast", ""],["types", ""],["hint?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:stack-alloc",
+  "args": [["ast", ""],["types", ""],["hint?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:set!",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:ret",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:pref",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:pointer-set",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:pointer-ref-ptr",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:pointer-ref",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:pdref",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:null",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:native-call",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:modulo",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:math-intrinsics",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:math",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:make-tuple",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:make-array",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:loop",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:llvm_varargs",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:ifret",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:if",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:heap-alloc-without-size",
+  "args": [["ast", ""],["types", ""],["hint?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:heap-alloc-with-size",
+  "args": [["ast", ""],["types", ""],["hint?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:heap-alloc",
+  "args": [["ast", ""],["types", ""],["hint?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:fptrcall",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:cmp",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:closure-set",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:closure-refcheck",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:closure-ref",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:closure-from-getter",
+  "args": [["name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:callback",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:bitwise",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:bitconvert",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:bitcast",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:array-set",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:array-ref-ptr",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler:array-ref",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compiler",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compile:push_zone",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compile:push_new_zone",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compile:pop_zone",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compile:make-env",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compile:make-closureenv",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compile:make-closure",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compile:eval-var",
+  "args": [["var", ""],["t", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compile:eval-gvar",
+  "args": [["var", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compile:create_zone",
+  "args": [["ast", ""],["types", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:compile:apply-closure",
+  "args": [["ast", ""],["types", ""],["ftype-provided?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:closure?",
+  "args": [["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:clean-named-type",
+  "args": [["str", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:check-type-size-calculations",
+  "args": [["typename-list", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:boolean?",
+  "args": [["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:ir:array?",
+  "args": [["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:reset-jit-compilation-queue",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:queue-ir-for-compilation",
+  "args": [["ir-string", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-variable-not-marked-as-free-error",
+  "args": [["vs", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-unsupported-conversion-error",
+  "args": [["from", ""],["to", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-type-mismatch-error",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-type-conflict-error",
+  "args": [["type1", ""],["type2", ""],["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-shadow-var-error",
+  "args": [["name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-polying-details-to-log",
+  "args": [["lead-string", ""],["poly-name", ""],["native-name", ""],["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-not-during-aot-error",
+  "args": [["message", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-no-valid-forms-for-generic-error",
+  "args": [["name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-no-scheme-stub-notification",
+  "args": [["symname", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-no-retval-error",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-no-redefinitions-error",
+  "args": [["name", ""],["oldtype", ""],["newtype", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-needs-zone-size-error",
+  "args": [["expr-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-needs-zone-delay-error",
+  "args": [["expr-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-missing-identifier-error",
+  "args": [["name", ""],["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-missing-generic-type-error",
+  "args": [["type-name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-lib-binding-details-to-log",
+  "args": [["libname", ""],["symname", ""],["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-index-oob-error",
+  "args": [["type", ""],["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-if-type-conflict-error",
+  "args": [["then", ""],["else", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-expansion-arity-error",
+  "args": [["before", ""],["after", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-dylib-loading-details-to-log",
+  "args": [["dylib-path", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-double-colon-error",
+  "args": [["var", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-could-not-resolve-type-error",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-could-not-resolve-generic-type-error",
+  "args": [["types", ""],["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-compiler-warning",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-compiler-failed-error",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-compiler-error",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-cannot-expand-non-generic-error",
+  "args": [["name", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-binding-details-to-log",
+  "args": [["lead-string", ""],["symname", ""],["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-bind-func-details-to-log",
+  "args": [["lead-string", ""],["symname", ""],["type", ""],["zone-size", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-badly-formed-expression-error",
+  "args": [["expr-type", ""],["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-bad-type-error-with-ast",
+  "args": [["type", ""],["message", ""],["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-bad-type-error",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-bad-numeric-value-error",
+  "args": [["value", ""],["expected-type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-bad-arity-error",
+  "args": [["ast", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:print-already-bound-error",
+  "args": [["name", ""],["type", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:compiler:flush-jit-compilation-queue",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:aot:print-compilation-details",
+  "args": [["start-time", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:aot:insert-typealias-binding-details",
+  "args": [["name", ""],["type", ""],["docstring", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:aot:insert-polyfunc-binding-details",
+  "args": [["poly-name", ""],["func-name", ""],["docstring", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:aot:insert-nativefunc-binding-details",
+  "args": [["lib-name", ""],["func-name", ""],["type", ""],["docstring", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:aot:insert-namedtype-binding-details",
+  "args": [["name", ""],["type", ""],["docstring", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:aot:insert-load-dylib-details",
+  "args": [["dylib-info-pair", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:aot:insert-header",
+  "args": [["libname", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:aot:insert-globalvar-binding-details",
+  "args": [["name", ""],["type", ""],["docstring", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:aot:insert-footer",
+  "args": [["libname", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:aot:insert-closure-binding-details",
+  "args": [["name", ""],["type", ""],["zone-size", ""],["docstring", ""],["body", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:aot:currently-compiling?",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:aot:compile-xtm-file",
+  "args": [["lib-path", ""],["exit-afterwards?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "impc:aot:compile-module",
+  "args": [["module-name", ""],["module", ""],["exit-afterwards?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "icr:set-zone-default",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "icr:set-zone",
+  "args": [["zone", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "icr:new-zone",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "icr:destroy-zone",
+  "args": [["zone", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "head",
+  "args": [["stream", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "get-named-arg",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "get-llvm-path",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "generic-member",
+  "args": [["cmp", ""],["obj", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "generic-assoc",
+  "args": [["cmp", ""],["obj", ""],["alst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "gcd",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "format",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "for-each",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "foldr",
+  "args": [["func", ""],["end", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "foldl",
+  "args": [["func", ""],["accum", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "flatten-1",
+  "args": [["list", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "flatten",
+  "args": [["list", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "filter",
+  "args": [["pred", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "filename-strip-extension",
+  "args": [["path", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "filename-from-path",
+  "args": [["path", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "file-exists?",
+  "args": [["path", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "file->string",
+  "args": [["path", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "factorial",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "exact->inexact",
+  "args": [["n", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "even?",
+  "args": [["n", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "equal?",
+  "args": [["x", ""],["y", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "envelope-segments-v",
+  "args": [["points", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "envelope-segments-l",
+  "args": [["points", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "delete-at-index",
+  "args": [["k", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cond-expand-runtime",
+  "args": [["cond-action-list", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cond-eval-or",
+  "args": [["cond-list", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cond-eval-and",
+  "args": [["cond-list", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cond-eval",
+  "args": [["condition", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "combinations",
+  "args": [["s", ""],["size", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "close-port",
+  "args": [["p", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "clock:update-metro",
+  "args": [["server-process", ""],["local-process", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "clock:sync-adjust",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "clock:offset-from-server",
+  "args": [["server-proc", ""],["local-proc", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "clock->samples",
+  "args": [["time", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "clamp",
+  "args": [["num", ""],["low", ""],["high", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:union",
+  "args": [["lst1", ""],["lst2", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:tree-copy",
+  "args": [["tree", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:subset?",
+  "args": [["lst1", ""],["lst2", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:sorted?",
+  "args": [["seq", ""],["less?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:sort!",
+  "args": [["seq", ""],["less?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:sort",
+  "args": [["seq", ""],["less?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:some",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:set-difference",
+  "args": [["lst1", ""],["lst2", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:remove-if-not",
+  "args": [["pred?", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:remove-if",
+  "args": [["pred?", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:remove-duplicates",
+  "args": [["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:remove",
+  "args": [["obj", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:reduce-init",
+  "args": [["pred?", ""],["init", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:reduce",
+  "args": [["pred?", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:position",
+  "args": [["obj", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:or?",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:nthcdr",
+  "args": [["n", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:nreverse",
+  "args": [["rev-it", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:notevery",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:notany",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:nconc",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:merge!",
+  "args": [["a", ""],["b", ""],["less?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:merge",
+  "args": [["a", ""],["b", ""],["less?", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:member-if",
+  "args": [["pred?", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:make-list",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:list-of??",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:list*",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:last",
+  "args": [["lst", ""],["n", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:intersection",
+  "args": [["lst1", ""],["lst2", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:has-duplicates?",
+  "args": [["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:find-if",
+  "args": [["pred?", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:every",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:delete-if-not",
+  "args": [["pred", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:delete-if",
+  "args": [["pred", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:delete",
+  "args": [["obj", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:copy-list",
+  "args": [["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:butnthcdr",
+  "args": [["k", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:butlast",
+  "args": [["lst", ""],["n", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:atom?",
+  "args": [["obj", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:assoc-union",
+  "args": [["lst1", ""],["lst2", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:assoc-adjoin",
+  "args": [["pair", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:and?",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cl:adjoin",
+  "args": [["obj", ""],["lst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "char>?",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "char>=?",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "char=?",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "char<?",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "char<=?",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "char-cmp?",
+  "args": [["cmp", ""],["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "char-ci>?",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "char-ci>=?",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "char-ci=?",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "char-ci<?",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "char-ci<=?",
+  "args": [["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "char-ci-cmp?",
+  "args": [["cmp", ""],["a", ""],["b", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "change-over-time",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "change-at-index",
+  "args": [["k", ""],["lst", ""],["obj", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cddr",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cdddr",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cddddr",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cdddar",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cddar",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cddadr",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cddaar",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cdar",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cdadr",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cdaddr",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cdadar",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cdaar",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cdaadr",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cdaaar",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "callback-adapter",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "callback",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "call-with-output-file",
+  "args": [["s", ""],["p", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "call-with-input-file",
+  "args": [["s", ""],["p", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "call-cpp",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cadr",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "caddr",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cadddr",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "caddar",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cadar",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cadadr",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "cadaar",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "caar",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "caadr",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "caaddr",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "caadar",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "caaar",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "caaadr",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "caaaar",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "bind-func-ipc",
+  "args": [["symname", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "bench",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "atom?",
+  "args": [["x", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "assv",
+  "args": [["obj", ""],["alst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "assq",
+  "args": [["obj", ""],["alst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "assoc",
+  "args": [["obj", ""],["alst", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "anyatom->string",
+  "args": [["n", ""],["pred", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "acons",
+  "args": [["x", ""],["y", ""],["z", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "abs",
+  "args": [["n", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "_dsp:set!",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "Windows-convert-unix-path",
+  "args": [["unix-path", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "String_cat_macro",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "<>",
+  "args": [["n1", ""],["n2", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "-clock:metro-from-host-",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "*metro*",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "*livecoding-error-hook*",
+  "args": [["msg", ""],["a", ""]],
+  "type": null,
+  "docstring": null
+},
+{
+  "category": "scheme closure",
+  "name": "*error-hook*",
+  "args": null,
+  "type": null,
+  "docstring": null
+},
+{
   "category": "builtin",
   "name": "zalloc",
   "args": [["RETURN", "!v*"], ["optional-size", "i64"]],
