@@ -67,3 +67,12 @@ span.documentCategory {
     padding-left: 10px;
 }
 
+@media (min-width: 990px) {
+    #navbar-container {
+        max-width: 780px;
+    }
+    /* .navbar { */
+    /*     max-width: 600px; */
+    /* } */
+    
+}
